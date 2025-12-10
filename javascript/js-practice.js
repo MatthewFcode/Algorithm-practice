@@ -17,3 +17,22 @@ export function sumEvenNumbers(arr) {
 export function findFirstOver(arr, threshold) {
   return arr.find((n) => n > threshold)
 }
+
+// find all numbers in an array the surpass a certain threshold
+export function findAllNumbersOverBad(numbers, threshold) {
+  const numbersOver = []
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > threshold) {
+      numbersOver.push(numbers[i])
+    } else {
+      console.log('I miss my girlfriend')
+    }
+  }
+  return numbersOver
+}
+
+//LIVE NOTE: after writing the above the function I have realised that I could possibly provide the solution using a simple .filter()
+//LIVE NOTE: it does pass
+export function findAllNumbersOver(arr, number) {
+  return arr.filter((n) => n > number)
+}
