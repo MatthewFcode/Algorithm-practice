@@ -3,6 +3,7 @@ import {
   doubleNumbers,
   filterShortWords,
   sumEvenNumbers,
+  findFirstOver,
 } from '../js-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
@@ -43,4 +44,15 @@ test('sum all even numbers in an array filtering out any uneven numbers', () => 
   //Assert
   expect(result1).toEqual(expected1)
   expect(result2).toEqual(expected2)
+})
+
+test('Find the first number in an array that passes the threshold (2nd parameter)', () => {
+  //Arrange
+  const numbers = [3, 5, 77, 300, 16, 38, 67, 54.67, 412.15, 450, 223]
+  const threshold = 412.2
+  const expected = 450
+  //Act
+  const result = findFirstOver(numbers, threshold)
+  //Assert
+  expect(result).toEqual(expected)
 })
