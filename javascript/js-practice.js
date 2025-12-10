@@ -36,3 +36,8 @@ export function findAllNumbersOverBad(numbers, threshold) {
 export function findAllNumbersOver(arr, number) {
   return arr.filter((n) => n > number)
 }
+
+// sorting an array of objects in ascending order by the age property
+export function sortByAge(arr) {
+  return arr.sort((a, b) => a.age - b.age)
+}

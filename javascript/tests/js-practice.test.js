@@ -5,6 +5,7 @@ import {
   sumEvenNumbers,
   findFirstOver,
   findAllNumbersOver,
+  sortByAge,
 } from '../js-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
@@ -65,6 +66,24 @@ test('Find all numbers in array that surpass the threshold (parameter)', () => {
   const expected = [100, 177.9, 89.11, 112.5]
   //Act
   const result = findAllNumbersOver(numbers, threshold)
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('Sort an array of objects in ascending order of the objects age property', () => {
+  //Arrange
+  const objects = [
+    { name: 'A', age: 19 },
+    { name: 'B', age: 14 },
+    { name: 'C', age: 22 },
+  ]
+  const expected = [
+    { name: 'B', age: 14 },
+    { name: 'A', age: 19 },
+    { name: 'C', age: 22 },
+  ]
+  //Act
+  const result = sortByAge(objects)
   //Assert
   expect(result).toEqual(expected)
 })
