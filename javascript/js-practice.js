@@ -6,3 +6,9 @@ export function doubleNumbers(arr) {
 export function filterShortWords(arr) {
   return arr.filter((w) => w.length > 2)
 }
+
+// summing all even numbers in array using .filter() and .reduce() || filter first and then reduce
+export function sumEvenNumbers(arr) {
+  const filteredArr = arr.filter((n) => n % 2 === 0)
+  return filteredArr.reduce((accum, val) => accum + val, 0)
+}
