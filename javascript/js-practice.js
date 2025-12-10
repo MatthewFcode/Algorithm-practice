@@ -41,3 +41,34 @@ export function findAllNumbersOver(arr, number) {
 export function sortByAge(arr) {
   return arr.sort((a, b) => a.age - b.age)
 }
+
+// counting occurences of each word in an array and returning the result as an object || using .reduce()
+// Live note I have no idea how to do it using .reduce()
+export function countOccurences(arr) {
+  // accum is the current backpack so accum[val] is the current value of the backpack and checks whether the current accum has that word
+  return arr.reduce((accum, val) => {
+    // val is the current value of the array we are looping over
+    if (accum[val]) {
+      // if the current iteration of val doesn't exist in the back pack
+      accum[val] += 1
+    } else {
+      accum[val] = 1
+    }
+    return accum
+  }, {}) // empty object is where the back pack starts
+}
+
+export function countLetters(string) {
+  let stringArr = []
+  for (let i = 0; i < string.length; i++) {
+    stringArr.push(string[i])
+  } // could be done with a simple arr.split but I thought this helps for the visuals of making a new array considering the reduce in literally unreadable in my opinion with the object assignment
+  return stringArr.reduce((accum, val) => {
+    if (accum[val]) {
+      accum[val] += 1
+    } else {
+      accum[val] = 1
+    }
+    return accum
+  }, {}) // backpack = 0 || LIVE NOTE: I don't think that you can call .reduce() directly on a string so I am going loop over the whole arr then push it to a new one to then call the function on
+}

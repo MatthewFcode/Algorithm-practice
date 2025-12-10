@@ -6,6 +6,8 @@ import {
   findFirstOver,
   findAllNumbersOver,
   sortByAge,
+  countOccurences,
+  countLetters,
 } from '../js-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
@@ -84,6 +86,25 @@ test('Sort an array of objects in ascending order of the objects age property', 
   ]
   //Act
   const result = sortByAge(objects)
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('Counting how many times each word in an array occurs using .reduce() || returning the result as an object', () => {
+  //Arrange
+  const words = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple']
+  const expected = { apple: 3, banana: 2, orange: 1 }
+  //Act
+  const result = countOccurences(words)
+  //Assert
+  expect(result).toEqual(expected)
+})
+test('counting letters in a string using .reduce() and returning an object', () => {
+  //Arrange
+  const word = 'banana'
+  const expected = { b: 1, a: 3, n: 2 }
+  //Act
+  const result = countLetters(word)
   //Assert
   expect(result).toEqual(expected)
 })
