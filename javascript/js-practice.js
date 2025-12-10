@@ -2,5 +2,7 @@ export function doubleNumbers(arr) {
   return arr.map((n) => n * 2)
 }
 
-const arr = [20, 40, 21, 32.5, 66.6]
-console.log(doubleNumbers(arr))
+// .filter() makes a new array with words that have a greater length than two or meet the condition not the other way around
+export function filterShortWords(arr) {
+  return arr.filter((w) => w.length > 2)
+}
