@@ -8,6 +8,7 @@ import {
   filterZeros,
   isAscendingOrder,
   countOccurencesOfNum,
+  doubleNumbersManually,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -146,6 +147,16 @@ test('count how many times a specified value appears in an array without using a
   const expected = 5
   //Act
   const result = countOccurencesOfNum(numbers, number)
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('double every number in array manually and without using .push()', () => {
+  //Arrange
+  const numbers = [44, 55, 3232, 232, 2, 23, 2323, 2323, 232]
+  const expected = [88, 110, 6464, 464, 4, 46, 4646, 4646, 464]
+  //Act
+  const result = doubleNumbersManually(numbers)
   //Assert
   expect(result).toEqual(expected)
 })

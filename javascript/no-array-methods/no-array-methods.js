@@ -74,3 +74,22 @@ export const countOccurencesOfNum = (arr, number) => {
   }
   return total
 }
+
+//function that double numbers in an array without using .push()
+// export const doubleNumbersManually = (numbers) => {
+//   for (let i = 0; i < numbers.length; i++) {
+//     let newArr = [numbers[i] * 2]
+//     if (numbers[i] === numbers.length) {
+//       return newArr
+//     }
+//   }
+// }
+
+//
+export const doubleNumbersManually = (numbers) => {
+  let doubledArr = []
+  for (let i = 0; i < numbers.length; i++) {
+    doubledArr[i] = numbers[i] * 2
+  }
+  return doubledArr
+}
