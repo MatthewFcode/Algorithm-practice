@@ -7,6 +7,7 @@ import {
   squareNumbers,
   filterZeros,
   isAscendingOrder,
+  countOccurencesOfNum,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -136,4 +137,15 @@ test('check of the array is sorted in ascending order and return true or false',
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('count how many times a specified value appears in an array without using arr methods', () => {
+  //Arrange
+  const numbers = [1, 44, 34, 2, 3, 6, 7, 1, 1, 1, 1, 5, 5, 5, 33]
+  const number = 1
+  const expected = 5
+  //Act
+  const result = countOccurencesOfNum(numbers, number)
+  //Assert
+  expect(result).toEqual(expected)
 })

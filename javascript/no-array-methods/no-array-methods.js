@@ -63,3 +63,14 @@ export const isAscendingOrder = (arr) => {
   }
   return true
 } // LIVE NOTE: this isnt going to work beacause it isnt checking over the whole array being ascending bu just that the last iteration of it meets or doesn't meet that condition
+
+// function that takes a number array and specified number and returns how many times that number occurs in that array
+export const countOccurencesOfNum = (arr, number) => {
+  let total = 0
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === number) {
+      total += 1
+    }
+  }
+  return total
+}
