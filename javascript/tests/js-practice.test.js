@@ -12,6 +12,7 @@ import {
   countWordsByLength,
   groupNumbersByRemainder,
   countBooleans,
+  flatten2DArray,
 } from '../js-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
@@ -196,4 +197,14 @@ test('count how many true or false values or in an array using .reduce() and ass
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('flatten a 2D array using .flat()', () => {
+  //Arrange
+  const arr = [[1, 2], [3, 4], [5]]
+  const expected = [1, 2, 3, 4, 5]
+  //Assert
+  const result = flatten2DArray(arr)
+  //Assert
+  expect(result).toEqual(expected)
 })

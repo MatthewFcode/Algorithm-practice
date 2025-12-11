@@ -134,3 +134,8 @@ export function countBooleans(arr) {
     { true: 0, false: 0 }
   )
 }
+
+// function that takes an array with 1 level of nested arrays using .flat()
+export function flatten2DArray(arr) {
+  return arr.flat(1)
+}
