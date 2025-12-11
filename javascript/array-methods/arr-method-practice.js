@@ -138,4 +138,4 @@ export function countBooleans(arr) {
 // function that takes an array with 1 level of nested arrays using .flat()
 export function flatten2DArray(arr) {
   return arr.flat(1)
-}
+} // LIVE NOTE: whenever I hear flatten an object or array I get really intimidated and nervous and start to think its gonna be really hard without even googling anything || this is one of the easisest functions I have ever written

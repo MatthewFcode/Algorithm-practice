@@ -13,7 +13,7 @@ import {
   groupNumbersByRemainder,
   countBooleans,
   flatten2DArray,
-} from '../js-practice.js'
+} from '../arr-method-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
   //Arrange
