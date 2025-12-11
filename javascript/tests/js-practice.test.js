@@ -10,6 +10,7 @@ import {
   countLetters,
   countEvenAndOddNumbers,
   countWordsByLength,
+  groupNumbersByRemainder,
 } from '../js-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
@@ -158,4 +159,14 @@ test('Counting the occurences of words of a paticular length using .reduce() and
   const result = countWordsByLength(words)
   //Assert
   expect(expected).toEqual(result)
+})
+
+test('group numbers by there remainder using .reduce() and returning an object', () => {
+  //Arrange
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const expected = { 0: 3, 1: 3, 2: 3 }
+  //Act
+  const result = groupNumbersByRemainder(numbers)
+  //Assert
+  expect(result).toEqual(expected)
 })

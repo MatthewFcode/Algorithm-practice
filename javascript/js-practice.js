@@ -92,7 +92,6 @@ export function countEvenAndOddNumbers(numArr) {
   )
 }
 
-//
 export function countWordsByLength(arr) {
   // count how many times a word length repeats in an array
   // we are going to need the length property initialise that as the first key if it doesn't but if it does then plus the existing one by one
@@ -103,6 +102,19 @@ export function countWordsByLength(arr) {
     } else {
       // if it already exists add 1 onto that value
       accum[val.length] = 1
+    }
+    return accum
+  }, {})
+}
+
+// function that loops through an array of numbers and groups values by how many leave different remainders of a certain value | using .reduce()
+export function groupNumbersByRemainder(arr) {
+  return arr.reduce((accum, val) => {
+    if (accum[val % 3]) {
+      // check if the current iterations remainder already exists in the backpack
+      accum[val % 3] += 1 // if it does add another increment to that value on the object
+    } else {
+      accum[val % 3] = 1 // if it doesn't already exist intialise a property using the remainder value and instialise the value to 0
     }
     return accum
   }, {})
