@@ -91,3 +91,19 @@ export function countEvenAndOddNumbers(numArr) {
     { even: 0, odd: 0 }
   )
 }
+
+//
+export function countWordsByLength(arr) {
+  // count how many times a word length repeats in an array
+  // we are going to need the length property initialise that as the first key if it doesn't but if it does then plus the existing one by one
+  return arr.reduce((accum, val) => {
+    if (accum[val.length]) {
+      // if the current length of the iteration isn't in the accum then add the current length as a property with an increment of 1
+      accum[val.length] += 1
+    } else {
+      // if it already exists add 1 onto that value
+      accum[val.length] = 1
+    }
+    return accum
+  }, {})
+}

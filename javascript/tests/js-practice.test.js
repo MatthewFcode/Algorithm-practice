@@ -9,6 +9,7 @@ import {
   countOccurences,
   countLetters,
   countEvenAndOddNumbers,
+  countWordsByLength,
 } from '../js-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
@@ -147,4 +148,14 @@ test('counting even and odd numbers in an array using .reduce() || returing a {}
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('Counting the occurences of words of a paticular length using .reduce() and returning an object', () => {
+  //Arrange
+  const words = ['hi', 'hello', 'hey', 'yo', 'greetings']
+  const expected = { 2: 2, 5: 1, 3: 1, 9: 1 }
+  //Act
+  const result = countWordsByLength(words)
+  //Assert
+  expect(expected).toEqual(result)
 })
