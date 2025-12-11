@@ -5,6 +5,7 @@ import {
   parseBoldText,
   mergeArrays,
   squareNumbers,
+  filterZeros,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -110,4 +111,14 @@ test('create a new array of square roots of each value of the array', () => {
   const result = squareNumbers(numbers)
   //Assert
   expect(result).toEqual(result)
+})
+
+test('filter all values of 0 out of an array manually ', () => {
+  //Arrange
+  const numbers = [0, 55, 550, 223, 0, 3, 0, 2323, 0, 0, 3232, 0, 232, 44, 0]
+  const expected = [55, 550, 223, 3, 2323, 3232, 232, 44]
+  //Act
+  const result = filterZeros(numbers)
+  //Arrange
+  expect(result).toEqual(expected)
 })

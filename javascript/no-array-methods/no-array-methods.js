@@ -43,3 +43,14 @@ export function squareNumbers(arr) {
   }
   return newArr
 }
+
+// function that filters out all 0 values from an array
+export function filterZeros(arr) {
+  let noZeros = []
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== 0) {
+      noZeros.push(arr[i])
+    }
+  }
+  return noZeros
+}
