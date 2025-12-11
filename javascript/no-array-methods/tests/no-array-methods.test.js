@@ -6,6 +6,7 @@ import {
   mergeArrays,
   squareNumbers,
   filterZeros,
+  isAscendingOrder,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -121,4 +122,18 @@ test('filter all values of 0 out of an array manually ', () => {
   const result = filterZeros(numbers)
   //Arrange
   expect(result).toEqual(expected)
+})
+
+test('check of the array is sorted in ascending order and return true or false', () => {
+  //Arrange
+  const numbers = [1, 44, 6232, 9032, 10302, 15455]
+  const numbers2 = [33, 1, 532, 5, 0, 345, 123312414141343]
+  const expected = true
+  const expected2 = false
+  //Act
+  const result = isAscendingOrder(numbers)
+  const result2 = isAscendingOrder(numbers2)
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })

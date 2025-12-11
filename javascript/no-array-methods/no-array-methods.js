@@ -54,3 +54,12 @@ export function filterZeros(arr) {
   }
   return noZeros
 }
+
+export const isAscendingOrder = (arr) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i + 1]) {
+      return false
+    }
+  }
+  return true
+} // LIVE NOTE: this isnt going to work beacause it isnt checking over the whole array being ascending bu just that the last iteration of it meets or doesn't meet that condition
