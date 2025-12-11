@@ -119,3 +119,18 @@ export function groupNumbersByRemainder(arr) {
     return accum
   }, {})
 }
+
+// function that count how many booleans are in array and returns the result as an object using .reduce()
+export function countBooleans(arr) {
+  return arr.reduce(
+    (accum, val) => {
+      if (val === true) {
+        accum.true += 1
+      } else if (val === false) {
+        accum.false += 1
+      }
+      return accum
+    },
+    { true: 0, false: 0 }
+  )
+}

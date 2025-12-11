@@ -11,6 +11,7 @@ import {
   countEvenAndOddNumbers,
   countWordsByLength,
   groupNumbersByRemainder,
+  countBooleans,
 } from '../js-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
@@ -169,4 +170,30 @@ test('group numbers by there remainder using .reduce() and returning an object',
   const result = groupNumbersByRemainder(numbers)
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('count how many true or false values or in an array using .reduce() and assign those values to an object', () => {
+  //Arrange
+  const values = [true, false, true, true, false]
+  const values2 = [
+    true,
+    'That irritates me',
+    false,
+    67,
+    true,
+    69,
+    true,
+    false,
+    true,
+    true,
+    undefined,
+  ]
+  const expected = { true: 3, false: 2 }
+  const expected2 = { true: 5, false: 2 }
+  //Act
+  const result = countBooleans(values)
+  const result2 = countBooleans(values2)
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })
