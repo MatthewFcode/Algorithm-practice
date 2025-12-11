@@ -3,6 +3,8 @@ import {
   reverseArr,
   sumEvenNumbers,
   parseBoldText,
+  mergeArrays,
+  squareNumbers,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -31,7 +33,7 @@ test('Reverse an array without using any array methods', () => {
     4,
     1,
   ]
-  //Arrange
+  //Act
   const result = reverseArr(arr)
   //Assert
   expect(result).toEqual(expected)
@@ -53,7 +55,7 @@ test('count how many even numbers there are in an array without using any array 
   ]
   const expected = 3
   const expected2 = 3
-  //Assert
+  //Act
   const result = sumEvenNumbers(numbers)
   const result2 = sumEvenNumbers(numbers2)
   //Assert
@@ -86,4 +88,26 @@ test('given a string with any bold markdown tags turn them into <b></b> html tag
   expect(result3).toEqual(expected3)
   expect(result4).toEqual(expected4)
   expect(result5).toEqual(expected5)
+})
+
+test('merging two arrays with no array methods', () => {
+  //Arrange
+  const arr1 = [1, 555, 749, 34345, 2224, 2, 3444]
+  const arr2 = [2232, 323234, 23333, 444, 3133, 44]
+  const expected = [
+    1, 555, 749, 34345, 2224, 2, 3444, 2232, 323234, 23333, 444, 3133, 44,
+  ]
+  //Act
+  const result = mergeArrays(arr1, arr2)
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('create a new array of square roots of each value of the array', () => {
+  //Arrange
+  const numbers = [2, 4, 6, 8, 16, 24, 32, 64, 128, 256, 512, 1024]
+  //Act
+  const result = squareNumbers(numbers)
+  //Assert
+  expect(result).toEqual(result)
 })

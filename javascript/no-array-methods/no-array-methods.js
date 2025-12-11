@@ -28,3 +28,18 @@ export function parseBoldText(string) {
     return `<b>${content}</b>`
   })
 }
+
+// function that takes two arrays as a parameter and returns the arrays merged into one array
+export function mergeArrays(arr1, arr2) {
+  return [...arr1, ...arr2]
+}
+
+// function that takes an array of numbers and return square roots
+export function squareNumbers(arr) {
+  let newArr = []
+  for (let i = 0; i < arr.length; i++) {
+    const squaredNum = arr[i] * arr[i]
+    newArr.push(squaredNum)
+  }
+  return newArr
+}
