@@ -63,8 +63,10 @@ export function countLetters(string) {
   for (let i = 0; i < string.length; i++) {
     stringArr.push(string[i])
   } // could be done with a simple arr.split but I thought this helps for the visuals of making a new array considering the reduce in literally unreadable in my opinion with the object assignment
+  console.log(stringArr)
   return stringArr.reduce((accum, val) => {
     if (accum[val]) {
+      // if the accum doesnt have the current value of the iteration of the array
       accum[val] += 1
     } else {
       accum[val] = 1

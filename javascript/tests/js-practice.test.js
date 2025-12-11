@@ -102,9 +102,34 @@ test('Counting how many times each word in an array occurs using .reduce() || re
 test('counting letters in a string using .reduce() and returning an object', () => {
   //Arrange
   const word = 'banana'
+  const word2 =
+    'dfngaerngkenrglnqerlgknqelrnglqenrglqerlgkneqlrnglqerlnebln3rlgnlernglnrdgnqergnqkerng;kqejnrg;lnqerognqerlgnqebg;k135g455erjqgnknerlngl'
   const expected = { b: 1, a: 3, n: 2 }
+  const expected2 = {
+    d: 2,
+    f: 1,
+    n: 24,
+    g: 20,
+    a: 1,
+    e: 18,
+    r: 18,
+    k: 7,
+    l: 17,
+    q: 13,
+    b: 2,
+    3: 2,
+    ';': 3,
+    j: 2,
+    o: 1,
+    1: 1,
+    5: 3,
+    4: 1,
+  }
+
   //Act
   const result = countLetters(word)
+  const result2 = countLetters(word2)
   //Assert
   expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })
