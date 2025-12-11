@@ -9,6 +9,7 @@ import {
   isAscendingOrder,
   countOccurencesOfNum,
   doubleNumbersManually,
+  getIndexOf,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -159,4 +160,20 @@ test('double every number in array manually and without using .push()', () => {
   const result = doubleNumbersManually(numbers)
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('function takes an array and specified value and returns the first index of that value', () => {
+  //Arrange
+  const numbers = [232, 232, 23, 23, 42, 23423, 2, 32342, 34, 234, 342234234]
+  const words = ['hello', 'what', 'banasa', 4, 'd', 2342643]
+  const number = 34
+  const word = 'banasa'
+  const expectedNumbers = 8
+  const expectedWords = 2
+  //Act
+  const result = getIndexOf(numbers, number)
+  const result2 = getIndexOf(words, word)
+  //Assert
+  expect(result).toEqual(expectedNumbers)
+  expect(result2).toEqual(expectedWords)
 })

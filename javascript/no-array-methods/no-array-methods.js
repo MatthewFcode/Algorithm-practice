@@ -76,20 +76,19 @@ export const countOccurencesOfNum = (arr, number) => {
 }
 
 //function that double numbers in an array without using .push()
-// export const doubleNumbersManually = (numbers) => {
-//   for (let i = 0; i < numbers.length; i++) {
-//     let newArr = [numbers[i] * 2]
-//     if (numbers[i] === numbers.length) {
-//       return newArr
-//     }
-//   }
-// }
-
-//
 export const doubleNumbersManually = (numbers) => {
   let doubledArr = []
   for (let i = 0; i < numbers.length; i++) {
     doubledArr[i] = numbers[i] * 2
   }
   return doubledArr
+}
+
+// function that returns the index of a speciffied value without using .indexOf()
+export const getIndexOf = (arr, value) => {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === value) {
+      return i
+    }
+  }
 }
