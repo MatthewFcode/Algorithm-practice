@@ -17,3 +17,14 @@ export function sumEvenNumbers(arr) {
   }
   return total
 }
+
+// function that takes a string || detect
+export function parseBoldText(string) {
+  const re = /(\*\*|__)(?!\s)([\s\S]*?)(\1)/g
+  return string.replace(re, (match, marker, content) => {
+    if (content.length === 0 || content[content.length - 1] === ' ') {
+      return match
+    }
+    return `<b>${content}</b>`
+  })
+}
