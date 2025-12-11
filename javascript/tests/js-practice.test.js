@@ -8,6 +8,7 @@ import {
   sortByAge,
   countOccurences,
   countLetters,
+  countEvenAndOddNumbers,
 } from '../js-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
@@ -129,6 +130,20 @@ test('counting letters in a string using .reduce() and returning an object', () 
   //Act
   const result = countLetters(word)
   const result2 = countLetters(word2)
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('counting even and odd numbers in an array using .reduce() || returing a {}', () => {
+  //Arrange
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const numbers2 = [44, 55, 37923, 600, 8400, 4, 8, 4440, 8024]
+  const expected = { even: 4, odd: 5 }
+  const expected2 = { even: 7, odd: 2 }
+  //Act
+  const result = countEvenAndOddNumbers(numbers)
+  const result2 = countEvenAndOddNumbers(numbers2)
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)

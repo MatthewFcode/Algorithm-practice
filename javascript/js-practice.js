@@ -74,3 +74,20 @@ export function countLetters(string) {
     return accum
   }, {}) // backpack = 0 || LIVE NOTE: I don't think that you can call .reduce() directly on a string so I am going loop over the whole arr then push it to a new one to then call the function on
 }
+
+//LIVE NOTE: ideally I want to split the arrays to odd and even but I want to return as one object so I know this is wrong
+export function countEvenAndOddNumbers(numArr) {
+  let even = 0
+  let odd = 0
+  return numArr.reduce(
+    (accum, val) => {
+      if (val % 2 === 0) {
+        accum.even += 1
+      } else {
+        accum.odd += 1
+      }
+      return accum
+    },
+    { even: 0, odd: 0 }
+  )
+}
