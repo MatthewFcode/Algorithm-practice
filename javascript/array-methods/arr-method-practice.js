@@ -63,7 +63,7 @@ export function countLetters(string) {
   for (let i = 0; i < string.length; i++) {
     stringArr.push(string[i])
   } // could be done with a simple arr.split but I thought this helps for the visuals of making a new array considering the reduce in literally unreadable in my opinion with the object assignment
-  console.log(stringArr)
+
   return stringArr.reduce((accum, val) => {
     if (accum[val]) {
       // if the accum doesnt have the current value of the iteration of the array
@@ -77,8 +77,6 @@ export function countLetters(string) {
 
 //LIVE NOTE: ideally I want to split the arrays to odd and even but I want to return as one object so I know this is wrong
 export function countEvenAndOddNumbers(numArr) {
-  let even = 0
-  let odd = 0
   return numArr.reduce(
     (accum, val) => {
       if (val % 2 === 0) {

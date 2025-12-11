@@ -6,3 +6,14 @@ export function reverseArr(arr) {
   }
   return newArr
 }
+
+//function that counts total amount of even numbers in an array
+export function sumEvenNumbers(arr) {
+  let total = 0
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      total += 1
+    }
+  }
+  return total
+}
