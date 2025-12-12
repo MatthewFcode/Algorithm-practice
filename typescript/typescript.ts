@@ -32,3 +32,18 @@ export function filterObjectsWithoutPriceProperty(
   }
   return filteredArr
 }
+
+// creating a completely generically typed function that returns whatever you pass into it
+export function genericeType<T>(input: T): T {
+  // <T> is a generic type parameter that changes the type of T to whatever the type of the input is
+  console.log(typeof input)
+  return input
+}
+
+// generically type wrapper object
+type Generic<T> = {
+  value: T
+  age: T
+  name: T
+  ages: T[]
+}
