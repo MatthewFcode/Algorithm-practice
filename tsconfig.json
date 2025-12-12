@@ -8,7 +8,9 @@
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
+    // compiles to the latest version of javascript 
     "target": "esnext",
+    //uses Node.js ES6 module behaviour with imports/exports
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],
