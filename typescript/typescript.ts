@@ -1,3 +1,34 @@
+// function using a union to accept two types and returning the type of the parameter passed in
 export const typeOfUnion = (value: string | number): string => {
   return typeof value
+}
+
+//function that takes an array of objects and returns the objects in that array that have a price property
+
+export interface Product {
+  // typescript object interface for the below object
+  id: number
+  name: string
+  price?: number
+  category?: string
+}
+
+export interface FilteredProduct {
+  id: number
+  name: string
+  category?: string
+  price: number
+}
+
+export function filterObjectsWithoutPriceProperty(
+  arr: Product[]
+): FilteredProduct[] {
+  let filteredArr: FilteredProduct[] = []
+  for (let i = 0; i < arr.length; i++) {
+    const currentIteration = arr[i] as FilteredProduct
+    if (currentIteration.price) {
+      filteredArr.push(currentIteration)
+    }
+  }
+  return filteredArr
 }
