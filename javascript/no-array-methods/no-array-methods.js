@@ -92,3 +92,29 @@ export const getIndexOf = (arr, value) => {
     }
   }
 }
+
+// export function twoSum(numbers, target) {
+//   // first index of the numbers array as the current index
+//   let currentNumber = numbers[0]
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (currentNumber + numbers[i] !== target) {
+//       // if the first  index plus any number in the array doesnt equal the target then make the current number the next number in the array
+//       currentNumber = numbers[i + 1]
+//     } else if (currentNumber + numbers[i] === target) {
+//       return [currentNumber, i]
+//     }
+//   }
+// } // this function doesnt work and I am too drunk to understand why but apparently it is a very easy leetcode question so I will go fuck myself
+
+export function twoSum(numbers, target) {
+  for (let i = 0; i < numbers.length; i++) {
+    // this outer loop is looping over the numbers right starting from 0 sunshine
+    for (let j = i + 1; j < numbers.length; j++) {
+      // inner loop is gonna be the current iterator of the outer loop plus on index
+      if (numbers[i] + numbers[j] === target) {
+        // compare if the current iterators together equal the target
+        return [i, j] // return the indices of each values if they do
+      }
+    }
+  }
+}

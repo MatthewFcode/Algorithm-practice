@@ -10,6 +10,7 @@ import {
   countOccurencesOfNum,
   doubleNumbersManually,
   getIndexOf,
+  twoSum,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -176,4 +177,15 @@ test('function takes an array and specified value and returns the first index of
   //Assert
   expect(result).toEqual(expectedNumbers)
   expect(result2).toEqual(expectedWords)
+})
+
+test('function that returns the indicies of numbers in an array that add up to the target specified', () => {
+  //Arrange
+  const numbers = [3, 4, 10, 34, 18]
+  const target = 28
+  const expected = [2, 4]
+  //Act
+  const result = twoSum(numbers, target)
+  //Assert
+  expect(result).toEqual(expected)
 })

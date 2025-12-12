@@ -13,6 +13,7 @@ import {
   groupNumbersByRemainder,
   countBooleans,
   flatten2DArray,
+  sumAllNumbers,
 } from '../arr-method-practice.js'
 
 test('uses .map() effentially to double every number in an array', () => {
@@ -206,5 +207,13 @@ test('flatten a 2D array using .flat()', () => {
   //Assert
   const result = flatten2DArray(arr)
   //Assert
+  expect(result).toEqual(expected)
+})
+
+test('summing all numbers in array using a very simple .reduce()', () => {
+  const numbers = [33, 4, 34, 343, 334, 22]
+  const expected = 770
+
+  const result = sumAllNumbers(numbers)
   expect(result).toEqual(expected)
 })

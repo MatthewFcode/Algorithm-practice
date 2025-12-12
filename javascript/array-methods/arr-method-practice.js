@@ -118,7 +118,7 @@ export function groupNumbersByRemainder(arr) {
   }, {})
 }
 
-// function that count how many booleans are in array and returns the result as an object using .reduce()
+// // function that count how many booleans are in array and returns the result as an object using .reduce()
 export function countBooleans(arr) {
   return arr.reduce(
     (accum, val) => {
@@ -137,3 +137,10 @@ export function countBooleans(arr) {
 export function flatten2DArray(arr) {
   return arr.flat(1)
 } // LIVE NOTE: whenever I hear flatten an object or array I get really intimidated and nervous and start to think its gonna be really hard without even googling anything || this is one of the easisest functions I have ever written
+
+export function sumAllNumbers(arr) {
+  return arr.reduce((accum, val) => {
+    accum += val
+    return accum
+  }, 0)
+}
