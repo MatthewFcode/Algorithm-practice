@@ -11,6 +11,7 @@ import {
   doubleNumbersManually,
   getIndexOf,
   twoSum,
+  buyAndSell,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -186,6 +187,16 @@ test('function that returns the indicies of numbers in an array that add up to t
   const expected = [2, 4]
   //Act
   const result = twoSum(numbers, target)
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that takes an array of numbers and finds the lowest point to by at and then the highest point left after to sell at then calculates the profit margin', () => {
+  //Arrange
+  const numbers = [7, 1, 3, 2, 6, 5]
+  const expected = 5
+  //Act
+  const result = buyAndSell(numbers)
   //Assert
   expect(result).toEqual(expected)
 })

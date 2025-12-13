@@ -118,3 +118,33 @@ export function twoSum(numbers, target) {
     }
   }
 }
+
+// function that is no wear  near finished || need to devise a method for finding the highest num that is at a higher index than the lowest point
+
+export function buyAndSell(numbers) {
+  let highestNumber = numbers[0]
+  let lowestNumber = 30000000
+  let highestNumIterator = undefined
+  let lowestNumIterator = undefined
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] < lowestNumber) {
+      lowestNumber = numbers[i]
+      lowestNumIterator = i
+    }
+    for (let j = 0; j < numbers.length; j++) {
+      if (numbers[j] > highestNumber) {
+        highestNumIterator = j
+        if (j > i) {
+          highestNumber = numbers[j]
+        }
+      }
+    }
+  }
+  console.log(`highest number ${highestNumber}, lowest number: ${lowestNumber}`)
+  const result = highestNumber - lowestNumber
+  return result
+}
+
+const numbers = [7, 1, 3, 2, 6, 5]
+
+console.log(buyAndSell(numbers))
