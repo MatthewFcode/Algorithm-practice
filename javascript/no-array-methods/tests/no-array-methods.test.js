@@ -14,6 +14,7 @@ import {
   buyAndSell,
   isSorted,
   firstDuplicate,
+  occurencesOfNumbersWithoutReduce,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -233,4 +234,15 @@ test(' function that returns the value of the first duplicate in an array', () =
   //Assert
   expect(result).toEqual(expected)
   expect(result1).toEqual(expected1)
+})
+
+test('count the occurences of numbers and from an array and add the numbers add properties if the dont exist', () => {
+  //Arrange
+  const numbers = [1, 2, 2, 2, 2, 4, 5, 3, 1, 4, 5, 3]
+  const expected = { 1: 2, 2: 4, 4: 2, 5: 2, 3: 2 }
+
+  //Act
+  const result = occurencesOfNumbersWithoutReduce(numbers)
+  //Assert
+  expect(result).toEqual(expected)
 })

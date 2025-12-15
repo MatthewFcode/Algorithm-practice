@@ -172,3 +172,17 @@ export function firstDuplicate(arr) {
   }
   return null
 }
+
+// function that takes an array of numbers and returns an object where the numbers are the properties  and the values are how often they appear in an array without using .reduce()
+
+export function occurencesOfNumbersWithoutReduce(arr) {
+  const numbers = {}
+  for (let i = 0; i < arr.length; i++) {
+    if (numbers[arr[i]]) {
+      numbers[arr[i]] += 1
+    } else if (!numbers[arr[i]]) {
+      numbers[arr[i]] = 1
+    }
+  }
+  return numbers
+}
