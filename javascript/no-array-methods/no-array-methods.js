@@ -186,3 +186,23 @@ export function occurencesOfNumbersWithoutReduce(arr) {
   }
   return numbers
 }
+
+export function returnMostFrequentNumber(arr) {
+  const numbers = {}
+  let maxCount = 0
+  let mostFrequent = null
+
+  for (let i = 0; i < arr.length; i++) {
+    if (numbers[arr[i]]) {
+      numbers[arr[i]] += 1
+    } else if (!numbers[arr[i]]) {
+      numbers[arr[i]] = 1
+    }
+
+    if (numbers[arr[i]] > maxCount) {
+      maxCount = numbers[arr[i]]
+      mostFrequent = arr[i]
+    }
+  }
+  return mostFrequent
+}

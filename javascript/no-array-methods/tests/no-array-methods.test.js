@@ -15,6 +15,7 @@ import {
   isSorted,
   firstDuplicate,
   occurencesOfNumbersWithoutReduce,
+  returnMostFrequentNumber,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -243,6 +244,18 @@ test('count the occurences of numbers and from an array and add the numbers add 
 
   //Act
   const result = occurencesOfNumbersWithoutReduce(numbers)
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('return the most frequent number in an array', () => {
+  //Arrange
+  const numbers = [1, 2, 2, 2, 2, 4, 5, 3, 1, 4, 5, 3]
+  const expected = 2
+
+  //Act
+  const result = returnMostFrequentNumber(numbers)
+
   //Assert
   expect(result).toEqual(expected)
 })
