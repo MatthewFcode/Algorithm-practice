@@ -159,3 +159,16 @@ export function isSorted(arr) {
   }
   return true
 }
+
+// function that finds the first duplicate in an array || going to push all numbers to the array but check if they are already in there first if they are return that iteration
+export function firstDuplicate(arr) {
+  const seen = {}
+  for (let i = 0; i < arr.length; i++) {
+    if (seen[arr[i]]) {
+      return arr[i]
+    } else if (!seen[arr[i]]) {
+      seen[arr[i]] = true
+    }
+  }
+  return null
+}

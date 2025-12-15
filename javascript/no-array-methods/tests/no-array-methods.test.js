@@ -13,6 +13,7 @@ import {
   twoSum,
   buyAndSell,
   isSorted,
+  firstDuplicate,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -216,4 +217,20 @@ test('function that checks if an array is sorted or not and returns a boolean', 
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test(' function that returns the value of the first duplicate in an array', () => {
+  //Arrange
+  const numbers = [2, 3, 7, 3, 2, 9, 5656, 2]
+  const numbers1 = [2, 2]
+
+  const expected = 3
+  const expected1 = 2
+  //Act
+  const result = firstDuplicate(numbers)
+  const result1 = firstDuplicate(numbers1)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result1).toEqual(expected1)
 })
