@@ -192,12 +192,28 @@ test('function that returns the indicies of numbers in an array that add up to t
   expect(result).toEqual(expected)
 })
 
-test('function that takes an array of numbers and finds the lowest point to by at and then the highest point left after to sell at then calculates the profit margin', () => {
+// test('function that takes an array of numbers and finds the lowest point to by at and then the highest point left after to sell at then calculates the profit margin', () => {
+//   //Arrange
+//   const numbers = [7, 1, 3, 2, 6, 5]
+//   const expected = 5
+//   //Act
+//   const result = buyAndSell(numbers)
+//   //Assert
+//   expect(result).toEqual(expected)
+// })
+
+test('function that checks if an array is sorted or not and returns a boolean', () => {
   //Arrange
-  const numbers = [7, 1, 3, 2, 6, 5]
-  const expected = 5
+  const numbers = [1, 3, 5, 7, 9]
+  const expected = true
+  const numbers2 = [1, 3, 3, 7]
+  const expected2 = false
+
   //Act
-  const result = buyAndSell(numbers)
+  const result = isSorted(numbers)
+  const result2 = isSorted(numbers2)
+
   //Assert
   expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })

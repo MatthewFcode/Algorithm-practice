@@ -133,17 +133,29 @@ export function buyAndSell(numbers) {
 }
 
 // function that checks if an array is sorted
-function isSorted(arr) {
-  const sortedArr = arr.sort()
-  let isTrue = false
+// export function isSorted(arr) {
+//   const sortedArr = [...arr.sort()]
+//   let isTrue = false
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr[i] !== sortedArr[i] && arr.length > 1) {
+//       return false
+//     } else if (arr.length > 1) {
+//       isTrue = true
+//     } else if (arr.length < 1) {
+//       console.log('there is no array big gas')
+//     }
+//   }
+//   return isTrue
+// }
+
+// chatgpt solution of the above problem || this function is way better than mine above lol and much simpler
+export function isSorted(arr) {
+  if (arr.length <= 1) return true
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] !== sortedArr[i] && arr.length > 1) {
+    if (arr[i] >= arr[i + 1]) {
       return false
-    } else if (arr.length > 1) {
-      isTrue = true
-    } else if (arr.length < 1) {
-      console.log('there is no array big gas')
+    } else {
     }
   }
-  return isTrue
+  return true
 }
