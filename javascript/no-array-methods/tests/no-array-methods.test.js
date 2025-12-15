@@ -12,6 +12,7 @@ import {
   getIndexOf,
   twoSum,
   buyAndSell,
+  isSorted,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {

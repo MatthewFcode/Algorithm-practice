@@ -93,19 +93,6 @@ export const getIndexOf = (arr, value) => {
   }
 }
 
-// export function twoSum(numbers, target) {
-//   // first index of the numbers array as the current index
-//   let currentNumber = numbers[0]
-//   for (let i = 0; i < numbers.length; i++) {
-//     if (currentNumber + numbers[i] !== target) {
-//       // if the first  index plus any number in the array doesnt equal the target then make the current number the next number in the array
-//       currentNumber = numbers[i + 1]
-//     } else if (currentNumber + numbers[i] === target) {
-//       return [currentNumber, i]
-//     }
-//   }
-// } // this function doesnt work and I am too drunk to understand why but apparently it is a very easy leetcode question so I will go fuck myself
-
 export function twoSum(numbers, target) {
   for (let i = 0; i < numbers.length; i++) {
     // this outer loop is looping over the numbers right starting from 0 sunshine
@@ -145,6 +132,18 @@ export function buyAndSell(numbers) {
   return result
 }
 
-const numbers = [7, 1, 3, 2, 6, 5]
-
-console.log(buyAndSell(numbers))
+// function that checks if an array is sorted
+function isSorted(arr) {
+  const sortedArr = arr.sort()
+  let isTrue = false
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== sortedArr[i] && arr.length > 1) {
+      return false
+    } else if (arr.length > 1) {
+      isTrue = true
+    } else if (arr.length < 1) {
+      console.log('there is no array big gas')
+    }
+  }
+  return isTrue
+}
