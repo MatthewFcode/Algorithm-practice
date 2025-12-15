@@ -206,3 +206,15 @@ export function returnMostFrequentNumber(arr) {
   }
   return mostFrequent
 }
+
+export function findFirstNonReoccuringLetter(string) {
+  const stringArr = string.toLowerCase().split('')
+  let seen = {}
+  for (let i = 0; i < stringArr.length; i++) {
+    if (!seen[stringArr[i]]) {
+      seen[stringArr[i]] = true
+    } else if (seen[stringArr[i]]) {
+      return stringArr[i]
+    }
+  }
+}

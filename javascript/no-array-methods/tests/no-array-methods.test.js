@@ -16,6 +16,7 @@ import {
   firstDuplicate,
   occurencesOfNumbersWithoutReduce,
   returnMostFrequentNumber,
+  findFirstNonReoccuringLetter,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -256,6 +257,17 @@ test('return the most frequent number in an array', () => {
   //Act
   const result = returnMostFrequentNumber(numbers)
 
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('given a string return the first character that does not repeat', () => {
+  //Arrange
+  const word = 'hannah'
+  const expected = 's'
+
+  //Act
+  const result = findFirstNonReoccuringLetter(word)
   //Assert
   expect(result).toEqual(expected)
 })
