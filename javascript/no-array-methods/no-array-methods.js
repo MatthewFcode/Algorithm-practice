@@ -218,3 +218,13 @@ export function findFirstNonReoccuringLetter(string) {
     }
   }
 }
+
+// function that takes an array of numbers  || write a function that checks the IDS are in non decreasing/ascending order and otherwise return false
+function isAscendingIds(numbers) {
+  for (let i = 0; i < numbers.length - 1; i++) {
+    if (numbers[i] > numbers[i + 1]) {
+      return false
+    }
+  }
+  return true
+}
