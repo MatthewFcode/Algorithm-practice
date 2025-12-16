@@ -242,5 +242,15 @@ function returnTheFirstDuplicate(numbers) {
   return null
 }
 
-// // function that returns the missing number in a sequence
-// function
+// function that returns the missing number in a sequence || sort the array and loop through it || check if the current number + 1 === the next number in the array and if not return what that number would be
+
+export function missingNumberInSequence(numbers) {
+  const ascendingArr = numbers.sort()
+  for (let i = 0; i < ascendingArr.length; i++) {
+    if (ascendingArr[i] + 1 !== ascendingArr[i + 1]) {
+      return ascendingArr[i] + 1
+    } else {
+      console.log('youstupid')
+    }
+  }
+}

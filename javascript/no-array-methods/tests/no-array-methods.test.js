@@ -17,6 +17,7 @@ import {
   occurencesOfNumbersWithoutReduce,
   returnMostFrequentNumber,
   findFirstNonReoccuringLetter,
+  missingNumberInSequence,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -261,13 +262,34 @@ test('return the most frequent number in an array', () => {
   expect(result).toEqual(expected)
 })
 
-test('given a string return the first character that does not repeat', () => {
+// test('given a string return the first character that does not repeat', () => {
+//   //Arrange
+//   const word = 'hannah'
+//   const expected = 's'
+
+//   //Act
+//   const result = findFirstNonReoccuringLetter(word)
+//   //Assert
+//   expect(result).toEqual(expected)
+// })
+
+test('function that takes and array of numbers that have a number missing in a sequence || return the missing number', () => {
   //Arrange
-  const word = 'hannah'
-  const expected = 's'
+  const numbers = [1, 2, 4, 5]
+  const numbers2 = [2, 3, 1, 5]
+  const numbers3 = [1]
+
+  const expected = 3
+  const expected1 = 4
+  const expected2 = 2
 
   //Act
-  const result = findFirstNonReoccuringLetter(word)
+  const result = missingNumberInSequence(numbers)
+  const result2 = missingNumberInSequence(numbers2)
+  const result3 = missingNumberInSequence(numbers3)
+
   //Assert
   expect(result).toEqual(expected)
+  expect(result2).toEqual(expected1)
+  expect(result3).toEqual(expected2)
 })
