@@ -260,3 +260,17 @@ export function missingNumberInSequence(numbers) {
     }
   }
 }
+
+//function that is counting pairs that sum to a target to the target || return how many pairs do this
+export function countPairsThatAddToTargt(numbers, target) {
+  // decalred var for total amount of pairs
+  let total = 0
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] + numbers[j] === target) {
+        total += 1
+      }
+    }
+  }
+  return total
+}

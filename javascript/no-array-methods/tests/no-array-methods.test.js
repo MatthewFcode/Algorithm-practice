@@ -18,6 +18,7 @@ import {
   returnMostFrequentNumber,
   findFirstNonReoccuringLetter,
   missingNumberInSequence,
+  countPairsThatAddToTargt,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -296,4 +297,28 @@ test('function that takes and array of numbers that have a number missing in a s
   expect(result2).toEqual(expected1)
   expect(result3).toEqual(expected2)
   expect(result4).toEqual(expected3)
+})
+
+test(' counting the amount of pairs in a number array that add up to n', () => {
+  //Arrange
+  const numbers = [1, 2, 3, 4, 5]
+  const target = 6
+  const numbers2 = [3, 3, 3]
+  const target2 = 6
+  const numbers3 = []
+  const target3 = 5
+
+  const expected = 2
+  const expected2 = 3
+  const expected3 = 0
+
+  //Act
+  const result = countPairsThatAddToTargt(numbers, target)
+  const result2 = countPairsThatAddToTargt(numbers2, target2)
+  const result3 = countPairsThatAddToTargt(numbers3, target3)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+  expect(result3).toEqual(expected3)
 })
