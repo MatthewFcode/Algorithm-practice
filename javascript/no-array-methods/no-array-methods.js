@@ -228,3 +228,19 @@ function isAscendingIds(numbers) {
   }
   return true
 }
+
+// function that finds the first duplicate in an array of numbers
+function returnTheFirstDuplicate(numbers) {
+  const seen = {}
+  for (let i = 0; i < numbers.length; i++) {
+    if (seen[numbers[i]]) {
+      return numbers[i]
+    } else {
+      seen[numbers[i]] = true
+    }
+  }
+  return null
+}
+
+// // function that returns the missing number in a sequence
+// function
