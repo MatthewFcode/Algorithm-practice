@@ -209,11 +209,17 @@ export function returnMostFrequentNumber(arr) {
 
 export function findFirstNonReoccuringLetter(string) {
   const stringArr = string.toLowerCase().split('')
-  let seen = {}
+  let obj = {}
+
   for (let i = 0; i < stringArr.length; i++) {
-    if (!seen[stringArr[i]]) {
-      seen[stringArr[i]] = true
-    } else if (seen[stringArr[i]]) {
+    if (obj[stringArr[i]]) {
+      obj[stringArr[i]] += 1
+    } else {
+      obj[stringArr[i]] = 1
+    }
+  }
+  for (let i = 0; i < stringArr.length; i++) {
+    if (obj[stringArr[i]] === 1) {
       return stringArr[i]
     }
   }

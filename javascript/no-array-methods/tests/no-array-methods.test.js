@@ -262,16 +262,16 @@ test('return the most frequent number in an array', () => {
   expect(result).toEqual(expected)
 })
 
-// test('given a string return the first character that does not repeat', () => {
-//   //Arrange
-//   const word = 'hannah'
-//   const expected = 's'
+test('given a string return the first character that does not repeat', () => {
+  //Arrange
+  const word = 'hansnah'
+  const expected = 's'
 
-//   //Act
-//   const result = findFirstNonReoccuringLetter(word)
-//   //Assert
-//   expect(result).toEqual(expected)
-// })
+  //Act
+  const result = findFirstNonReoccuringLetter(word)
+  //Assert
+  expect(result).toEqual(expected)
+})
 
 test('function that takes and array of numbers that have a number missing in a sequence || return the missing number', () => {
   //Arrange
