@@ -278,18 +278,22 @@ test('function that takes and array of numbers that have a number missing in a s
   const numbers = [1, 2, 4, 5]
   const numbers2 = [2, 3, 1, 5]
   const numbers3 = [1]
+  const numbers4 = [1, 2, 3]
 
   const expected = 3
   const expected1 = 4
   const expected2 = 2
+  const expected3 = 4
 
   //Act
   const result = missingNumberInSequence(numbers)
   const result2 = missingNumberInSequence(numbers2)
   const result3 = missingNumberInSequence(numbers3)
+  const result4 = missingNumberInSequence(numbers4)
 
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected1)
   expect(result3).toEqual(expected2)
+  expect(result4).toEqual(expected3)
 })
