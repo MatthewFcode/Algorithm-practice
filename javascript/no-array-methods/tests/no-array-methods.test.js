@@ -19,6 +19,7 @@ import {
   findFirstNonReoccuringLetter,
   missingNumberInSequence,
   countPairsThatAddToTargt,
+  firstMissingPositiveNumber,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {

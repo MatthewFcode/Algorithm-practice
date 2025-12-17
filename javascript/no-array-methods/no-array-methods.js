@@ -275,5 +275,13 @@ export function countPairsThatAddToTargt(numbers, target) {
   return total
 }
 
-//function that finds the first missing positive number
-function firstMissingPositiveNumber(numbers) {}
+//function that finds the first missing positive number || sort the array from smallest to biggest || loop over the array and check if the next iteration in the array equals the current one plus one and if it doesnt return what that value would be
+export function firstMissingPositiveNumber(numbers) {
+  const newNumbers = numbers.sort((a, b) => a - b)
+  for (let i = 0; i < newNumbers.length; i++) {
+    if (newNumbers[i] + 1 !== newNumbers[i + 1] && newNumbers[i] + 1 > 0) {
+      return newNumbers[i] + 1
+    }
+  }
+  return 'your mum a hoe'
+}
