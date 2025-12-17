@@ -285,3 +285,16 @@ export function firstMissingPositiveNumber(numbers) {
   }
   return 'your mum a hoe'
 }
+
+export function findTheLongestWordInAString(string) {
+  const stringArr = string.split(' ')
+  let longestWord = undefined
+  for (let i = 0; i < stringArr.length; i++) {
+    for (let j = 1; j < stringArr.length; j++) {
+      if (stringArr[i].length > stringArr[j].length) {
+        longestWord = stringArr[i]
+      }
+    }
+  }
+  return longestWord
+}
