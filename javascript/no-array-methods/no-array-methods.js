@@ -287,13 +287,12 @@ export function firstMissingPositiveNumber(numbers) {
 }
 
 export function findTheLongestWordInAString(string) {
+  if (string.lenth === 0) return ''
   const stringArr = string.split(' ')
-  let longestWord = undefined
+  let longestWord = stringArr[0] // let the longest word equal the first word of the string
   for (let i = 0; i < stringArr.length; i++) {
-    for (let j = 1; j < stringArr.length; j++) {
-      if (stringArr[i].length > stringArr[j].length) {
-        longestWord = stringArr[i]
-      }
+    if (stringArr[i].length > longestWord.length) {
+      longestWord = stringArr[i]
     }
   }
   return longestWord

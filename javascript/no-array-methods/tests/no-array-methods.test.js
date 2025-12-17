@@ -20,6 +20,7 @@ import {
   missingNumberInSequence,
   countPairsThatAddToTargt,
   firstMissingPositiveNumber,
+  findTheLongestWordInAString,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -343,4 +344,17 @@ test('function that finds the smallest missing positive integer', () => {
   expect(result1).toEqual(expected)
   expect(result2).toEqual(expected2)
   expect(expected3).toEqual(result3)
+})
+
+test('function that finds the longest word in a sentence when the input is a string', () => {
+  //Arrange
+  const sentence = 'Hello there my name is Matthew Foley'
+
+  const expected = 'Matthew'
+
+  //Act
+  const result = findTheLongestWordInAString(sentence)
+
+  //Assert
+  expect(result).toEqual(expected)
 })
