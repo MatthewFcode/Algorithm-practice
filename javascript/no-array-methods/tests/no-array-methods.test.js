@@ -322,3 +322,24 @@ test(' counting the amount of pairs in a number array that add up to n', () => {
   expect(result2).toEqual(expected2)
   expect(result3).toEqual(expected3)
 })
+
+test('function that finds the smallest missing positive integer', () => {
+  //Arrange
+  const numbers = [3, 4, -1, 1]
+  const numbers2 = [1, 2, 3]
+  const numbers3 = [7, 8, 9, 11, 12]
+
+  const expected = 2
+  const expected2 = 4
+  const expected3 = 10
+
+  //Act
+  const result1 = firstMissingPositiveNumber(numbers)
+  const result2 = firstMissingPositiveNumber(numbers2)
+  const result3 = firstMissingPositiveNumber(numbers3)
+
+  //Assert
+  expect(result1).toEqual(expected)
+  expect(result2).toEqual(expected2)
+  expect(expected3).toEqual(result3)
+})

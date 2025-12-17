@@ -274,3 +274,6 @@ export function countPairsThatAddToTargt(numbers, target) {
   }
   return total
 }
+
+//function that finds the first missing positive number
+function firstMissingPositiveNumber(numbers) {}
