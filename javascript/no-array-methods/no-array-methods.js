@@ -345,3 +345,14 @@ export function longestConsecutive(numbers) {
   }
   return longestSequence
 }
+
+// function that returns the first missing positive integer || sort array || loop through it and check whether the current iteration + 1 = the next iteration
+export function firstMissingPositiveNumberInit(numbers) {
+  let sortedArr = numbers.sort((a, b) => a - b)
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i] + 1 !== sortedArr[i + 1] && sortedArr[i] + 1 > 0) {
+      return sortedArr[i] + 1
+    }
+  }
+}
