@@ -301,7 +301,7 @@ export function findTheLongestWordInAString(string) {
 // function that returns the first unique character in an array
 
 export function firstUniqueCharacter(string) {
-  const stringArr = string.toLowerCase().split(' ')
+  const stringArr = string.toLowerCase().split('')
   let seen = {}
   // loop over the array and check whether the current iteration is a property in the seen object || if it isn't we are going to add it and initialise it to 1
   // if the iteration is already in the seen object we are going to increase the count by 1
@@ -319,4 +319,25 @@ export function firstUniqueCharacter(string) {
     }
   }
   return 'your mums a nonce'
+}
+
+//function that returns the longest sequece of numbers in an array of numbers
+export function longestConsecutive(numbers) {
+  // first I am going to handle all duplicate by looping through the array and checking if the array and checking if they are already in there or not
+  let duplicateFree = []
+  let longestSequence = []
+  for (let i = 0; i < numbers.length; i++) {
+    if (!duplicateFree.includes(numbers[i])) {
+      // using .includes is the got for checking every on an array where you want a comparison
+      duplicateFree.push(numbers[i])
+    }
+  }
+
+  let sortedArr = duplicateFree.sort((a, b) => a - b)
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i] + 1 === sortedArr[i + 1]) {
+      longestSequence.push(sortedArr[i])
+    }
+  }
+  return longestSequence
 }
