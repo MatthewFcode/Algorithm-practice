@@ -22,6 +22,7 @@ import {
   firstMissingPositiveNumber,
   findTheLongestWordInAString,
   firstUniqueCharacter,
+  longestConsecutive,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -374,4 +375,25 @@ test('returns the first unique (non-repeating) character in a string', () => {
   //Assert
   expect(result).toEqual(result)
   expect(result2).toEqual(result2)
+})
+
+test('function returns the longest seuqence in an array as an array', () => {
+  //Arrange
+  const numbers = [100, 4, 200, 1, 3, 2]
+  const numbers2 = [0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
+  const numbers3 = []
+
+  const expected = [1, 2, 3, 4]
+  const expected2 = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+  const expected3 = 0
+
+  //Act
+  const result = longestConsecutive(numbers)
+  const result2 = longestConsecutive(numbers2)
+  const result3 = longestConsecutive(numbers3)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+  expect(result3).toEqual(expected3)
 })

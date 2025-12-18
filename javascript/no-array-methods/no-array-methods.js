@@ -324,6 +324,7 @@ export function firstUniqueCharacter(string) {
 //function that returns the longest sequece of numbers in an array of numbers
 export function longestConsecutive(numbers) {
   // first I am going to handle all duplicate by looping through the array and checking if the array and checking if they are already in there or not
+  if (numbers.length === 0) return 0
   let duplicateFree = []
   let longestSequence = []
   for (let i = 0; i < numbers.length; i++) {
@@ -335,7 +336,10 @@ export function longestConsecutive(numbers) {
 
   let sortedArr = duplicateFree.sort((a, b) => a - b)
   for (let i = 0; i < sortedArr.length; i++) {
-    if (sortedArr[i] + 1 === sortedArr[i + 1]) {
+    if (
+      sortedArr[i] + 1 === sortedArr[i + 1] ||
+      sortedArr[i] - 1 === sortedArr[i - 1]
+    ) {
       longestSequence.push(sortedArr[i])
     }
   }
