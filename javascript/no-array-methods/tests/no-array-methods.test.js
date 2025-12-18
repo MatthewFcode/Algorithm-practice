@@ -409,3 +409,17 @@ test('function that takes an array of numbers and returns the smallest missing p
   //assert
   expect(result).toEqual(expected)
 })
+
+test('function that take takes array of numbers and a integer for a sum', () => {
+  //Arrange
+  const numbers = [1, -1, 5, -2, 3]
+  const integer = 3
+
+  const expected = 3
+
+  //Act
+  const result = longestSubarray(numbers, integer)
+
+  //Assert
+  expect(result).toEqual(expected)
+})

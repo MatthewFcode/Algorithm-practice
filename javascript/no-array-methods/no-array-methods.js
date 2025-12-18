@@ -356,3 +356,13 @@ export function firstMissingPositiveNumberInit(numbers) {
     }
   }
 }
+
+//function that returns the length of a sub array from an array that sums up to k
+export function longestSubarray(numbers, integer) {
+  let smallestNumber = 300000000000
+  for (let i = 0; i < numbers.lenth; i++) {
+    if (numbers[i] < smallestNumber) {
+      smallestNumber = numbers[i]
+    }
+  }
+}
