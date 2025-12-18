@@ -21,6 +21,7 @@ import {
   countPairsThatAddToTargt,
   firstMissingPositiveNumber,
   findTheLongestWordInAString,
+  firstUniqueCharacter,
 } from '../no-array-methods.js'
 
 test('Reverse an array without using any array methods', () => {
@@ -357,4 +358,20 @@ test('function that finds the longest word in a sentence when the input is a str
 
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('returns the first unique (non-repeating) character in a string', () => {
+  // Arrange
+  const string = 'beachesballsbaths'
+  const string2 = 'CouldaShouldcWoulda'
+  const expected = 'c'
+  const expected2 = 's'
+
+  //Act
+  const result = firstUniqueCharacter(string)
+  const result2 = firstUniqueCharacter(string2)
+
+  //Assert
+  expect(result).toEqual(result)
+  expect(result2).toEqual(result2)
 })

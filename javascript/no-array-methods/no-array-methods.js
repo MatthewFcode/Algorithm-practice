@@ -297,3 +297,26 @@ export function findTheLongestWordInAString(string) {
   }
   return longestWord
 }
+
+// function that returns the first unique character in an array
+
+export function firstUniqueCharacter(string) {
+  const stringArr = string.toLowerCase().split(' ')
+  let seen = {}
+  // loop over the array and check whether the current iteration is a property in the seen object || if it isn't we are going to add it and initialise it to 1
+  // if the iteration is already in the seen object we are going to increase the count by 1
+  for (let i = 0; i < stringArr.length; i++) {
+    if (seen[stringArr[i]]) {
+      seen[stringArr[i]] += 1
+    } else {
+      seen[stringArr[i]] = 1
+    }
+  }
+  // now the seen object is full of the counts of each letter we are going to loop through the array again and check for properties with a count of 1 but we are going to return the first one we find
+  for (let i = 0; i < stringArr.length; i++) {
+    if (seen[stringArr[i]] === 1) {
+      return stringArr[i]
+    }
+  }
+  return 'your mums a nonce'
+}
