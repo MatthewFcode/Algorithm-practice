@@ -82,15 +82,16 @@ export const firstUniqueCharacter = (string: string): string | undefined => {
   const seen: Record<string, number> = {}
 
   for (let i = 0; i < stringArr.length; i++) {
-    if (seen[stringArr[i]] as Record<string, number>) {
-      seen[stringArr[i]] = 1
+    const index = stringArr[i] as keyof SeenObj
+    if (seen[stringArr[i] as string]) {
+      seen[index]! += 1
     } else {
-      seen[stringArr[i]] += 1
+      seen[index] = 1
     }
   }
 
   for (let i = 0; i < stringArr.length; i++) {
-    if (seen[stringArr[i]] === 1) {
+    if (seen[stringArr[i] as string] === 1) {
       return stringArr[i]
     }
   }
