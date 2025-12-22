@@ -97,3 +97,26 @@ export const firstUniqueCharacter = (string: string): string | undefined => {
   }
   return ''
 }
+
+export const findMaxPossibleSum = (numbers: number[]): number | undefined => {
+  // we have the numbers and we want to find the maximum value we can get from summing all the numbers in the array
+  // we need some sort of loop checking every option || storing the best then running that and returning that value
+  let currentSum = numbers[0] as number
+  let maxSum = numbers[0]
+  // we are asking two questions during the loop is it better to add the current iteration to the loop or will it be harmful || then we want to ask if it would be better to start fresh from the current sum so if the current iteration is more than the current sum
+  for (let i = 1; i < numbers.length; i++) {
+    const currentIteration = numbers[i] as number
+    if (currentIteration > currentSum + currentIteration) {
+      // we are not checking if the current sum is bigger than the running total but also if the currentIteration plus the total is worse than restarting with the currentIteration
+      currentSum = currentIteration
+    } else if (currentIteration + currentSum > currentSum) {
+      currentSum += currentIteration
+    }
+
+    if (currentSum > maxSum!) {
+      maxSum = currentSum
+    }
+  }
+
+  return maxSum
+}
