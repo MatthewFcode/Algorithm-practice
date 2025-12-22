@@ -3,6 +3,7 @@ import {
   typeOfUnion,
   filterObjectsWithoutPriceProperty,
   firstUniqueCharacter,
+  findMaxPossibleSum,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -86,4 +87,21 @@ test('function returns first non repeating character in a string (case insensiti
   expect(result2).toEqual(expected2)
   expect(result3).toEqual(expected3)
   expect(result4).toEqual(expected4)
+})
+
+test('function takes an array of numbers and finds the maximum possible sum of numbers', () => {
+  //Arrange
+  const numbers = [1, -3, 2, 1, -1]
+  const numbers2 = [-2, -1, -3]
+
+  const expected = 4
+  const expected2 = -1
+
+  //Act
+  const result = findMaxPossibleSum(numbers)
+  const result2 = findMaxPossibleSum(numbers2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })
