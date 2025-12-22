@@ -95,4 +95,5 @@ export const firstUniqueCharacter = (string: string): string | undefined => {
       return stringArr[i]
     }
   }
+  return ''
 }
