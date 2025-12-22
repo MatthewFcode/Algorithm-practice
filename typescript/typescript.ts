@@ -47,3 +47,51 @@ type Generic<T> = {
   name: T
   ages: T[]
 }
+
+interface SeenObj {
+  a?: number
+  b?: number
+  c?: number
+  d?: number
+  e?: number
+  f?: number
+  g?: number
+  h?: number
+  i?: number
+  j?: number
+  k?: number
+  l?: number
+  m?: number
+  n?: number
+  o?: number
+  p?: number
+  q?: number
+  r?: number
+  s?: number
+  t?: number
+  u?: number
+  v?: number
+  w?: number
+  x?: number
+  y?: number
+  z?: number
+}
+
+export const firstUniqueCharacter = (string: string): string | undefined => {
+  let stringArr = string.toLowerCase().split('')
+  const seen: Record<string, number> = {}
+
+  for (let i = 0; i < stringArr.length; i++) {
+    if (seen[stringArr[i]] as Record<string, number>) {
+      seen[stringArr[i]] = 1
+    } else {
+      seen[stringArr[i]] += 1
+    }
+  }
+
+  for (let i = 0; i < stringArr.length; i++) {
+    if (seen[stringArr[i]] === 1) {
+      return stringArr[i]
+    }
+  }
+}

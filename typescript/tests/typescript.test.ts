@@ -2,6 +2,7 @@ import { test, expect } from 'vitest'
 import {
   typeOfUnion,
   filterObjectsWithoutPriceProperty,
+  firstUniqueCharacter,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -60,4 +61,29 @@ test('function takes an array of products and returns only those with a price', 
   const result = filterObjectsWithoutPriceProperty(products)
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('function returns first non repeating character in a string (case insensitive)', () => {
+  //Arrange
+  const word = 'hansnah'
+  const word2 = 'aabbcc'
+  const word3 = 'Swiss'
+  const word4 = 'Stress'
+
+  const expected = 's'
+  const expected2 = ''
+  const expected3 = 'w'
+  const expected4 = 't'
+
+  //Act
+  const result = firstUniqueCharacter(word)
+  const result2 = firstUniqueCharacter(word2)
+  const result3 = firstUniqueCharacter(word3)
+  const result4 = firstUniqueCharacter(word4)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+  expect(result3).toEqual(expected3)
+  expect(result4).toEqual(expected4)
 })
