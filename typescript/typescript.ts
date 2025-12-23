@@ -122,6 +122,13 @@ export const findMaxPossibleSum = (numbers: number[]): number | undefined => {
 }
 
 export const isPalindrome = (string: string): boolean => {
+  const should = { spaces: false }
+  for (let i = 0; i < string.length; i++) {
+    if (string[i + 1] === ' ') {
+      should.spaces = true
+    }
+  }
+
   const stringArr = string.split(' ')
   let reversedStringArr = []
   for (let i = stringArr.length - 1; i >= 0; i--) {

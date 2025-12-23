@@ -4,6 +4,7 @@ import {
   filterObjectsWithoutPriceProperty,
   firstUniqueCharacter,
   findMaxPossibleSum,
+  isPalindrome,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -104,4 +105,20 @@ test('function takes an array of numbers and finds the maximum possible sum of n
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('function takes string and returns true if it is a palindrome and false if it isnt', () => {
+  //Arrange
+  const word = 'Race Car'
+  const word2 = 'racecar'
+
+  //Act
+  const result = isPalindrome(word)
+  const result2 = isPalindrome(word2)
+
+  const expected = true
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected)
 })
