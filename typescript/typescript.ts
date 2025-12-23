@@ -120,3 +120,19 @@ export const findMaxPossibleSum = (numbers: number[]): number | undefined => {
 
   return maxSum
 }
+
+export const isPalindrome = (string: string): boolean => {
+  const stringArr = string.split(' ')
+  let reversedStringArr = []
+  for (let i = stringArr.length - 1; i >= 0; i--) {
+    reversedStringArr.push(stringArr[i] as string)
+  }
+
+  const normalString = stringArr.join('').toLowerCase()
+  const reverseString = reversedStringArr.join('').toLowerCase()
+  if (normalString === reverseString) {
+    return true
+  } else {
+    return false
+  }
+}
