@@ -1,4 +1,4 @@
-# Hi! 👋
+## Algorithm Practice 
 
 This is my repository for my algorithm practice using **TypeScript** and **JavaScript** to solve algorithms, and **Test Driven Development** with **Unit Testing** to test the algorithms I write 😊
 
