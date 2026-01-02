@@ -2,6 +2,7 @@ import { test, expect } from 'vitest'
 import {
   getLongestConsecutiveSequence,
   removeOverlappingIntervals,
+  findIndexOfFirstNonRepeatingCharacterInString,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -30,6 +31,19 @@ test('function removes intervals from an array where the intervals overlap', () 
 
   //Act
   const result = removeOverlappingIntervals(intervals)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that returns the index of the first non repeating character in a string', () => {
+  //Arrange
+  const string = 'wiggleiw'
+
+  const expected = 4
+
+  // Act
+  const result = findIndexOfFirstNonRepeatingCharacterInString(string)
 
   //Assert
   expect(result).toEqual(expected)

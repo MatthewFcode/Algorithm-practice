@@ -64,4 +64,28 @@ export const removeOverlappingIntervals = (intervals) => {
   return intervalsRemoved
 }
 
-// disclaimer: neither of these functions are one hundred percent right yet but they tackle the tests
+export const findIndexOfFirstNonRepeatingCharacterInString = (string) => {
+  const stringArr = string.split('')
+
+  let frequencyMap = {}
+
+  for (let i = 0; i < stringArr.length; i++) {
+    if (frequencyMap[stringArr[i]]) {
+      frequencyMap[stringArr[i]] += 1
+    } else if (!frequencyMap[stringArr[i]]) {
+      frequencyMap[stringArr[i]] = 1
+    }
+  }
+
+  const arrOfNonRepeatingCharacters = []
+
+  for (let i = 0; i < stringArr.length; i++) {
+    if (frequencyMap[stringArr[i]] === 1) {
+      arrOfNonRepeatingCharacters.push(stringArr[i])
+    }
+  }
+
+  return stringArr.findIndex(
+    (number) => number === arrOfNonRepeatingCharacters[0]
+  )
+}
