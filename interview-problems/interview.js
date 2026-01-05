@@ -119,3 +119,20 @@ export const longestUniqueSubString = (string) => {
   }
   return length
 }
+
+export const integerFizzBuzz = (n) => {
+  let numArr = []
+  for (let i = 1; i <= n; i++) {
+    numArr.push(i)
+  }
+  for (let i = 0; i < numArr.length; i++) {
+    if (numArr[i] % 3 === 0 && numArr[i] % 5 === 0) {
+      numArr[i] = 'fizzbuzz'
+    } else if (numArr[i] % 5 === 0) {
+      numArr[i] = 'buzz'
+    } else if (numArr[i] % 3 === 0) {
+      numArr[i] = 'fizz'
+    }
+  }
+  return numArr
+}
