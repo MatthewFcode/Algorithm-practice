@@ -4,6 +4,7 @@ import {
   removeOverlappingIntervals,
   findIndexOfFirstNonRepeatingCharacterInString,
   twoSum,
+  longestUniqueSubString,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -59,6 +60,18 @@ test('function that returns the indicies of numbers in an array that add up to a
 
   //Act
   const result = twoSum(numbers, sum)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that finds the longest unique substring', () => {
+  //Arrange
+  const string = 'abcabcaa'
+  const expected = 3
+
+  //Act
+  const result = longestUniqueSubString(string)
 
   //Assert
   expect(result).toEqual(expected)

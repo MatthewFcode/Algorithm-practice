@@ -104,3 +104,18 @@ export const twoSum = (numbers, target) => {
 
   return twoSum
 }
+
+export const longestUniqueSubString = (string) => {
+  let length = 0
+  for (let i = 0; i < string.length; i++) {
+    let seen = {}
+    for (let j = i; j < string.length; j++) {
+      if (seen[string[j]]) {
+        break
+      }
+      seen[string[j]] = true
+      length = Math.max(length, j - i + 1) // abc  2 - 0 + 1 = 3 okay this makes sense we are checking the length of all off them but only saving the longest one at the end of the loop
+    }
+  }
+  return length
+}
