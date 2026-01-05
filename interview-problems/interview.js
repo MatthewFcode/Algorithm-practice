@@ -107,13 +107,17 @@ export const twoSum = (numbers, target) => {
 
 export const longestUniqueSubString = (string) => {
   let length = 0
+
   for (let i = 0; i < string.length; i++) {
     let seen = {}
+
     for (let j = i; j < string.length; j++) {
       if (seen[string[j]]) {
         break
       }
+
       seen[string[j]] = true
+
       length = Math.max(length, j - i + 1) // abc  2 - 0 + 1 = 3 okay this makes sense we are checking the length of all off them but only saving the longest one at the end of the loop
     }
   }
@@ -122,9 +126,11 @@ export const longestUniqueSubString = (string) => {
 
 export const integerFizzBuzz = (n) => {
   let numArr = []
+
   for (let i = 1; i <= n; i++) {
     numArr.push(i)
   }
+
   for (let i = 0; i < numArr.length; i++) {
     if (numArr[i] % 3 === 0 && numArr[i] % 5 === 0) {
       numArr[i] = 'fizzbuzz'
@@ -134,5 +140,6 @@ export const integerFizzBuzz = (n) => {
       numArr[i] = 'fizz'
     }
   }
+
   return numArr
 }
