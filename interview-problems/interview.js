@@ -89,3 +89,18 @@ export const findIndexOfFirstNonRepeatingCharacterInString = (string) => {
     (number) => number === arrOfNonRepeatingCharacters[0]
   )
 }
+
+//two sum functions that uses a nested loop to test every two addition in an array of numbers || push the two numbers to a new array and then run the indexOf method on both of those and push them to a new array and then return it
+export const twoSum = (numbers, target) => {
+  let twoSum = []
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] + numbers[j] === target) {
+        twoSum.push(i, j)
+      }
+    }
+  }
+
+  return twoSum
+}

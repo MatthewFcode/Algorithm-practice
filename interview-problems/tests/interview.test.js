@@ -3,6 +3,7 @@ import {
   getLongestConsecutiveSequence,
   removeOverlappingIntervals,
   findIndexOfFirstNonRepeatingCharacterInString,
+  twoSum,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -44,6 +45,20 @@ test('function that returns the index of the first non repeating character in a 
 
   // Act
   const result = findIndexOfFirstNonRepeatingCharacterInString(string)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that returns the indicies of numbers in an array that add up to a target', () => {
+  //Arrange
+  const numbers = [2, 3, 5, 1, 22, 7]
+  const sum = 9
+
+  const expected = [0, 5]
+
+  //Act
+  const result = twoSum(numbers, sum)
 
   //Assert
   expect(result).toEqual(expected)
