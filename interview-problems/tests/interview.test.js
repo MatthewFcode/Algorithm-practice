@@ -8,6 +8,7 @@ import {
   integerFizzBuzz,
   findMissingNumber,
   vowelCase,
+  tirePressure,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -174,4 +175,24 @@ test('function that turns all vowels in a string into uppercase and everything e
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
   expect(result3).toEqual(expected3)
+})
+
+test('function that checks the tire pressure of four numbers in an array and returns an array with the quality of the tire pressure', () => {
+  //Arrange
+  const tires = [32, 28, 35, 29]
+  const tires2 = [32, 28, 35, 30]
+
+  const pressure = [2, 3]
+  const pressure2 = [2, 2.3]
+
+  const expected = ['Good', 'Low', 'Good', 'Low']
+  const expected2 = ['Good', 'Low', 'High', 'Good']
+
+  //Act
+  const result = tirePressure(tires, pressure)
+  const result2 = tirePressure(tires2, pressure2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })

@@ -175,3 +175,9 @@ export const vowelCase = (string) => {
   const final = lowerCaseArr.join('')
   return final
 }
+
+export const tirePressure = (tires, pressure) => {
+  // first thing we are going to do is convert the bars into PSI
+  let psiPressure = []
+  for (let i = 0; i < pressure.length; i++)
+} 
