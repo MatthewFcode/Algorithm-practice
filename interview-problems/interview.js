@@ -143,3 +143,14 @@ export const integerFizzBuzz = (n) => {
 
   return numArr
 }
+
+// function that takes an array of numbers and returns the missing number in the sequence
+export const findMissingNumber = (numbers) => {
+  let missingNum = undefined
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] + 1 !== numbers[i + 1] && i !== numbers.length - 1) {
+      missingNum = numbers[i] + 1
+    }
+  }
+  return missingNum
+}
