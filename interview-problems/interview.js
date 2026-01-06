@@ -197,3 +197,17 @@ export const tirePressure = (tires, pressure) => {
   }
   return tireStatus
 }
+
+//function that checks whether a function is a leap year or not
+export function isLeapYear(year) {
+  let leapYear = undefined
+  if (
+    (year % 4 === 0 && year % 100 !== 0) ||
+    (year % 4 === 0 && year % 400 === 0) // bit of an easy function I am not gonna lie but this conditional go a bit funky init
+  ) {
+    leapYear = true
+  } else {
+    leapYear = false
+  }
+  return leapYear
+}

@@ -9,6 +9,7 @@ import {
   findMissingNumber,
   vowelCase,
   tirePressure,
+  isLeapYear,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -191,6 +192,23 @@ test('function that checks the tire pressure of four numbers in an array and ret
   //Act
   const result = tirePressure(tires, pressure)
   const result2 = tirePressure(tires2, pressure2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that determines whether an integer is a leap year', () => {
+  //Arrange
+  const year = 2024
+  const year2 = 2023
+
+  const expected = true
+  const expected2 = false
+
+  //Act
+  const result = isLeapYear(year)
+  const result2 = isLeapYear(year2)
 
   //Assert
   expect(result).toEqual(expected)
