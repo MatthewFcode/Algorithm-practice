@@ -177,7 +177,23 @@ export const vowelCase = (string) => {
 }
 
 export const tirePressure = (tires, pressure) => {
+  if (tires.length === 0 || pressure.length === 0) return
   // first thing we are going to do is convert the bars into PSI
   let psiPressure = []
-  for (let i = 0; i < pressure.length; i++)
-} 
+  for (let i = 0; i < pressure.length; i++) {
+    psiPressure.push(pressure[i] * 14.5038)
+  }
+
+  // loop over the array of numbers and check if pressure below in between or above and push those words to a new Arr and then return it
+  let tireStatus = []
+  for (let i = 0; i < tires.length; i++) {
+    if (tires[i] < psiPressure[0]) {
+      tireStatus.push('Low')
+    } else if (tires[i] >= psiPressure[0] && tires[i] <= psiPressure[1]) {
+      tireStatus.push('Good')
+    } else if (tires[i] > psiPressure[1]) {
+      tireStatus.push('High')
+    }
+  }
+  return tireStatus
+}
