@@ -7,6 +7,7 @@ import {
   longestUniqueSubString,
   integerFizzBuzz,
   findMissingNumber,
+  vowelCase,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -153,4 +154,24 @@ test('function that finds the missing number in an number sequence array', () =>
 
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('function that turns all vowels in a string into uppercase and everything else is converted to lowercase', () => {
+  //Arrange
+  const word = 'vowelcase'
+  const word2 = 'coding is fun'
+  const word3 = 'HELLO, world!'
+
+  const expected = 'vOwElcAsE'
+  const expected2 = 'cOdIng Is fUn'
+  const expected3 = 'hEllO, wOrld!'
+
+  //Act
+  const result = vowelCase(word)
+  const result2 = vowelCase(word2)
+  const result3 = vowelCase(word3)
+
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+  expect(result3).toEqual(expected3)
 })

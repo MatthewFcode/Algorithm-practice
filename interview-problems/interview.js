@@ -158,3 +158,20 @@ export const findMissingNumber = (numbers) => {
   }
   return anything
 }
+
+export const vowelCase = (string) => {
+  const lowerCaseArr = string.toLowerCase().split('')
+  for (let i = 0; i < lowerCaseArr.length; i++) {
+    if (
+      lowerCaseArr[i] === 'a' ||
+      lowerCaseArr[i] === 'e' ||
+      lowerCaseArr[i] === 'i' ||
+      lowerCaseArr[i] === 'o' ||
+      lowerCaseArr[i] === 'u'
+    ) {
+      lowerCaseArr[i] = lowerCaseArr[i].toUpperCase()
+    }
+  }
+  const final = lowerCaseArr.join('')
+  return final
+}
