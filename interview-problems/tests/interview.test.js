@@ -144,9 +144,9 @@ test('fizzbuzz function that takes and integer and returns and array with all th
 
 test('function that finds the missing number in an number sequence array', () => {
   //Arrange
-  const numbers = [1, 2, 3, 5, 6, 7, 8, 9, 10]
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-  const expected = 4
+  const expected = 'nothing missing in the sequence'
 
   //Act
   const result = findMissingNumber(numbers)
