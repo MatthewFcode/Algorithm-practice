@@ -6,6 +6,7 @@ import {
   twoSum,
   longestUniqueSubString,
   integerFizzBuzz,
+  findMissingNumber,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -136,6 +137,19 @@ test('fizzbuzz function that takes and integer and returns and array with all th
   ]
   //Act
   const result = integerFizzBuzz(integer)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that finds the missing number in an number sequence array', () => {
+  //Arrange
+  const numbers = [1, 2, 3, 5, 6, 7, 8, 9, 10]
+
+  const expected = 4
+
+  //Act
+  const result = findMissingNumber(numbers)
 
   //Assert
   expect(result).toEqual(expected)
