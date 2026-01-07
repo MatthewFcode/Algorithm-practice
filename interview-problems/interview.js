@@ -235,4 +235,33 @@ export const findLeftHandedSeats = (matrix) => {
   return seatCounter
 }
 
-export const resolutionStreak = (matrix) => {}
+// export const resolutionStreak = (matrix) => {
+//   let streakCounter = undefined
+
+//   for (let i = 0; i < matrix.length; i++) {
+//     for (let j = 0; j < matrix[i].length; j++) {
+//       if (matrix[i][0] >= 10000 && matrix[i][1] <= 120 && matrix[i][2] >= 5) {
+//         streakCounter = i
+//       } else {
+//         return `Resolution failed on day ${i}: ${streakCounter} day streak`
+//       }
+//     }
+//   }
+//   return `Resolution on track: ${streakCounter} day streak.`
+// }
+
+export const resolutionStreak = (matrix) => {
+  let streakCounter = 0
+  for (let i = 0; i < matrix.length; i++) {
+    const [steps, screenTime, pages] = matrix[i]
+
+    const pass = steps >= 10000 && screenTime <= 120 && pages >= 5
+
+    if (pass) {
+      streakCounter++
+    } else {
+      return `Resolution failed on day ${i + 1}: ${streakCounter} day streak.`
+    }
+  }
+  return `Resolution on track: ${streakCounter} day streak.`
+}
