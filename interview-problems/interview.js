@@ -234,3 +234,5 @@ export const findLeftHandedSeats = (matrix) => {
   }
   return seatCounter
 }
+
+export const resolutionStreak = (matrix) => {}

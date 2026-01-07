@@ -11,6 +11,7 @@ import {
   tirePressure,
   isLeapYear,
   findLeftHandedSeats,
+  resolutionStreak,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -233,6 +234,30 @@ test('function that determines where a left handed person can sit at a table usi
   //Act
   const result = findLeftHandedSeats(matrix)
   const result2 = findLeftHandedSeats(matrix2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that works like a resolution tracker, tracking streaks in subarrays of keeping resolution promises', () => {
+  //Arrange
+  const resolutionMatrix = [
+    [10500, 75, 15],
+    [11000, 90, 10],
+    [10650, 100, 9],
+  ]
+  const resolutionMatrix2 = [
+    [10000, 120, 5],
+    [10950, 121, 11],
+  ]
+
+  const expected = 'Resolution on track: 3 day streak.'
+  const expected2 = 'Resolution failed on day 2: 1 day streak.'
+
+  //Act
+  const result = resolutionStreak(resolutionMatrix)
+  const result2 = resolutionStreak(resolutionMatrix2)
 
   //Assert
   expect(result).toEqual(expected)
