@@ -211,3 +211,26 @@ export function isLeapYear(year) {
   }
   return leapYear
 }
+
+export const findLeftHandedSeats = (matrix) => {
+  let seatCounter = 0
+
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      if (matrix[i][j] !== 'U') continue // continure basically mean just skip the current iteration of the loop and move to the next one no questions asked
+
+      if (i === 0) {
+        if (matrix[i][j + 1] !== 'R') {
+          seatCounter++
+        }
+      }
+
+      if (i === 1 && matrix[i][j - 1] !== 'R') {
+        if (matrix[i][j - 1] !== 'R') {
+          seatCounter++
+        }
+      }
+    }
+  }
+  return seatCounter
+}

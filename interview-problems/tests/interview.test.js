@@ -10,6 +10,7 @@ import {
   vowelCase,
   tirePressure,
   isLeapYear,
+  findLeftHandedSeats,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -209,6 +210,29 @@ test('function that determines whether an integer is a leap year', () => {
   //Act
   const result = isLeapYear(year)
   const result2 = isLeapYear(year2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that determines where a left handed person can sit at a table using a matrix of arrays', () => {
+  //Arrange
+  const matrix = [
+    ['U', 'R', 'U', 'L'],
+    ['U', 'R', 'R', 'R'],
+  ]
+  const matrix2 = [
+    ['U', 'U', 'U', 'U'],
+    ['U', 'U', 'U', 'U'],
+  ]
+
+  const expected = 2
+  const expected2 = 8
+
+  //Act
+  const result = findLeftHandedSeats(matrix)
+  const result2 = findLeftHandedSeats(matrix2)
 
   //Assert
   expect(result).toEqual(expected)
