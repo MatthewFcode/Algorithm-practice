@@ -12,6 +12,7 @@ import {
   isLeapYear,
   findLeftHandedSeats,
   resolutionStreak,
+  init,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -262,4 +263,16 @@ test('function that works like a resolution tracker, tracking streaks in subarra
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('function that finds the longest unique substring', () => {
+  //Arrange
+  const string = 'abcabcaa'
+  const expected = 3
+
+  //Act
+  const result = init(string)
+
+  //Assert
+  expect(result).toEqual(expected)
 })

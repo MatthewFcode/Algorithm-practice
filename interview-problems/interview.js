@@ -265,3 +265,20 @@ export const resolutionStreak = (matrix) => {
   }
   return `Resolution on track: ${streakCounter} day streak.`
 }
+
+// formula is the end index of the sunstring represented by j - the start index reperesented by plus one because we start counting at 0
+export const init = (string) => {
+  let length = 0
+
+  for (let i = 0; i < string.length; i++) {
+    let seen = {}
+    for (let j = i; j < string.length; j++) {
+      if (seen[string[j]]) {
+        break
+      }
+      seen[string[j]] = true
+      length = Math.max(length, j - i + 1)
+    }
+  }
+  return length
+}
