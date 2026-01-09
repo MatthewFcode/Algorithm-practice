@@ -13,6 +13,7 @@ import {
   findLeftHandedSeats,
   resolutionStreak,
   init,
+  isCircularPrime,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -275,4 +276,21 @@ test('function that finds the longest unique substring', () => {
 
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('function that determines whether an integer is a circular prime', () => {
+  //Arrange
+  const number = 197
+  const number2 = 23
+
+  const expected = true
+  const expected2 = false
+
+  //Act
+  const result = isCircularPrime(number)
+  const result2 = isCircularPrime(number2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })
