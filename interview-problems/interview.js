@@ -282,3 +282,26 @@ export const init = (string) => {
   }
   return length
 }
+
+export function isCircularPrime(n) {
+  const digits = n.toString()
+  let rotation = digits
+
+  for (let i = 0; i < digits.length; i++) {
+    const num = Number(rotation)
+    if (!isPrime(num)) return false
+
+    // rotate left
+    rotation = rotation.slice(1) + rotation[0]
+  }
+
+  return true
+}
+
+function isPrime(n) {
+  if (n < 2) return false
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i === 0) return false
+  }
+  return true
+}
