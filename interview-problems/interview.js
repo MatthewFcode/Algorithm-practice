@@ -305,3 +305,21 @@ function isPrime(n) {
   }
   return true
 }
+
+export const isSorted = (arr) => {
+  let ascending = true
+  let descending = true
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > arr[i + 1]) {
+      ascending = false
+    }
+
+    if (arr[i] < arr[i + 1]) {
+      descending = false
+    }
+  }
+
+  if (ascending) return 'Ascending'
+  if (descending) return 'Descending'
+  return 'Not Sorted'
+}

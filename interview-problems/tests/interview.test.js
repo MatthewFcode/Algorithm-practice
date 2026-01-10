@@ -14,6 +14,7 @@ import {
   resolutionStreak,
   init,
   isCircularPrime,
+  isSorted,
 } from '../interview.js'
 
 test('function returns the length of the longest consecutive sequence of numbers in increasing order in a number array', () => {
@@ -293,4 +294,25 @@ test('function that determines whether an integer is a circular prime', () => {
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('functions that deterimes whether and array of numbers is ascending, descending or, not sorted', () => {
+  //Arrange
+  const numbers = [1, 2, 3, 4, 5]
+  const numbers2 = [10, 8, 6, 4, 2]
+  const numbers3 = [1, 3, 2, 4, 5]
+
+  const expected = 'Ascending'
+  const expected2 = 'Descending'
+  const expected3 = 'Not Sorted'
+
+  //Act
+  const result = isSorted(numbers)
+  const result2 = isSorted(numbers2)
+  const result3 = isSorted(numbers3)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+  expect(result3).toEqual(expected3)
 })
