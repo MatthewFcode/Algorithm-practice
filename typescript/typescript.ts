@@ -200,5 +200,3 @@ export const manualStringReverse = (string: string): string => {
   const result = strRevArr.join(' ')
   return result
 }
-
-export const
