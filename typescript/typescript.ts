@@ -209,3 +209,6 @@ export const fullStringReverse = (string: string): string => {
   }
   return reversed
 }
+
+// function that finds the longest consecutive sequence
+// we need to keep track of the longest sequence so far || loop and then a break once the sequence stops

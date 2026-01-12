@@ -9,6 +9,7 @@ import {
   findMissingNumber,
   wordStringReverse,
   fullStringReverse,
+  findLongestConsecutiveSequence,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -195,6 +196,23 @@ test('function that full reverses a string with spaces', () => {
   //Act
   const result = fullStringReverse(word)
   const result2 = fullStringReverse(word2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that returns the longest consecutive sequence of numbers in an unsorted array', () => {
+  //Arrange
+  const numbers = [100, 4, 200, 1, 3, 2]
+  const numbers2 = [0, 3, 7, 2, 5, 8, 4, 6, 0, 1]
+
+  const expected = 4
+  const expected2 = 9
+
+  //Act
+  const result = findLongestConsecutiveSequence(numbers)
+  const result2 = findLongestConsecutiveSequence(numbers2)
 
   //Assert
   expect(result).toEqual(expected)
