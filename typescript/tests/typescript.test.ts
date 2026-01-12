@@ -7,6 +7,7 @@ import {
   isPalindrome,
   longestUniqueSubString,
   findMissingNumber,
+  manualStringReverse,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -163,4 +164,21 @@ test('Function that finds the missing number', () => {
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
   expect(result3).toEqual(expected3)
+})
+
+test('function that manually reverses a string with spaces', () => {
+  //Arrange
+  const word: string = 'the sky is blue'
+  const word2: string = 'a b c'
+
+  const expected: string = 'eulb si yks eht'
+  const expected2: string = 'c b a'
+
+  //Act
+  const result = manualStringReverse(word)
+  const result2 = manualStringReverse(word2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })
