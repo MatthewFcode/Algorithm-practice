@@ -160,3 +160,29 @@ export const longestUniqueSubString = (string: string): number => {
   }
   return length
 }
+
+// function that takes the string and loops over it and long as fuck conditional checking for vowels and then adding 1 ot a variable if it hits then returning it-- dont need to write it out
+
+// function that sorts a number array in ascending order || loop over it and check that the next number equals the current plus 1 and that it isnt the last number in the array
+
+const arr = [2, 4, 5, 1]
+const length = 4
+
+// note to self accesing the last element in an array without knowing what index it is after the loop
+
+export const findMissingNumber = (monkey: number[]): number | string => {
+  const numbers = monkey.sort((a, b) => a - b)
+  for (let i = 0; i < numbers.length; i++) {
+    if (
+      (numbers[i] as number) + 1 !== numbers[i + 1] &&
+      i !== numbers.length - 1
+    ) {
+      return (numbers[i] as number) + 1
+    }
+  }
+  return `Nothing missing in this sequence the numbers are in order from ${
+    numbers[0]
+  } --> ${numbers[numbers.length - 1]} `
+
+  //return numbers[numbers.length - 1]
+}

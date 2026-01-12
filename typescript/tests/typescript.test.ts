@@ -6,6 +6,7 @@ import {
   findMaxPossibleSum,
   isPalindrome,
   longestUniqueSubString,
+  findMissingNumber,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -139,4 +140,27 @@ test('function that returns the longest sub-string in a string without repeating
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('Function that finds the missing number', () => {
+  //Arrange
+  const numbers = [1, 2, 3, 4, 5, 6, 8, 9, 10]
+  const numbers2 = [3, 0, 1]
+  const numbers3 = [0, 1]
+  // cheeky function for detecting the end of an array
+  const expected = 7
+  const expected2 = 2
+  const expected3 = `Nothing missing in this sequence the numbers are in order from ${
+    numbers3[0]
+  } --> ${numbers3[numbers3.length - 1]} `
+
+  //Act
+  const result = findMissingNumber(numbers)
+  const result2 = findMissingNumber(numbers2)
+  const result3 = findMissingNumber(numbers3)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+  expect(result3).toEqual(expected3)
 })
