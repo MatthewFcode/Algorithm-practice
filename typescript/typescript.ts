@@ -122,24 +122,41 @@ export const findMaxPossibleSum = (numbers: number[]): number | undefined => {
 }
 
 export const isPalindrome = (string: string): boolean => {
-  const should = { spaces: false }
-  for (let i = 0; i < string.length; i++) {
-    if (string[i + 1] === ' ') {
-      should.spaces = true
-    }
+  // split the string then join it lol
+  let orgString = string.split(' ').join('').toLowerCase() // split it to an array with no spcaes adn then joined it again lol
+  // we just need to reverse the string manually then comapre it with the org and if it is the same then we rreturn true otherwise we return false
+  let revStrArr = []
+  for (let i = orgString.length - 1; i >= 0; i--) {
+    revStrArr.push(orgString[i])
   }
 
-  const stringArr = string.split(' ')
-  let reversedStringArr = []
-  for (let i = stringArr.length - 1; i >= 0; i--) {
-    reversedStringArr.push(stringArr[i] as string)
-  }
-
-  const normalString = stringArr.join('').toLowerCase()
-  const reverseString = reversedStringArr.join('').toLowerCase()
-  if (normalString === reverseString) {
+  let revString = revStrArr.join('')
+  if (revString === orgString) {
     return true
   } else {
     return false
   }
+}
+
+export const longestUniqueSubString = (string: string): number => {
+  // first we are initialising our length variable and starting it at 0
+  // we are going to loop over the array starting it at 0 and initialise a freqMap for if the character is seen or not if it hasnt been seen we are going to mark it as true
+  // we are then going to start a nested array that starts at the iterator of the outer array + 1 so the next element
+  // we are checking for if the character is seen because then we are going to break the loop
+  // we use Math.max on the length variable to take the maxiimum interger that goes through the variable kind of like pushing every value to an array then loopnig through and finding the highest one
+  // formula for calculating the length of the sunstring without running .length is we are going to take the index of the last number in the array and then minus the first index of that sub string but plus one to get the real lenght since we started at 0
+  // then I am going to return the length variable
+
+  let length = 0
+  for (let i = 0; i < string.length; i++) {
+    let seen: Record<string, boolean> = {}
+    for (let j = i; j < string.length; j++) {
+      if (seen[string[j] as string]) {
+        break
+      }
+      seen[string[j] as string] = true
+      length = Math.max(length, j - i + 1)
+    }
+  }
+  return length
 }

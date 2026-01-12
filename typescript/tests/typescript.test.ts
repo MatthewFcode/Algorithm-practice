@@ -5,6 +5,7 @@ import {
   firstUniqueCharacter,
   findMaxPossibleSum,
   isPalindrome,
+  longestUniqueSubString,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -121,4 +122,21 @@ test('function takes string and returns true if it is a palindrome and false if 
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected)
+})
+
+test('function that returns the longest sub-string in a string without repeating characters', () => {
+  //Arrange
+  const string = 'abcabcbb'
+  const string2 = 'b'
+
+  const expected = 3
+  const expected2 = 1
+
+  //Act
+  const result = longestUniqueSubString(string)
+  const result2 = longestUniqueSubString(string2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })
