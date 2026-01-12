@@ -8,6 +8,7 @@ import {
   longestUniqueSubString,
   findMissingNumber,
   manualStringReverse,
+  fullStringReverse,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -171,12 +172,28 @@ test('function that manually reverses a string with spaces', () => {
   const word: string = 'the sky is blue'
   const word2: string = 'a b c'
 
-  const expected: string = 'eulb si yks eht'
+  const expected: string = 'blue is sky the'
   const expected2: string = 'c b a'
 
   //Act
   const result = manualStringReverse(word)
   const result2 = manualStringReverse(word2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that full reverses a string with spaces', () => {
+  const word: string = 'the sky is blue'
+  const word2: string = 'a b c'
+
+  const expected: string = 'eulb si yks eht'
+  const expected2: string = 'c b a'
+
+  //
+  const result = fullStringReverse(word)
+  const result2 = fullStringReverse(word2)
 
   //Assert
   expect(result).toEqual(expected)
