@@ -191,7 +191,7 @@ export const findMissingNumber = (monkey: number[]): number | string => {
 // split the string but we want to keep the spaces so i guess we want to make each word an iteration in the array
 // nested loop that goes over the current iteration of the array and pushes thee reverse to a new array and the join that then return it?
 
-export const manualStringReverse = (string: string): string => {
+export const wordStringReverse = (string: string): string => {
   const stringArr = string.split(' ')
   let strRevArr = []
   for (let i = stringArr.length - 1; i >= 0; i--) {
@@ -199,4 +199,13 @@ export const manualStringReverse = (string: string): string => {
   }
   const result = strRevArr.join(' ')
   return result
+}
+
+export const fullStringReverse = (string: string): string => {
+  let reversed = ''
+
+  for (let i = string.length - 1; i >= 0; i--) {
+    reversed += string[i]
+  }
+  return reversed
 }

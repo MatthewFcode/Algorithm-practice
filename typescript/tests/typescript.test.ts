@@ -7,7 +7,7 @@ import {
   isPalindrome,
   longestUniqueSubString,
   findMissingNumber,
-  manualStringReverse,
+  wordStringReverse,
   fullStringReverse,
 } from '../typescript.js'
 // types imports for the arrangment data
@@ -176,8 +176,8 @@ test('function that manually reverses a string with spaces', () => {
   const expected2: string = 'c b a'
 
   //Act
-  const result = manualStringReverse(word)
-  const result2 = manualStringReverse(word2)
+  const result = wordStringReverse(word)
+  const result2 = wordStringReverse(word2)
 
   //Assert
   expect(result).toEqual(expected)
@@ -185,13 +185,14 @@ test('function that manually reverses a string with spaces', () => {
 })
 
 test('function that full reverses a string with spaces', () => {
+  //Arrange
   const word: string = 'the sky is blue'
   const word2: string = 'a b c'
 
   const expected: string = 'eulb si yks eht'
   const expected2: string = 'c b a'
 
-  //
+  //Act
   const result = fullStringReverse(word)
   const result2 = fullStringReverse(word2)
 
