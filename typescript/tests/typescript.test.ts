@@ -233,5 +233,5 @@ test('function that makes [i] the product of all other elements in the array exc
 
   //Assert
   expect(result).toEqual(expected)
-  expect(result).toEqual(expected2)
+  expect(result2).toEqual(expected2)
 })

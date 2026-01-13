@@ -249,3 +249,32 @@ export const findLongestConsecutiveSequence = (arr: number[]) => {
   }
   return longest
 }
+
+// my solution that went no where quick
+// export const productExceptSelf = (numbers: number[]): number[] => {
+//   // okay we could loop over the arr and then started a nested loop that starts at the next index and starts timsing values
+//   for (let i = 0; i < numbers.length; i++) {
+//     for (let j = i + 1; j === i; j++) {
+
+//     }
+//   }
+// }
+
+// ChatGpt solution
+export const productExceptSelf = (numbers: number[]): number[] => {
+  const result = new Array(numbers.length).fill(1)
+
+  let leftProduct = 1
+  for (let i = 0; i < numbers.length; i++) {
+    result[i] = leftProduct
+    leftProduct *= numbers[i] as number
+  }
+
+  let rightProduct = 1
+  for (let i = numbers.length - 1; i >= 0; i--) {
+    result[i] *= rightProduct
+    rightProduct *= numbers[i] as number
+  }
+
+  return result
+}
