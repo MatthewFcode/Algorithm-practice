@@ -10,6 +10,7 @@ import {
   wordStringReverse,
   fullStringReverse,
   findLongestConsecutiveSequence,
+  productExceptSelf,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -217,4 +218,20 @@ test('function that returns the longest consecutive sequence of numbers in an un
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('function that makes [i] the product of all other elements in the array except [i] ', () => {
+  //Arrange
+  const numbers = [1, 2, 3, 4]
+  const numbers2 = [4, 6, 2, 5]
+  const expected = [24, 12, 8, 6]
+  const expected2 = [60, 40, 120, 48]
+
+  //Act
+  const result = productExceptSelf(numbers)
+  const result2 = productExceptSelf(numbers2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result).toEqual(expected2)
 })
