@@ -212,35 +212,40 @@ export const fullStringReverse = (string: string): string => {
 
 // function that finds the longest consecutive sequence
 // we need to keep track of the longest sequence so far || loop and then a break once the sequence stops
-export const findLongestConsecutiveSequence = (
-  arr: number[]
-): number | string => {
+export const findLongestConsecutiveSequence = (arr: number[]) => {
+  // first thing is to manually remove all duplicates using a for loop and a push and a includes tho check if any element in the clean array is the current iteration
+  // then we are going to sort this array in ascending order
+  // declare current and longest to 1 because we are returing the length of the longest array and dont want to start at 0
+  // then we loop over the array if the current iteration is consec add on to current
+  // else we are going to init current back down to 1 and check if the current was the highest so far and initiales it to that if it is the highest
+  // then we are going to do one final check incase the longest consecutive one was going to to the end off the array in which case it would never have been initilaised to longest
   if (arr.length === 0) return 0
-
   let clean: number[] = []
 
   for (let i = 0; i < arr.length; i++) {
     if (clean.includes(arr[i] as number)) {
       continue
-    } else clean.push(arr[i] as number)
-  }
-
-  const sortedArr = clean.sort((a, b) => a! - b!)
-
-  let current = 1 // we start the values at 1 becuase we are computing the length of an array rather than how many times so we start it at 1 to account for the first character
-  let longest = 1 // init a longest variable
-  for (let i = 0; i < sortedArr.length; i++) {
-    if (sortedArr[i] === (sortedArr[i - 1] as number) + 1) {
-      current++
     } else {
-      if (current > longest) {
-        longest = current
-      }
-      current = longest
+      clean.push(arr[i] as number)
     }
   }
-  if (current > longest) {
-    longest = current
+
+  const sortedArr: number[] = clean.sort((a, b) => a - b)
+  let length = 1
+  let longest = 1
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i] === (sortedArr[i - 1] as number) + 1) {
+      length++
+    } else {
+      if (length > longest) {
+        longest = length
+      }
+      length = 1
+    }
+  }
+  if (length > longest) {
+    longest = length
   }
   return longest
 }
