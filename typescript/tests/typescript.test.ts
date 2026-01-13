@@ -12,6 +12,7 @@ import {
   findLongestConsecutiveSequence,
   productExceptSelf,
   twoSum,
+  moveZeroes,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -251,6 +252,23 @@ test('function that returns the indicies of two numbers in an array that add up 
   //Act
   const result = twoSum(numbers, target)
   const result2 = twoSum(numbers2, target2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that moves all 0s in an array to the end of the array and returns the original array of not', () => {
+  //Arrange
+  const numbers: number[] = [0, 1, 0, 3, 12]
+  const numbers2: number[] = [1, 2, 3]
+
+  const expected: number[] = [1, 3, 12, 0, 0]
+  const expected2: number[] = [1, 2, 3]
+
+  //Act
+  const result = moveZeroes(numbers)
+  const result2 = moveZeroes(numbers2)
 
   //Assert
   expect(result).toEqual(expected)

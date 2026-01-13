@@ -295,3 +295,19 @@ export const twoSum = (numbers: number[], k: number): number[] => {
   }
   return nums
 }
+
+export const moveZeroes = (numbers: number[]): number[] => {
+  // filter out non zeroes into one array and the filter zeroes into another join copies of the array together
+  let zeroes: number[] = []
+  let integers: number[] = []
+
+  for (let i = 0; i < numbers.length; i++) {
+    if ((numbers[i] as number) !== 0) {
+      integers.push(numbers[i] as number)
+    } else if ((numbers[i] as number) === 0) {
+      zeroes.push(numbers[i] as number)
+    }
+  }
+
+  return [...integers, ...zeroes]
+}
