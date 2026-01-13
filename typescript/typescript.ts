@@ -212,3 +212,35 @@ export const fullStringReverse = (string: string): string => {
 
 // function that finds the longest consecutive sequence
 // we need to keep track of the longest sequence so far || loop and then a break once the sequence stops
+export const findLongestConsecutiveSequence = (
+  arr: number[]
+): number | string => {
+  if (arr.length === 0) return 0
+
+  let clean: number[] = []
+
+  for (let i = 0; i < arr.length; i++) {
+    if (clean.includes(arr[i] as number)) {
+      continue
+    } else clean.push(arr[i] as number)
+  }
+
+  const sortedArr = clean.sort((a, b) => a! - b!)
+
+  let current = 1 // we start the values at 1 becuase we are computing the length of an array rather than how many times so we start it at 1 to account for the first character
+  let longest = 1 // init a longest variable
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (sortedArr[i] === (sortedArr[i - 1] as number) + 1) {
+      current++
+    } else {
+      if (current > longest) {
+        longest = current
+      }
+      current = longest
+    }
+  }
+  if (current > longest) {
+    longest = current
+  }
+  return longest
+}
