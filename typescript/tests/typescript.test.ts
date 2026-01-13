@@ -11,6 +11,7 @@ import {
   fullStringReverse,
   findLongestConsecutiveSequence,
   productExceptSelf,
+  twoSum,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -230,6 +231,26 @@ test('function that makes [i] the product of all other elements in the array exc
   //Act
   const result = productExceptSelf(numbers)
   const result2 = productExceptSelf(numbers2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that returns the indicies of two numbers in an array that add up to k', () => {
+  //Arrange
+  const numbers = [2, 7, 11, 15]
+  const numbers2 = [3, 2, 4]
+
+  const target = 9
+  const target2 = 6
+
+  const expected = [0, 1]
+  const expected2 = [1, 2]
+
+  //Act
+  const result = twoSum(numbers, target)
+  const result2 = twoSum(numbers2, target2)
 
   //Assert
   expect(result).toEqual(expected)
