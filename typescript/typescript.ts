@@ -278,3 +278,20 @@ export const productExceptSelf = (numbers: number[]): number[] => {
 
   return result
 }
+
+export const twoSum = (numbers: number[], k: number): number[] => {
+  // declare mutable array to push values that add up to sum
+  // loop over the array and start a nested loop check numbers add up to target and push the indexes to mutable array if they do
+  // return the mutable array
+
+  let nums: number[] = []
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if ((((numbers[i] as number) + numbers[j]!) as number) === k) {
+        nums.push(i, j)
+      }
+    }
+  }
+  return nums
+}
