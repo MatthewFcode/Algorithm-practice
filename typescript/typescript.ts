@@ -326,3 +326,28 @@ export const longestSubArrayToK = (numbers: number[], k: number): number => {
   }
   return length
 }
+
+//CHATGPT solution" I couldnt figure it out
+export const maximumContigousSubArray = (
+  numbers: number[],
+  k: number
+): number => {
+  let windowSum = 0
+  let maxSum = 0
+
+  // build first window
+  for (let i = 0; i < k; i++) {
+    windowSum += numbers[i]!
+  }
+
+  maxSum = windowSum
+
+  // slide the window
+  for (let right = k; right < numbers.length; right++) {
+    windowSum += numbers[right]! // add right
+    windowSum -= numbers[right - k]! // remove left
+    maxSum = Math.max(maxSum, windowSum)
+  }
+
+  return maxSum
+}
