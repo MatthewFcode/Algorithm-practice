@@ -351,3 +351,23 @@ export const maximumContigousSubArray = (
 
   return maxSum
 }
+
+export const findSecondHighestNum = (numbers: number[]): string => {
+  let highestNum: number = numbers[0]!
+  for (let i = 0; i < numbers.length; i++) {
+    if ((numbers[i] as number) > highestNum) {
+      highestNum = numbers[i] as number
+    }
+  }
+  let secondHighestNum = -Infinity
+  for (let i = 0; i < numbers.length; i++) {
+    if (
+      (numbers[i] as number) > secondHighestNum &&
+      (numbers[i] as number) < highestNum
+    ) {
+      secondHighestNum = numbers[i]!
+    }
+  }
+  const index = numbers.indexOf(secondHighestNum)
+  return String(index)
+}
