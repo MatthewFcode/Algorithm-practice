@@ -14,6 +14,7 @@ import {
   twoSum,
   moveZeroes,
   longestSubArrayToK,
+  maximumContigousSubArray,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -285,6 +286,21 @@ test('function that finds the longest subarray in an array that adds up to k', (
 
   //Act
   const result = longestSubArrayToK(nums, k)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that returns the maxium sum of a sub array with a defined length', () => {
+  //Arrange
+  const numbers = [2, 1, 5, 1, 3, 2]
+
+  const k = 3
+
+  const expected = 9
+
+  //Act
+  const result = maximumContigousSubArray(numbers, k)
 
   //Assert
   expect(result).toEqual(expected)
