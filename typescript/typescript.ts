@@ -311,3 +311,18 @@ export const moveZeroes = (numbers: number[]): number[] => {
 
   return [...integers, ...zeroes]
 }
+
+export const longestSubArrayToK = (numbers: number[], k: number): number => {
+  // findign the length of the sub array that meets the requeirments would  be the end of the array j nested loop minus i + 1 for the start of the array but we want to keep the highest value that enters the length variable so we use max.length
+  let length: number = 0
+  for (let i = 0; i < numbers.length; i++) {
+    let sum: number = 0
+    for (let j = i; j < numbers.length; j++) {
+      sum += numbers[j]!
+      if (sum === k) {
+        length = Math.max(length, j - i + 1)
+      }
+    }
+  }
+  return length
+}

@@ -13,6 +13,7 @@ import {
   productExceptSelf,
   twoSum,
   moveZeroes,
+  longestSubArrayToK,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -273,4 +274,18 @@ test('function that moves all 0s in an array to the end of the array and returns
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('function that finds the longest subarray in an array that adds up to k', () => {
+  //Arrange
+  const nums = [1, -1, 5, -2, 3]
+  const k = 3
+
+  const expected = 4
+
+  //Act
+  const result = longestSubArrayToK(nums, k)
+
+  //Assert
+  expect(result).toEqual(expected)
 })
