@@ -16,6 +16,7 @@ import {
   longestSubArrayToK,
   maximumContigousSubArray,
   findSecondHighestNum,
+  longestContSubArray,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -315,6 +316,18 @@ test('function that returns the index of the second highest number in an array a
 
   //Act
   const result = findSecondHighestNum(numbers)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that returns the longest increasing sub array', () => {
+  //Arrange
+  const numbers = [1, 3, 5, 4, 7]
+  const expected = 3
+
+  //Act
+  const result = longestContSubArray(numbers)
 
   //Assert
   expect(result).toEqual(expected)
