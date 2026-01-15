@@ -374,26 +374,45 @@ export const findSecondHighestNum = (numbers: number[]): string => {
 
 // longest cont sub where the condition is that the next element is higher than the previous
 
+// export const longestContSubArray = (numbers: number[]): number => {
+//   // we have the numbers and they dont need sorting or to be dupicate free
+//   // delcare a variable for length and current length
+//   // loop over the array if the next element is more than the current then we add one to the length and if it isn't we check if the current value of currrent is more than length and reassign it if it is
+//   // then we set length back to 1
+//   let length = 1
+//   let current = 1
+//   for (let i = 0; i < numbers.length; i++) {
+//     if ((numbers[i + 1] as number) > numbers[i]!) {
+//       current++
+//     } else {
+//       if (current > length) {
+//         length = current
+//       }
+//       current = 1
+//     }
+//   }
+
+//   if (current > length) {
+//     length = current
+//   }
+//   return length
+// }
+
 export const longestContSubArray = (numbers: number[]): number => {
-  // we have the numbers and they dont need sorting or to be dupicate free
-  // delcare a variable for length and current length
-  // loop over the array if the next element is more than the current then we add one to the length and if it isn't we check if the current value of currrent is more than length and reassign it if it is
-  // then we set length back to 1
-  let length = 1
+  // we want to loop over the array and just do the same thing but  instead of two variables we just apply math.max to the vairable and do the length thing
+  if (numbers.length === 0) return 0
+
   let current = 1
+  let length = 1
+
   for (let i = 0; i < numbers.length; i++) {
     if ((numbers[i + 1] as number) > numbers[i]!) {
       current++
     } else {
-      if (current > length) {
-        length = current
-      }
       current = 1
     }
+    length = Math.max(length, current) // compares the current highest with the current count of the array and reassigns on every iteration
   }
 
-  if (current > length) {
-    length = current
-  }
   return length
 }
