@@ -17,6 +17,7 @@ import {
   maximumContigousSubArray,
   findSecondHighestNum,
   longestContSubArray,
+  smallestMissingPostiveInteger,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -331,4 +332,26 @@ test('function that returns the longest increasing sub array', () => {
 
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('function that finds the first missing positive number in an array of numbers', () => {
+  // Arrange
+  const nums = [1, 2, 0]
+
+  const nums2 = [3, 4, -1, 1]
+
+  const nums3 = [7, 8, 9, 10, 11, 12]
+
+  const expected = 3
+  const expected2 = 2
+  const expected3 = 1
+
+  //Act
+  const result = smallestMissingPostiveInteger(nums)
+  const result2 = smallestMissingPostiveInteger(nums2)
+  const result3 = smallestMissingPostiveInteger(nums3)
+
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+  expect(result3).toEqual(expected3)
 })

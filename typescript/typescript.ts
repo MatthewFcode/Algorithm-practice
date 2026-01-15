@@ -416,3 +416,30 @@ export const longestContSubArray = (numbers: number[]): number => {
 
   return length
 }
+
+export const smallestMissingPostiveInteger = (
+  numbers: number[]
+): number | string => {
+  if (numbers.length === 0) return 'No Missing Numbers '
+
+  if (!numbers.includes(1)) {
+    return 1
+  }
+
+  const sortedArr = numbers.sort((a, b) => a - b)
+
+  let current: number = 0
+  let lowest = +Infinity
+
+  for (let i = 0; i < sortedArr.length; i++) {
+    if (
+      (sortedArr[i] as number) + 1 !== sortedArr[i + 1] &&
+      (sortedArr[i] as number) + 1 > 0
+    ) {
+      current = sortedArr[i]! + 1
+    }
+    lowest = Math.min(lowest, current)
+  }
+
+  return lowest
+}
