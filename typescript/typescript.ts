@@ -371,3 +371,29 @@ export const findSecondHighestNum = (numbers: number[]): string => {
   const index = numbers.indexOf(secondHighestNum)
   return String(index)
 }
+
+// longest cont sub where the condition is that the next element is higher than the previous
+
+export const longestContSubArray = (numbers: number[]): number => {
+  // we have the numbers and they dont need sorting or to be dupicate free
+  // delcare a variable for length and current length
+  // loop over the array if the next element is more than the current then we add one to the length and if it isn't we check if the current value of currrent is more than length and reassign it if it is
+  // then we set length back to 1
+  let length = 1
+  let current = 1
+  for (let i = 0; i < numbers.length; i++) {
+    if ((numbers[i + 1] as number) > numbers[i]!) {
+      current++
+    } else {
+      if (current > length) {
+        length = current
+      }
+      current = 1
+    }
+  }
+
+  if (current > length) {
+    length = current
+  }
+  return length
+}
