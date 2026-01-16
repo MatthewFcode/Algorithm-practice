@@ -475,3 +475,27 @@ export const longestContSubArray = (numbers: number[]): number => {
 
 //   return missingInts[0]!
 // }
+// finding the length of an array = sortedArr[sortedArr.length - 1]
+export const maxConsecOnes = (numbers: number[]): number => {
+  // we need to keep track of the current amount of ones and then reassign if it gets more do it in one pass
+  if (numbers.length === 0) return 0
+  let max = 0
+  let current = 0
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === 1) {
+      current++
+    } else {
+      if (current > max) {
+        max = current
+        current = 0
+      }
+    }
+  }
+
+  if (current > max) {
+    max = current
+  }
+
+  return max
+}
