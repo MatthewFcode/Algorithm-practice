@@ -444,36 +444,34 @@ export const longestContSubArray = (numbers: number[]): number => {
 //   return lowest
 // }
 
-export const smallestMissingPostiveInteger = (numbers: number[]): number => {
-  if (numbers.length === 0) return 0
-  if (!numbers.includes(1)) return 1
+// export const smallestMissingPostiveInteger = (numbers: number[]): number => {
+//   if (numbers.length === 0) return 0
+//   if (!numbers.includes(1)) return 1
 
-  // manually  remove duplciates
-  let clean: number[] = []
-  for (let i = 0; i < numbers.length; i++) {
-    if (clean.includes(numbers[i] as number)) {
-      continue
-    } else {
-      clean.push(numbers[i] as number)
-    }
-  }
+//   // manually  remove duplciates
+//   let clean: number[] = []
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (clean.includes(numbers[i] as number)) {
+//       continue
+//     } else {
+//       clean.push(numbers[i] as number)
+//     }
+//   }
 
-  const sortedArr = clean.sort((a, b) => a - b)
+//   const sortedArr = clean.sort((a, b) => a - b)
 
-  let missingInts: number[] = []
+//   let missingInts: number[] = []
 
-  for (let i = 0; i < sortedArr.length; i++) {
-    if (
-      sortedArr[i]! + 1 !==
-      ((sortedArr[i + 1] as number) &&
-        (sortedArr[i] as number) + 1 > 0 &&
-        i !== sortedArr[sortedArr.length - 1])
-    ) {
-      missingInts.push(sortedArr[i]! + 1)
-    }
-  }
+//   for (let i = 0; i < sortedArr.length; i++) {
+//     if (
+//       sortedArr[i]! + 1 !==
+//       ((sortedArr[i + 1] as number) &&
+//         (sortedArr[i] as number) + 1 > 0 &&
+//         i !== sortedArr[sortedArr.length - 1])
+//     ) {
+//       missingInts.push(sortedArr[i]! + 1)
+//     }
+//   }
 
-  return missingInts[0]!
-}
-
-// finding the length of an array = sortedArr[sortedArr.length - 1]
+//   return missingInts[0]!
+// }
