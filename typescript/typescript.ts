@@ -417,29 +417,63 @@ export const longestContSubArray = (numbers: number[]): number => {
   return length
 }
 
-export const smallestMissingPostiveInteger = (
-  numbers: number[]
-): number | string => {
-  if (numbers.length === 0) return 'No Missing Numbers '
+// export const smallestMissingPostiveInteger = (
+//   numbers: number[]
+// ): number | string => {
+//   if (numbers.length === 0) return 'No Missing Numbers '
 
-  if (!numbers.includes(1)) {
-    return 1
+//   if (!numbers.includes(1)) {
+//     return 1
+//   }
+
+//   const sortedArr = numbers.sort((a, b) => a - b)
+
+//   let current: number = 0
+//   let lowest = +Infinity
+
+//   for (let i = 0; i < sortedArr.length; i++) {
+//     if (
+//       (sortedArr[i] as number) + 1 !== sortedArr[i + 1] &&
+//       (sortedArr[i] as number) + 1 > 0
+//     ) {
+//       current = sortedArr[i]! + 1
+//     }
+//     lowest = Math.min(lowest, current)
+//   }
+
+//   return lowest
+// }
+
+export const smallestMissingPostiveInteger = (numbers: number[]): number => {
+  if (numbers.length === 0) return 0
+  if (!numbers.includes(1)) return 1
+
+  // manually  remove duplciates
+  let clean: number[] = []
+  for (let i = 0; i < numbers.length; i++) {
+    if (clean.includes(numbers[i] as number)) {
+      continue
+    } else {
+      clean.push(numbers[i] as number)
+    }
   }
 
-  const sortedArr = numbers.sort((a, b) => a - b)
+  const sortedArr = clean.sort((a, b) => a - b)
 
-  let current: number = 0
-  let lowest = +Infinity
+  let missingInts: number[] = []
 
   for (let i = 0; i < sortedArr.length; i++) {
     if (
-      (sortedArr[i] as number) + 1 !== sortedArr[i + 1] &&
-      (sortedArr[i] as number) + 1 > 0
+      sortedArr[i]! + 1 !==
+      ((sortedArr[i + 1] as number) &&
+        (sortedArr[i] as number) + 1 > 0 &&
+        i !== sortedArr[sortedArr.length - 1])
     ) {
-      current = sortedArr[i]! + 1
+      missingInts.push(sortedArr[i]! + 1)
     }
-    lowest = Math.min(lowest, current)
   }
 
-  return lowest
+  return missingInts[0]!
 }
+
+// finding the length of an array = sortedArr[sortedArr.length - 1]
