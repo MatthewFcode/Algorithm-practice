@@ -499,3 +499,5 @@ export const maxConsecOnes = (numbers: number[]): number => {
 
   return max
 }
+
+// edge cases for the non Repeting char is gonna be length and type

@@ -19,6 +19,7 @@ import {
   longestContSubArray,
   //smallestMissingPostiveInteger,
   maxConsecOnes,
+  nonRepChar,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -368,4 +369,21 @@ test('function that returns the maximum amount of consecutive ones in an array',
 
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('function that returns the first non-repeating in a string', () => {
+  //Arrange
+  const string = 'leetcode'
+  const string2 = 'aabbcc'
+
+  const expected = 'l'
+  const expected2 = null
+
+  //Act
+  const result = nonRepChar(string)
+  const result2 = nonRepChar(string2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })
