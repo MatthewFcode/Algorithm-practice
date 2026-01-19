@@ -501,3 +501,32 @@ export const maxConsecOnes = (numbers: number[]): number => {
 }
 
 // edge cases for the non Repeting char is gonna be length and type
+
+export const nonRepChar = (string: string): string | null => {
+  if (string.length === 0) return null
+
+  if (typeof string !== 'string') {
+    return 'Parameter is not a string '
+  }
+
+  // string lower case and then split it into an array so I can map it sunshine
+  const arr = string.toLowerCase().split('')
+
+  // init a map for the frequency of all the numbers that are in the string using .map
+  const freqMap = arr.reduce((accum, val) => {
+    if (accum[val]) {
+      accum[val] += 1
+    } else if (!accum[val]) {
+      accum[val] = 1
+    }
+    return accum
+  }, {} as Record<string, number>)
+
+  for (let i = 0; i < arr.length; i++) {
+    if (freqMap[arr[i]!] === 1) {
+      return arr[i]!
+    }
+  }
+
+  return null
+}
