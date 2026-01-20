@@ -533,26 +533,26 @@ export const nonRepChar = (string: string): string | null => {
 
 // merging intervals || so we want to loop through the arrays of array and check that the second interval of the is less than thee first one but if not then add it to another array
 
-export const mergeIntervals = (arrays: number[][]): number[] | null => {
-  if (arrays.length === 0) return null
+// export const mergeIntervals = (arrays: number[][]): number[] | null => {
+//   if (arrays.length === 0) return null
 
-  let overlapArrs: number[] = []
+//   let overlapArrs: number[] = []
 
-  // loop through and then start another loop at the next index
-  for (let i = 0; i < arrays.length; i++) {
-    for (let j = i + 1; j < arrays.length; j++) {
-      if (arr[i][1] > arr[j][0]) {
-        overlapArrs.push(...arr[i], ...arr[j])
-      }
-    }
-  }
+//   // loop through and then start another loop at the next index
+//   for (let i = 0; i < arrays.length; i++) {
+//     for (let j = i + 1; j < arrays.length; j++) {
+//       if ((arrays[i]![1] as number) > arrays[j][0]) {
+//         overlapArrs.push(...arrays[i], ...arrays[j])
+//       }
+//     }
+//   }
 
-  let clean: number[] = []
-  for (let i = 0; i < overlapArrs.length; i++) {
-    if ((overlapArrs[i] as number) < overlapArrs[i + 1]!) {
-      clean.push(overlapArrs[i] as number)
-    }
-  }
+//   let clean: number[] = []
+//   for (let i = 0; i < overlapArrs.length; i++) {
+//     if ((overlapArrs[i] as number) < overlapArrs[i + 1]!) {
+//       clean.push(overlapArrs[i] as number)
+//     }
+//   }
 
-  return clean
-}
+//   return clean
+// }
