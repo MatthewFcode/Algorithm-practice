@@ -556,3 +556,23 @@ export const nonRepChar = (string: string): string | null => {
 
 //   return clean
 // }
+
+export const maxContSubArrayToK = (
+  nums: number[],
+  k: number
+): number | null => {
+  if (nums.length === 0) return null
+
+  // sort the array in descending order
+  const sortedNums = nums.sort((a, b) => b - a)
+
+  const output = []
+
+  for (let i = 0; i <= k - 1; i++) {
+    output.push(sortedNums[i])
+  }
+
+  const result = output.reduce((accum: number, val) => accum + val!, 0)
+
+  return result
+}

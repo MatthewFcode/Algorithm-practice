@@ -20,6 +20,7 @@ import {
   //smallestMissingPostiveInteger,
   maxConsecOnes,
   nonRepChar,
+  maxContSubArrayToK,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -410,3 +411,16 @@ test('function that returns the first non-repeating in a string', () => {
 //   expect(result).toEqual(expected)
 //   expect(result2).toEqual(somethingExpected)
 // })
+
+test('function that finds the maximum contigous subarray that adds up to k', () => {
+  //Arrange
+  const nums = [2, 1, 5, 1, 3, 2]
+  const k = 3
+  const expected = 10
+
+  //Act
+  const result = maxContSubArrayToK(nums, k)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
