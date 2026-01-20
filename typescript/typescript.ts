@@ -557,6 +557,7 @@ export const nonRepChar = (string: string): string | null => {
 //   return clean
 // }
 
+// function finds the highest sum of digits with k length in an array
 export const maxContSubArrayToK = (
   nums: number[],
   k: number
