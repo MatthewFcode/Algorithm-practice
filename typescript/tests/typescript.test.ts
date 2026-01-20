@@ -20,6 +20,7 @@ import {
   //smallestMissingPostiveInteger,
   maxConsecOnes,
   nonRepChar,
+  mergeIntervals,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -386,4 +387,27 @@ test('function that returns the first non-repeating in a string', () => {
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('function that merges arrays with intervals and removes the overlapping values', () => {
+  //Arrange
+  const numbers = [
+    [0, 1],
+    [3, 6],
+    [4, 9],
+  ]
+
+  const expected = [3, 4, 9]
+
+  const something: [] = []
+
+  const somethingExpected = null
+
+  //Act
+  const result = mergeIntervals(numbers)
+  const result2 = mergeIntervals(something)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(somethingExpected)
 })

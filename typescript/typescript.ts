@@ -533,7 +533,7 @@ export const nonRepChar = (string: string): string | null => {
 
 // merging intervals || so we want to loop through the arrays of array and check that the second interval of the is less than thee first one but if not then add it to another array
 
-export const mergeIntervals = (arrays: number[]): number[] | null => {
+export const mergeIntervals = (arrays: number[][]): number[] | null => {
   if (arrays.length === 0) return null
 
   let overlapArrs: number[] = []
