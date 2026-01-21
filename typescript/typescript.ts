@@ -577,3 +577,37 @@ export const maxContSubArrayToK = (
 
   return result
 }
+
+// nested loop thorugh the transactions comparing every transaction for strict equality and if the time stamp of the i - the one of the j is <= 60 then push that id of the j to an array this is the one we will return
+interface transaction {
+  id: string
+  amount: number
+  reference: string
+  timestamp: number
+}
+export const findDuplicateTransactions = (
+  transactions: transaction[]
+): string[] | null => {
+  // we are going to sort via the time stamp so that we can find the 60s window properly via minusing the later duplicate transaction
+  if (transactions.length === 0) return null
+
+  const sortedTransactions = transactions.sort(
+    (a, b) => a.timestamp - b.timestamp
+  )
+
+  let duplicateIds = []
+
+  for (let i = 0; i < sortedTransactions.length; i++) {
+    for (let j = i; j < sortedTransactions.length; j++) {
+      if (
+        sortedTransactions[i] === sortedTransactions[j] &&
+        sortedTransactions[i]!.timestamp - sortedTransactions[j]!.timestamp <=
+          60
+      ) {
+        duplicateIds.push(sortedTransactions[j]!.id)
+      }
+    }
+  }
+
+  return duplicateIds
+}

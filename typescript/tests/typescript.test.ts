@@ -21,6 +21,7 @@ import {
   maxConsecOnes,
   nonRepChar,
   maxContSubArrayToK,
+  findDuplicateTransactions,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -420,6 +421,23 @@ test('function that finds the maximum contigous subarray that adds up to k', () 
 
   //Act
   const result = maxContSubArrayToK(nums, k)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that finds duplcate transactions in an array of objects and returns the duplicate trasnaction IDs', () => {
+  //Arrange
+  const transactions = [
+    { id: 'a', amount: 100, reference: 'rent', timestamp: 1000 },
+    { id: 'b', amount: 100, reference: 'rent', timestamp: 1020 },
+    { id: 'c', amount: 200, reference: 'food', timestamp: 1030 },
+    { id: 'd', amount: 100, reference: 'rent', timestamp: 2000 },
+  ]
+  const expected = ['b']
+
+  //Act
+  const result = findDuplicateTransactions(transactions)
 
   //Assert
   expect(result).toEqual(expected)
