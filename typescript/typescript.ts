@@ -598,10 +598,11 @@ export const findDuplicateTransactions = (
   let duplicateIds = []
 
   for (let i = 0; i < sortedTransactions.length; i++) {
-    for (let j = i; j < sortedTransactions.length; j++) {
+    for (let j = i + 1; j < sortedTransactions.length; j++) {
       if (
-        sortedTransactions[i] === sortedTransactions[j] &&
-        sortedTransactions[i]!.timestamp - sortedTransactions[j]!.timestamp <=
+        sortedTransactions[i]!.amount === sortedTransactions[j]!.amount &&
+        sortedTransactions[i]!.reference === sortedTransactions[j]!.reference &&
+        sortedTransactions[j]!.timestamp - sortedTransactions[i]!.timestamp <=
           60
       ) {
         duplicateIds.push(sortedTransactions[j]!.id)
