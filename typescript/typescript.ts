@@ -639,3 +639,21 @@ export const overlappingInvoices = (invoices: Invoices[]): boolean | null => {
   return false
   // checking if the start date is before the end date of any previous object so we want to backwards loop ||
 }
+export const initLongSubArray = (nums: number[]): number => {
+  const n = nums.length
+  if (n === 0) return 0
+
+  // dp[i] = length of longest increasing subsequence ending at index i
+  const dp = new Array(n).fill(1)
+
+  for (let i = 1; i < n; i++) {
+    for (let j = 0; j < i; j++) {
+      if (nums[i]! > nums[j]!) {
+        dp[i] = Math.max(dp[i], dp[j] + 1)
+      }
+    }
+  }
+
+  // The result is the max value in dp array
+  return Math.max(...dp)
+}
