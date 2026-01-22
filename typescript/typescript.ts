@@ -623,7 +623,7 @@ interface Invoices {
 //
 export const overlappingInvoices = (invoices: Invoices[]): boolean | null => {
   if (invoices.length === 0) return null
-
+  let obj: Invoices[] = []
   for (let i = 0; i < invoices.length; i++) {
     for (let j = i + 1; j < invoices.length; j++) {
       const aStart = new Date(invoices[i]!.startDate).getTime()

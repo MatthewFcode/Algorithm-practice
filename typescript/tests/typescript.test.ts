@@ -23,6 +23,7 @@ import {
   maxContSubArrayToK,
   findDuplicateTransactions,
   overlappingInvoices,
+  initLongSubArray,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -458,5 +459,18 @@ test('function that returns a boolean based on whether overlapping onvoices are 
   const result = overlappingInvoices(invoices)
 
   //Assertt
+  expect(result).toEqual(expected)
+})
+
+test('function that finds the longest increasing sub array in an array', () => {
+  //Arrange
+  const numbers = [10, 9, 2, 5, 3, 7, 101, 18]
+
+  const expected = 4
+
+  //Act
+  const result = initLongSubArray(numbers)
+
+  //Assert
   expect(result).toEqual(expected)
 })
