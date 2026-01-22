@@ -612,3 +612,30 @@ export const findDuplicateTransactions = (
 
   return duplicateIds
 }
+
+interface Invoices {
+  id: string
+  startDate: string
+  endDate: string
+}
+
+// we are going to send a nested loop to compare if any object over laps with each other
+//
+export const overlappingInvoices = (invoices: Invoices[]): boolean | null => {
+  if (invoices.length === 0) return null
+
+  for (let i = 0; i < invoices.length; i++) {
+    for (let j = i + 1; j < invoices.length; j++) {
+      const aStart = new Date(invoices[i]!.startDate).getTime()
+      const aEnd = new Date(invoices[i]!.endDate).getTime()
+      const bStart = new Date(invoices[j]!.startDate).getTime()
+      const bEnd = new Date(invoices[j]!.endDate).getTime()
+
+      if (bStart <= aEnd) {
+        return true
+      }
+    }
+  }
+  return false
+  // checking if the start date is before the end date of any previous object so we want to backwards loop ||
+}

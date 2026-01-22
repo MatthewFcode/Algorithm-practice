@@ -22,6 +22,7 @@ import {
   nonRepChar,
   maxContSubArrayToK,
   findDuplicateTransactions,
+  overlappingInvoices,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -440,5 +441,22 @@ test('function that finds duplcate transactions in an array of objects and retur
   const result = findDuplicateTransactions(transactions)
 
   //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that returns a boolean based on whether overlapping onvoices are created for a client', () => {
+  //Arrange
+  const invoices = [
+    { id: 'A', startDate: '2024-01-01', endDate: '2024-01-31' },
+    { id: 'B', startDate: '2024-02-01', endDate: '2024-02-28' },
+    { id: 'C', startDate: '2024-01-15', endDate: '2024-02-10' },
+  ]
+
+  const expected = true
+
+  //Act
+  const result = overlappingInvoices(invoices)
+
+  //Assertt
   expect(result).toEqual(expected)
 })
