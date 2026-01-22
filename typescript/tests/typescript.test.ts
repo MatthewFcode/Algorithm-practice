@@ -24,6 +24,7 @@ import {
   findDuplicateTransactions,
   overlappingInvoices,
   initLongSubArray,
+  whatTheNonRepChar,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -473,4 +474,21 @@ test('function that finds the longest increasing sub array in an array', () => {
 
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('Function that returns the first non rep char in a string ', () => {
+  //Arrange
+  const string = 'aabbcc'
+  const string2 = 'leetcode'
+
+  const expected = -1
+  const expected2 = 0
+
+  //Act
+  const result = whatTheNonRepChar(string)
+  const result2 = whatTheNonRepChar(string2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })

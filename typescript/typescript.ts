@@ -657,3 +657,23 @@ export const initLongSubArray = (nums: number[]): number => {
   // The result is the max value in dp array
   return Math.max(...dp)
 }
+
+export const whatTheNonRepChar = (string: string): number | null => {
+  if (string.length === 0) return null
+  // freqMap the array
+  let freqMap: Record<string, number> = {}
+  for (let i = 0; i < string.length; i++) {
+    if (freqMap[string[i]!]) {
+      freqMap[string[i]!]! += 1
+    } else if (!freqMap[string[i]!]) {
+      freqMap[string[i]!] = 1
+    }
+  }
+
+  for (let i = 0; i < string.length; i++) {
+    if (freqMap[string[i]!] === 1) {
+      return string.indexOf(string[i]!)
+    }
+  }
+  return -1
+}
