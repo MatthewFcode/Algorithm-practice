@@ -701,3 +701,68 @@ export const longestSubArrayLessThanK = (
 
   return maxLength
 }
+
+// constraints: even numbers must be next to eachother || result has to be the maximum sum of the sub array || sub array length has to equal the length of k
+// function that uses a sliding window to find the longest contigious sub array that has even numbers
+
+// my solutionn which is wrong and I cant figure out how to get it to work
+// export const maxContSubArrayWithEvenNums = (
+//   numbers: number[],
+//   number: number | null
+// ) => {
+//   // quick sanity check for the inputs
+//   if (numbers.length === 0 || typeof number !== 'number') return null
+//   // this is going to need another nested loop |
+//   let max: number = 0
+//   for (let i = 0; i < numbers.length; i++) {
+//     let sum = 0
+//     for (let j = i + 1; j < numbers.length; j++) {
+//       if (j - i + 1 !== number) {
+//         // skipping all instances where the length of the sub array doesn't equal the desired length
+//         break // loop breaks and then  sum returns to 0 like above
+//       } else {
+//         for (let m = i; m < i + number; m++) {
+//           if (arr[j]! % 2 !== 0) {
+//             // checking every element in the sub array is divisible by 2
+//             break // adding all the values together in that current loop
+//           }
+//           sum += arr[j]!
+//         }
+//       }
+//       max = Math.max(max, sum)
+//     }
+//   }
+//   return max
+// }
+
+// example for doing the third inner loop
+
+// CHATGPT SOLUTIONN
+
+export const maxContSubArrayWithEvenNums = (
+  numbers: number[],
+  number: number | null
+): number | null => {
+  if (numbers.length === 0 || typeof number !== 'number') return null
+
+  let max = 0
+
+  for (let i = 0; i <= numbers.length - number; i++) {
+    let sum = 0
+    let allEven = true
+
+    for (let m = i; m < i + number; m++) {
+      if (numbers[m] % 2 !== 0) {
+        allEven = false
+        break
+      }
+      sum += numbers[m]
+    }
+
+    if (allEven) {
+      max = Math.max(max, sum)
+    }
+  }
+
+  return max
+}
