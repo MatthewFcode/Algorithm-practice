@@ -677,3 +677,27 @@ export const whatTheNonRepChar = (string: string): number | null => {
   }
   return -1
 }
+
+// given an array of numbers and a integer limit 2 params || find the longest sub array where the difference between the first and the last element in the sub array is less than or equal to the limit
+// working function that finds the longest contiguous  sub array where the numbers at either end of the array are less than k difference away from each other
+export const longestSubArrayLessThanK = (
+  numbers: number[],
+  number: number
+): number | null => {
+  if (numbers.length === 0 || typeof number !== 'number') return null // sanity check for inputs
+  // I think this need to keep track of the longest value of the sub array so we need to enact a nested loop over the array and at every iteration of the nested loop check if the value of i and j minus eachother equal or less than the thing and if they are then make current the length of that
+  let currentLength: number = 1
+  let maxLength: number = 1
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (Math.abs(numbers[i]! - numbers[j]!) <= number) {
+        // we can find current length by minusing the last number in the iteration of the first one and adding on to the index
+        currentLength = j - i + 1
+      }
+      maxLength = Math.max(maxLength, currentLength)
+    }
+  }
+
+  return maxLength
+}

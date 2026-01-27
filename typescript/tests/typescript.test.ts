@@ -25,6 +25,7 @@ import {
   overlappingInvoices,
   initLongSubArray,
   whatTheNonRepChar,
+  longestSubArrayLessThanK,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -487,6 +488,25 @@ test('Function that returns the first non rep char in a string ', () => {
   //Act
   const result = whatTheNonRepChar(string)
   const result2 = whatTheNonRepChar(string2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that finds the longest contigious subarray where the difference of the first and last element is less than K ', () => {
+  //Arrange
+  const numbers: number[] = [3, 7, 122, 125, 130, 125, 2, 5]
+  const number = 4
+  const numbers2: number[] = [3, 5, 8, 9, 11]
+  const number2 = 2
+
+  const expected = 8
+  const expected2 = 2
+
+  // Act
+  const result: number | null = longestSubArrayLessThanK(numbers, number)
+  const result2: number | null = longestSubArrayLessThanK(numbers2, number2)
 
   //Assert
   expect(result).toEqual(expected)
