@@ -752,11 +752,11 @@ export const maxContSubArrayWithEvenNums = (
     let allEven = true
 
     for (let m = i; m < i + number; m++) {
-      if (numbers[m] % 2 !== 0) {
+      if (numbers[m]! % 2 !== 0) {
         allEven = false
         break
       }
-      sum += numbers[m]
+      sum += numbers[m]!
     }
 
     if (allEven) {

@@ -26,6 +26,7 @@ import {
   initLongSubArray,
   whatTheNonRepChar,
   longestSubArrayLessThanK,
+  maxContSubArrayWithEvenNums,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -511,4 +512,27 @@ test('function that finds the longest contigious subarray where the difference o
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('returns the maximum sum of a contiguous subarray of length k with only even numbers', () => {
+  // Arrange
+  const nums1 = [2, 4, 6, 1, 8, 10]
+  const nums2 = [1, 3, 5, 7]
+  const nums3 = [2, 2, 2, 2]
+
+  const k = 3
+
+  const expected1 = 12 // = 24
+  const expected2 = 0 // no valid even subarray
+  const expected3 = 6 // 2 + 2 + 2
+
+  // Act
+  const result1 = maxContSubArrayWithEvenNums(nums1, k)
+  const result2 = maxContSubArrayWithEvenNums(nums2, k)
+  const result3 = maxContSubArrayWithEvenNums(nums3, k)
+
+  // Assert
+  expect(result1).toEqual(expected1)
+  expect(result2).toEqual(expected2)
+  expect(result3).toEqual(expected3)
 })
