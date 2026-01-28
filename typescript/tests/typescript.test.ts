@@ -27,6 +27,7 @@ import {
   whatTheNonRepChar,
   longestSubArrayLessThanK,
   maxContSubArrayWithEvenNums,
+  alotOfOnes,
 } from '../typescript.js'
 // types imports for the arrangment data
 import type { Product, FilteredProduct } from '../typescript.js'
@@ -535,4 +536,17 @@ test('returns the maximum sum of a contiguous subarray of length k with only eve
   expect(result1).toEqual(expected1)
   expect(result2).toEqual(expected2)
   expect(result3).toEqual(expected3)
+})
+
+test('Function that tests counting max consec ones in an arr ', () => {
+  //Arrange
+  const numbers = [0, 0, 0, 1, 1, 2, 0, 0, 0, 0, 2, 0]
+
+  const expected = 2
+
+  //Act
+  const result = alotOfOnes(numbers)
+
+  //Assert
+  expect(result).toEqual(expected)
 })

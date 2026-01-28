@@ -766,3 +766,18 @@ export const maxContSubArrayWithEvenNums = (
 
   return max
 }
+
+export const alotOfOnes = (numbers: number[]): number => {
+  let ones = 0
+  let maxOnes = 0
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === 1) {
+      ones++
+    } else {
+      ones = 0
+    }
+    maxOnes = Math.max(maxOnes, ones)
+  }
+
+  return maxOnes
+}
