@@ -768,16 +768,53 @@ export const maxContSubArrayWithEvenNums = (
 }
 
 export const alotOfOnes = (numbers: number[]): number => {
-  let ones = 0
-  let maxOnes = 0
+  let ones = 0 // delaring empty variable for handling current one count in the loop
+  let maxOnes = 0 // variable for holding the highest one count so far in the loop
   for (let i = 0; i < numbers.length; i++) {
+    // looping over the array forwards
     if (numbers[i] === 1) {
-      ones++
+      // checking if the iteration is 1 and then adding one to the current one count
+      ones++ // increment the ones by one
     } else {
-      ones = 0
+      ones = 0 // when we hit one that isnt reset the counter
     }
-    maxOnes = Math.max(maxOnes, ones)
+    maxOnes = Math.max(maxOnes, ones) // reassigning max to the highest current every iteration
   }
 
-  return maxOnes
+  return maxOnes // returning the max
 }
+
+// finding the second highest number in an arrray
+
+export const nonceHighestNum = (numbers: number[]): number | null => {
+  if (numbers.length === 0) return null
+
+  let highestNum: number = numbers[0]!
+  for (let i = 0; i < numbers.length; i++) {
+    if ((numbers[i] as number) > highestNum) {
+      highestNum = numbers[i]!
+    }
+  }
+
+  let secondHighestNum: number = -Infinity
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (
+      (numbers[i] as number) < highestNum &&
+      (numbers[i] as number) > secondHighestNum
+    ) {
+      secondHighestNum = numbers[i]!
+    }
+  }
+
+  return secondHighestNum
+}
+
+// function that returns the maximum contiguous sub array of length k
+// export const okieDokieMaxCont = (
+//   numbers: number[],
+//   k: number
+// ): number | null => {
+
+// }
+//loop through numbers
