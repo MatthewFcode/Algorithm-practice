@@ -3,6 +3,7 @@ import {
   longestContUniqueSubString,
   longestIncreasingContNumSubArray,
   firstNonRepChar,
+  isAnagram,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -44,6 +45,27 @@ test('function that finds the index of the first non repeating character', () =>
   //Act
   const result = firstNonRepChar(string)
   const result2 = firstNonRepChar(string2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that tests whether two paramters are an anagram of eachother', () => {
+  //Arrange
+  const string1 = 'anagram'
+  const string2 = 'nagaram'
+
+  const expected = true
+
+  const something1 = 'rat'
+  const something2 = 'car'
+
+  const expected2 = false
+
+  //Act
+  const result = isAnagram(string1, string2)
+  const result2 = isAnagram(something1, something2)
 
   //Assert
   expect(result).toEqual(expected)

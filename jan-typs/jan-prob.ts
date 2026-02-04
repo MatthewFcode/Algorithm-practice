@@ -71,7 +71,7 @@ export const firstNonRepChar = (string: string): number | string | null => {
 
   for (let i = 0; i < str.length; i++) {
     if (freqMap[str[i] as string]) {
-      freqMap[str[i]] += 1
+      freqMap[str[i] as string]! += 1
     } else if (!freqMap[str[i] as string]) {
       freqMap[str[i] as string] = 1
     }
@@ -86,4 +86,33 @@ export const firstNonRepChar = (string: string): number | string | null => {
   }
 
   return 'somehow you managed to escape'
+}
+
+export const isAnagram = (string: string, string1: string): boolean | null => {
+  if (string.length === 0 || string1.length === 0) return null
+  if (string.length !== string1.length) return false
+
+  //freqMap the first array
+  let freqMap: Record<string, number> = {}
+
+  for (let i = 0; i < string.length; i++) {
+    const char: string = string[i]!
+    if (freqMap[char]) {
+      freqMap[char] += 1
+    } else if (!freqMap[char]) {
+      freqMap[char] = 1
+    }
+  }
+  // loop over the second string || check if the current iteration is in the freq map and if it isnt then return false || minus out of the freqMap
+
+  for (let i = 0; i < string1.length; i++) {
+    const char: string = string1[i]!
+    if (!freqMap[char]) {
+      return false
+    } else if (freqMap[char]) {
+      freqMap[char] - 1
+    }
+  }
+
+  return true
 }
