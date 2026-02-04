@@ -2,6 +2,7 @@ import { expect, test } from 'vitest'
 import {
   longestContUniqueSubString,
   longestIncreasingContNumSubArray,
+  firstNonRepChar,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -26,6 +27,23 @@ test('function that finds the longest increasing contigious subarray', () => {
   //Act
   const result = longestIncreasingContNumSubArray(numbers)
   const result2 = longestIncreasingContNumSubArray(numbers2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that finds the index of the first non repeating character', () => {
+  //Arrange
+  const string = 'LeetCode'
+  const string2 = 'Hannah'
+
+  const expected = 0
+  const expected2 = 'no non-repeating chars'
+
+  //Act
+  const result = firstNonRepChar(string)
+  const result2 = firstNonRepChar(string2)
 
   //Assert
   expect(result).toEqual(expected)

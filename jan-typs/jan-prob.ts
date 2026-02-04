@@ -52,3 +52,38 @@ export const longestIncreasingContNumSubArray = (
 
   return longest + 1
 }
+
+export const firstNonRepChar = (string: string): number | string | null => {
+  if (string.length === 0) return null
+
+  const str: string = string.toLowerCase()
+  // plaindrome check || loop through the string backwards | push to arr join array and compare tp string
+  let palindromeCheck: string[] = []
+  for (let i = str.length - 1; i >= 0; i--) {
+    palindromeCheck.push(str[i] as string)
+  }
+
+  const str2 = palindromeCheck.join('')
+  if (str2 === str) return 'no non-repeating chars'
+
+  //freqMap through str
+  let freqMap: Record<string, number> = {}
+
+  for (let i = 0; i < str.length; i++) {
+    if (freqMap[str[i] as string]) {
+      freqMap[str[i]] += 1
+    } else if (!freqMap[str[i] as string]) {
+      freqMap[str[i] as string] = 1
+    }
+  }
+
+  let char: string = ''
+
+  for (let i = 0; i < str.length; i++) {
+    if (freqMap[str[i] as string] === 1) {
+      return i
+    }
+  }
+
+  return 'somehow you managed to escape'
+}
