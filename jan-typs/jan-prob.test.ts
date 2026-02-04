@@ -4,6 +4,7 @@ import {
   longestIncreasingContNumSubArray,
   firstNonRepChar,
   isAnagram,
+  twentyChar,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -66,6 +67,23 @@ test('function that tests whether two paramters are an anagram of eachother', ()
   //Act
   const result = isAnagram(string1, string2)
   const result2 = isAnagram(something1, something2)
+
+  //Assert
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
+})
+
+test('function that returns string 20 chars or shorter - if it is longer trucate it to 17 chars and add 3 dots', () => {
+  //Arrange
+  const string = 'Hello World!'
+  const string2 = 'This string should get truncated.'
+
+  const expected = 'Hello World!'
+  const expected2 = 'This string shoul...'
+
+  //Act
+  const result = twentyChar(string)
+  const result2 = twentyChar(string2)
 
   //Assert
   expect(result).toEqual(expected)
