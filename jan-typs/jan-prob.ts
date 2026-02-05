@@ -117,4 +117,16 @@ export const isAnagram = (string: string, string1: string): boolean | null => {
   return true
 }
 
-export const
+export const twentyChar = (string: string): string | null => {
+  if (string.length === 0) return null
+  if (string.length <= 20) return string
+
+  // loop over till the index is 18 and add that to an array
+  let stringArr: string[] = []
+  for (let i = 0; i <= 16; i++) {
+    stringArr.push(string[i]!)
+  }
+
+  let str: string = stringArr.join('') + '...'
+  return str
+}
