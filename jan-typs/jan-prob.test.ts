@@ -5,6 +5,7 @@ import {
   firstNonRepChar,
   isAnagram,
   twentyChar,
+  zodiacFinder,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -88,4 +89,17 @@ test('function that returns string 20 chars or shorter - if it is longer trucate
   //Assert
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
+})
+
+test('function that returns the correct zodiac sign based on the string date', () => {
+  //Arrange
+  const date = '2005-05-26'
+
+  const expected = 'Gemini'
+
+  //Act
+  const result = zodiacFinder(date)
+
+  //Assert
+  expect(result).toEqual(expected)
 })
