@@ -10,6 +10,7 @@ import {
   anagramCheck,
   removeDuplicates,
   manualStrReversal,
+  kadaneAlg,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -171,4 +172,21 @@ test('manualStrReversal function reverses a string correctly', () => {
 
   // Assert
   expect(result).toBe(expected)
+})
+
+test('kadaneBruteForce finds the maximum contiguous subarray sum', () => {
+  // Arrange: multiple test cases
+  const cases = [
+    { input: [1, -2, 3, 4], expected: 7 }, // normal case, max subarray [3,4]
+    { input: [-3, -1, -7], expected: -1 }, // all negative numbers, max single element
+    { input: [5, 4, -1, 7, 8], expected: 23 }, // classic example, sum of whole array except first -1
+    { input: [], expected: null }, // empty array
+    { input: [0, -2, 3, -1, 2], expected: 4 }, // mix of positive/negative numbers
+  ]
+
+  // Act & Assert: loop through all cases
+  cases.forEach(({ input, expected }) => {
+    const result = kadaneAlg(input)
+    expect(result).toBe(expected)
+  })
 })

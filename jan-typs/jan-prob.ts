@@ -243,3 +243,24 @@ export const manualStrReversal = (string: string): string | null => {
   const revStr: string = revStrArr.join('')
   return revStr
 }
+
+export const kadaneAlg = (numbers: number[]): number | null => {
+  if (numbers.length === 0) return null
+
+  let max: number = numbers[0]!
+
+  // contigous = largest sum of numbers next to each other
+  for (let i = 0; i < numbers.length; i++) {
+    let current: number = 0
+    for (let j = i; j < numbers.length; j++) {
+      // we are just looping through to the nd
+      const ch: number = numbers[j]!
+      current += ch
+      if (current > max) {
+        max = current
+      }
+    }
+  }
+
+  return max
+}
