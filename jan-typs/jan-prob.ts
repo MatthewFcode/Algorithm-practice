@@ -158,3 +158,20 @@ export const zodiacFinder = (date: string): string | null => {
 
   return 'Thats no a valid birthday formay it needs to be YYYY/MM/DD'
 }
+
+export const twoSum = (numbers: number[], k: number): number[] | null => {
+  //quick sanity check
+  if (numbers.length === 0 || typeof k !== 'number') return null
+
+  // we are init a clean arr || nested loop over the nums and check if it hits the target
+  let ints: number[] = []
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if ((numbers[i] as number) + numbers[j]! === k) {
+        ints.push(i, j)
+      }
+    }
+  }
+
+  return ints
+}
