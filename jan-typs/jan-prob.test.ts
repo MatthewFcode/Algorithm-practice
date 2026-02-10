@@ -7,6 +7,7 @@ import {
   twentyChar,
   zodiacFinder,
   twoSum,
+  anagramCheck,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -118,4 +119,18 @@ test('TwoSum function that finds the indicies of the two numbers that add up to 
 
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('anagramCheck function that checks whether two strings are anagrams (case-insensitive)', () => {
+  // Arrange
+  const str1 = 'Listen'
+  const str2 = 'Silent'
+
+  const expected = true
+
+  // Act
+  const result = anagramCheck(str1, str2)
+
+  // Assert
+  expect(result).toBe(expected)
 })

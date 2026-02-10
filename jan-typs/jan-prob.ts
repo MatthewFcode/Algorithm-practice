@@ -175,3 +175,34 @@ export const twoSum = (numbers: number[], k: number): number[] | null => {
 
   return ints
 }
+
+export const anagramCheck = (str1: string, str2: string): boolean | null => {
+  //quick snaity check
+  if (str1.length === 0 || str2.length === 0) return null
+
+  // change strs to lowCase || freqMap over the first string
+  const lowStr1: string = str1.toLowerCase()
+  const lowStr2: string = str2.toLowerCase()
+
+  let freqMap: Record<string, number> = {}
+
+  for (let i = 0; i < lowStr1.length; i++) {
+    const ch: string = lowStr1[i]!
+    if (freqMap[ch]) {
+      freqMap[ch] += 1
+    } else if (!freqMap[ch]) {
+      freqMap[ch] = 1
+    }
+  }
+  // loop over the second string check if the freqMap has the current char other wise minus 1 of the freqMap and all should be 0
+  for (let i = 0; i < lowStr2.length; i++) {
+    const ch: string = lowStr2[i]!
+    if (!freqMap[ch]) {
+      return false
+    } else if (freqMap[ch]) {
+      freqMap[ch] - 1
+    }
+  }
+
+  return true
+}
