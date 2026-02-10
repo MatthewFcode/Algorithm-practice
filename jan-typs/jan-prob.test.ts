@@ -9,6 +9,7 @@ import {
   twoSum,
   anagramCheck,
   removeDuplicates,
+  manualStrReversal,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -158,4 +159,16 @@ test('removeDuplicates returns correct length for a string array', () => {
 
   // Assert
   expect(result2).toBe(expected2)
+})
+
+test('manualStrReversal function reverses a string correctly', () => {
+  // Arrange
+  const input = 'hello'
+  const expected = 'olleh'
+
+  // Act
+  const result = manualStrReversal(input)
+
+  // Assert
+  expect(result).toBe(expected)
 })

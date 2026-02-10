@@ -227,3 +227,19 @@ export const removeDuplicates = <T extends string | number>(
 
   return clean.length
 }
+
+export const manualStrReversal = (string: string): string | null => {
+  // sanity check
+  if (string.length === 0) return null
+
+  const strArr: string[] = string.split('')
+  let revStrArr: string[] = []
+
+  for (let i = strArr.length; i >= 0; i--) {
+    const ch: string = strArr[i]!
+    revStrArr.push(ch)
+  }
+
+  const revStr: string = revStrArr.join('')
+  return revStr
+}
