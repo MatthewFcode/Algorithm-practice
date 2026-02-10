@@ -206,3 +206,24 @@ export const anagramCheck = (str1: string, str2: string): boolean | null => {
 
   return true
 }
+
+export const removeDuplicates = <T extends string | number>(
+  arr: T[] // the T is just delaring a type before the parameteres for specific TypeScript functions
+): number | null => {
+  //sanity check
+  if (arr.length === 0) return null
+
+  // declare an empty array || loop \\ .includes and then push and them a return
+  let clean: T[] = []
+
+  for (let i = 0; i < arr.length; i++) {
+    const ch = arr[i]!
+    if (clean.includes(ch)) {
+      continue
+    } else if (!clean.includes(ch)) {
+      clean.push(ch)
+    }
+  }
+
+  return clean.length
+}
