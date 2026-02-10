@@ -8,6 +8,7 @@ import {
   zodiacFinder,
   twoSum,
   anagramCheck,
+  removeDuplicates,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -133,4 +134,28 @@ test('anagramCheck function that checks whether two strings are anagrams (case-i
 
   // Assert
   expect(result).toBe(expected)
+})
+
+test('removeDuplicates returns correct length for a string array', () => {
+  // strings
+  // Arrange
+  const arr = ['a', 'b', 'a', 'c', 'b']
+  const expected = 3
+
+  // Act
+  const result = removeDuplicates(arr)
+
+  // Assert
+  expect(result).toBe(expected)
+
+  // numbers
+  // Arrange
+  const arr2 = [1, 2, 2, 3, 4, 4, 4]
+  const expected2 = 4
+
+  // Act
+  const result2 = removeDuplicates(arr2)
+
+  // Assert
+  expect(result2).toBe(expected2)
 })
