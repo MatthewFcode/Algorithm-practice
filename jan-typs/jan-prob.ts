@@ -264,3 +264,27 @@ export const kadaneAlg = (numbers: number[]): number | null => {
 
   return max
 }
+
+// returning the longest sub string without repeating characters
+export const subStringWithoutRepeatingCharacters = (
+  string: string
+): number | null => {
+  // sanity check
+  if (string.length === 0) return null
+  // declare max length var
+  let maxLength: number = 0
+  // nested loop over the string | start seen obj at i and check of every iteration of j is in the seen object (if it is then break the loop obj resets) |
+  for (let i = 0; i < string.length; i++) {
+    let seen: Record<string, number> = {}
+    for (let j = i; j < string.length; j++) {
+      const ch: string = string[j]!
+      if (seen[ch]) {
+        break
+      } else {
+        maxLength = Math.max(maxLength, j - i + 1)
+      }
+    }
+  }
+
+  return maxLength
+}
