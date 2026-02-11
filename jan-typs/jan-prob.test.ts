@@ -211,3 +211,29 @@ test('subStringWithoutRepeatingCharacters returns the length of the longest subs
     expect(result).toBe(expected)
   })
 })
+
+describe('quickTwoSum', () => {
+  it('returns null for empty array', () => {
+    expect(quickTwoSum([], 10)).toBeNull()
+  })
+
+  it('returns null if target is not a number', () => {
+    // @ts-expect-error intentional wrong type
+    expect(quickTwoSum([1, 2, 3], '5')).toBeNull()
+  })
+
+  it('returns correct indices when two numbers add to target', () => {
+    const result = quickTwoSum([2, 7, 11, 15], 9)
+    expect(result).toEqual([0, 1])
+  })
+
+  it('returns multiple index pairs if multiple matches exist', () => {
+    const result = quickTwoSum([1, 2, 3, 4], 5)
+    expect(result).toEqual([0, 3, 1, 2])
+  })
+
+  it('returns empty array if no matches are found', () => {
+    const result = quickTwoSum([1, 2, 3], 100)
+    expect(result).toEqual([])
+  })
+})
