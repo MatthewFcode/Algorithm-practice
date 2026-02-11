@@ -11,6 +11,7 @@ import {
   removeDuplicates,
   manualStrReversal,
   kadaneAlg,
+  subStringWithoutRepeatingCharacters,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -187,6 +188,25 @@ test('kadaneBruteForce finds the maximum contiguous subarray sum', () => {
   // Act & Assert: loop through all cases
   cases.forEach(({ input, expected }) => {
     const result = kadaneAlg(input)
+    expect(result).toBe(expected)
+  })
+})
+
+test('subStringWithoutRepeatingCharacters returns the length of the longest substring without repeating characters', () => {
+  // Arrange
+  const cases = [
+    { input: 'abcabcbb', expected: 3 }, // "abc"
+    { input: 'bbbbb', expected: 1 }, // "b"
+    { input: 'pwwkew', expected: 3 }, // "wke"
+    { input: 'abcdef', expected: 6 }, // whole string
+    { input: 'a', expected: 1 }, // single character
+    { input: '', expected: null }, // empty string
+    { input: 'dvdf', expected: 3 }, // "vdf"
+  ]
+
+  // Act & Assert
+  cases.forEach(({ input, expected }) => {
+    const result = subStringWithoutRepeatingCharacters(input)
     expect(result).toBe(expected)
   })
 })
