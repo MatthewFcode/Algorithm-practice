@@ -289,3 +289,30 @@ export const subStringWithoutRepeatingCharacters = (
 
   return maxLength
 }
+
+// quick two sum
+
+export const quickTwoSum = (
+  numbers: number[],
+  target: number
+): number[] | null => {
+  // sanity check
+  if (numbers.length === 0 || typeof target !== 'number') return null
+
+  // clean array to push indexes to
+  let indicies: number[] = []
+  //nested loop
+  for (let i = 0; i < numbers.length; i++) {
+    // we compare i with every number in the rest of the array and if nothing matches we move i forward by 1
+    for (let j = i + 1; j < numbers.length; j++) {
+      const chi: number = numbers[i]!
+      const chj: number = numbers[j]!
+
+      if (chi + chj === target) {
+        indicies.push(i, j)
+      }
+    }
+  }
+
+  return indicies
+}
