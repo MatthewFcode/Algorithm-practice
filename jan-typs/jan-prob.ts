@@ -347,6 +347,5 @@ export const quickValidAnagram = (
       freqMap[ch] -= 1
     }
   }
-
   return true
 }
