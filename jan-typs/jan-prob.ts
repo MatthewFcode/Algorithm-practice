@@ -344,7 +344,7 @@ export const quickValidAnagram = (
     if (!freqMap[ch]) {
       return false
     } else if (freqMap[ch]) {
-      freqMap[ch] - 1
+      freqMap[ch] -= 1
     }
   }
 

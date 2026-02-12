@@ -13,6 +13,7 @@ import {
   kadaneAlg,
   subStringWithoutRepeatingCharacters,
   quickTwoSum,
+  quickValidAnagram,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -235,5 +236,20 @@ describe('quickTwoSum', () => {
   it('returns empty array if no matches are found', () => {
     const result = quickTwoSum([1, 2, 3], 100)
     expect(result).toEqual([])
+  })
+})
+
+describe('quickValidAnagram function', () => {
+  it('returns true for valid anagrams', () => {
+    // Arrange
+    const input1 = 'listen'
+    const input2 = 'silent'
+    const expected = true
+
+    // Act
+    const result = quickValidAnagram(input1, input2)
+
+    // Assert
+    expect(result).toBe(expected)
   })
 })
