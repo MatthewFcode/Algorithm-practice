@@ -253,7 +253,7 @@ export const kadaneAlg = (numbers: number[]): number | null => {
   for (let i = 0; i < numbers.length; i++) {
     let current: number = 0
     for (let j = i; j < numbers.length; j++) {
-      // we are just looping through to the nd
+      // we are just looping through to the end
       const ch: number = numbers[j]!
       current += ch
       if (current > max) {
@@ -315,4 +315,38 @@ export const quickTwoSum = (
   }
 
   return indicies
+}
+
+export const quickValidAnagram = (
+  string1: string,
+  string2: string
+): boolean | null => {
+  // quick sanity check
+  if (string1.length === 0 || string2.length === 0) return null
+
+  // we are going to turn both strings to lower case
+  const str1: string = string1.toLowerCase()
+  const str2: string = string2.toLowerCase()
+
+  // we are going to frequency map the first array
+  let freqMap: Record<string, number> = {}
+  for (let i = 0; i < str1.length; i++) {
+    const ch: string = str1[i]!
+    if (freqMap[ch]) {
+      freqMap[ch] += 1
+    } else if (!freqMap[ch]) {
+      freqMap[ch] = 1
+    }
+  }
+
+  for (let i = 0; i < str2.length; i++) {
+    const ch: string = str2[i]!
+    if (!freqMap[ch]) {
+      return false
+    } else if (freqMap[ch]) {
+      freqMap[ch] - 1
+    }
+  }
+
+  return true
 }
