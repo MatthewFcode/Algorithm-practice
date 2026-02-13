@@ -14,6 +14,7 @@ import {
   subStringWithoutRepeatingCharacters,
   quickTwoSum,
   quickValidAnagram,
+  contractorTakeHomePay,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -252,4 +253,19 @@ describe('quickValidAnagram function', () => {
     // Assert
     expect(result).toBe(expected)
   })
+})
+
+test('function that calculates take home pay for contractors', () => {
+  // Arrange
+  const income = 5000
+  const expenses = 1000
+  const taxRate = 0.28
+  const accLevyRate = 0.014
+  const expected = 3824
+
+  // Act
+  const result = contractorTakeHomePay(income, expenses, taxRate, accLevyRate)
+
+  // Assert
+  expect(result).toBe(expected)
 })

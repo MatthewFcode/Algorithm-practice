@@ -349,3 +349,22 @@ export const quickValidAnagram = (
   }
   return true
 }
+
+export const contractorTakeHomePay = (
+  income: number,
+  expenses: number,
+  taxRate: number,
+  accLevyRate: number
+): number | null => {
+  let taxableIncome: number = income - expenses
+
+  if (taxableIncome < 0) {
+    taxableIncome = 0
+  }
+
+  let tax: number = taxableIncome * taxRate
+
+  let accLevy: number = taxableIncome * accLevyRate
+
+  return income - tax - accLevy
+}
