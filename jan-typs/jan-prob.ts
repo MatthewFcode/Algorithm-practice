@@ -368,3 +368,33 @@ export const contractorTakeHomePay = (
 
   return income - tax - accLevy
 }
+
+// real answer init okiedokie
+export const productOfArrayExceptSelf = (
+  numbers: number[]
+): number[] | null => {
+  //sanity check
+  if (numbers.length === 0) return null
+
+  // clean array to push the value
+  let numArr: number[] = []
+
+  // outer loop
+  for (let i = 0; i < numbers.length; i++) {
+    let currentNum: number = numbers[i]! // current iteration of the arr
+    // inner loop that start at 0 to catch the numbers before i when i moves forward from 0
+    for (let j = 0; j < numbers.length; j++) {
+      // on loop per i
+      const jNum: number = numbers[j]!
+      if (j !== i) {
+        // check if the j isnt the i we are on and then times the i by everything but itself
+        currentNum *= jNum
+      }
+    }
+
+    // push the current state of the currentNum times
+    numArr.push(currentNum)
+  }
+
+  return numArr
+}
