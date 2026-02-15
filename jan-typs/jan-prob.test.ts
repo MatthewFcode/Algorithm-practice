@@ -15,6 +15,7 @@ import {
   quickTwoSum,
   quickValidAnagram,
   contractorTakeHomePay,
+  productOfArrayExceptSelf,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -268,4 +269,17 @@ test('function that calculates take home pay for contractors', () => {
 
   // Assert
   expect(result).toBe(expected)
+})
+
+test('function that times the iteration of num arr by everything except and pushes it to new Arr in place of that the current i', () => {
+  //Arrange
+  const nums: number[] = [2, 5, 6, 1, 4]
+
+  const expected: number[] = [120, 48, 40, 240, 60]
+
+  //Act
+  const result: number[] | null = productOfArrayExceptSelf(nums)
+
+  //Assert
+  expect(result).toEqual(expected)
 })

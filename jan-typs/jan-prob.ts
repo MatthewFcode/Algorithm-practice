@@ -381,14 +381,14 @@ export const productOfArrayExceptSelf = (
 
   // outer loop
   for (let i = 0; i < numbers.length; i++) {
-    let currentNum: number = numbers[i]! // current iteration of the arr
+    let currentNum: number = 1 // current iteration of the arr
     // inner loop that start at 0 to catch the numbers before i when i moves forward from 0
     for (let j = 0; j < numbers.length; j++) {
       // on loop per i
       const jNum: number = numbers[j]!
       if (j !== i) {
         // check if the j isnt the i we are on and then times the i by everything but itself
-        currentNum *= jNum
+        currentNum *= jNum // we are starting current number at it self but we wanna do
       }
     }
 
