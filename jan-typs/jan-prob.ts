@@ -398,3 +398,26 @@ export const productOfArrayExceptSelf = (
 
   return numArr
 }
+
+// kadanes algorithm || finding the maxium subarray in an array
+
+export const quickKadaneAlg = (numbers: number[]): number | null => {
+  //sanity check
+  if (numbers.length === 0) return null
+
+  // var for max sum
+  let maxSum: number = -Infinity
+  // loop over
+  for (let i = 0; i < numbers.length; i++) {
+    let currentSum: number = 0
+    for (let j = i; j < numbers.length; j++) {
+      const jh: number = numbers[j]!
+      currentSum += jh
+      if (currentSum > maxSum) {
+        maxSum = currentSum
+      }
+    }
+  }
+
+  return maxSum
+}
