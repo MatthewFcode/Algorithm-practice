@@ -406,18 +406,20 @@ export const quickKadaneAlg = (numbers: number[]): number | null => {
   if (numbers.length === 0) return null
 
   // var for max sum
-  let maxSum: number = -Infinity
+  let maxSum: number = -Infinity // init to inf negative
   // loop over
   for (let i = 0; i < numbers.length; i++) {
-    let currentSum: number = 0
+    let currentSum: number = 0 // init to 0 after checking everything from i
     for (let j = i; j < numbers.length; j++) {
+      // loop to the end from i
       const jh: number = numbers[j]!
-      currentSum += jh
+      currentSum += jh // checking the sum of adding everything together in the sub array
       if (currentSum > maxSum) {
+        // if something goes above the currentHighest val then reassign
         maxSum = currentSum
       }
     }
   }
 
-  return maxSum
+  return maxSum // return the sum of the highest cont numbers
 }

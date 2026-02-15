@@ -16,6 +16,7 @@ import {
   quickValidAnagram,
   contractorTakeHomePay,
   productOfArrayExceptSelf,
+  quickKadaneAlg,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -279,6 +280,19 @@ test('function that times the iteration of num arr by everything except and push
 
   //Act
   const result: number[] | null = productOfArrayExceptSelf(nums)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that tests the Kadanes algorithm (greatest sub array in an array)', () => {
+  //Arrange
+  const numbers: number[] = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+  const expected: number = 6
+
+  //Act
+  const result = quickKadaneAlg(numbers)
 
   //Assert
   expect(result).toEqual(expected)
