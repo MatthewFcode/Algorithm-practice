@@ -448,3 +448,30 @@ export const practiceProductOfArrayExceptSelf = (
 
   return cleanArr
 }
+
+export const practiceLongSubStrWoRepChars = (string: string): number | null => {
+  // sanity check
+  if (string.length === 0) return null
+
+  // declare var for max length
+  let maxLength: number = 0
+
+  // loop over every char || sliding window -- if char is seen break sliding window resets || if not calculate lenth at that time but Math.max it to keep highest in that variable
+  // return the highest easy peasy
+
+  for (let i = 0; i < string.length; i++) {
+    let seen: Record<string, boolean> = {}
+    const chi: string = string[i]!
+    for (let j = i; j < string.length; j++) {
+      const chj: string = string[j]!
+      if (seen[chj]) {
+        break
+      } else {
+        maxLength = Math.max(maxLength, j - i + 1)
+        seen[chj] = true
+      }
+    }
+  }
+
+  return maxLength
+}

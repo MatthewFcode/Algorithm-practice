@@ -18,6 +18,7 @@ import {
   productOfArrayExceptSelf,
   quickKadaneAlg,
   practiceProductOfArrayExceptSelf,
+  practiceLongSubStrWoRepChars,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -307,6 +308,19 @@ test('practicing product except self which is a function that times the iteratio
 
   //Act
   const result: number[] | null = practiceProductOfArrayExceptSelf(nums)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('practice function the finds the longest substring without repeating characters', () => {
+  //Arrange
+  const string: string = 'jjllnnknknllkmok'
+
+  const expected: number = 4
+
+  //Act
+  const result: number | null = practiceLongSubStrWoRepChars(string)
 
   //Assert
   expect(result).toEqual(expected)
