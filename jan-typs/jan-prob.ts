@@ -423,3 +423,28 @@ export const quickKadaneAlg = (numbers: number[]): number | null => {
 
   return maxSum // return the sum of the highest cont numbers
 }
+
+export const practiceProductOfArrayExceptSelf = (
+  numbers: number[]
+): number[] | null => {
+  if (numbers.length === 0) return null
+
+  //init clean array
+  let cleanArr: number[] = []
+
+  // outer loop over nums || inner loop over nums starting at 0
+  for (let i = 0; i < numbers.length; i++) {
+    // declare product to times numbers by
+    let product: number = 1
+    for (let j = 0; j < numbers.length; j++) {
+      const num: number = numbers[j]!
+      // times first object by one (same num and add to product) then times all other numbers by that where the iteration doesnt match
+      if (j !== i) {
+        product *= num
+      }
+    }
+    cleanArr.push(product)
+  }
+
+  return cleanArr
+}
