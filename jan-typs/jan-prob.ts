@@ -476,44 +476,45 @@ export const practiceLongSubStrWoRepChars = (string: string): number | null => {
   return maxLength
 }
 
-export const kFreqElements = (
-  numbers: number[],
-  k: number
-): number[] | null => {
-  // sanity check
-  if (numbers.length === 0 || typeof k !== 'number') return null
+// export const kFreqElements = (
+//   numbers: number[],
+//   k: number
+// ): number[] | null => {
+//   // sanity check
+//   if (numbers.length === 0 || typeof k !== 'number') return null
 
-  // we are going to freqMap the numbers
-  let freqMap: Record<number, number> = {}
+//   // we are going to freqMap the numbers
+//   let freqMap: Record<number, number> = {}
 
-  for (let i = 0; i < numbers.length; i++) {
-    const num: number = numbers[i]!
-    if (freqMap[num]) {
-      freqMap[num] += 1
-    } else if (!freqMap[num]) {
-      freqMap[num] = 1
-    }
-  }
-  //clean arr to push to
-  let cleanArr: number[] = []
+//   for (let i = 0; i < numbers.length; i++) {
+//     const num: number = numbers[i]!
+//     if (freqMap[num]) {
+//       freqMap[num] += 1
+//     } else if (!freqMap[num]) {
+//       freqMap[num] = 1
+//     }
+//   }
+//   //clean arr to push to
+//   let cleanArr: number[] = []
 
-  for (let i = 0; i < k; i++) {
-    // runs this loop k times
-    let maxFreq: number = -Infinity // max frequencey to track most appearing num
-    let maxKey: number = 0 // the key with the current most
-    for (const keyStr in freqMap) {
-      // loops through the object
-      const key: number = Number(keyStr) // this is the key turned to a number
-      if (freqMap[key]! > maxFreq) {
-        // of the frequency of the current val > than negative infinity
-        maxKey = key // reassigning the max key
-        maxFreq = freqMap[key]! // reassigning the current max frequency if > -Infinity
-      }
-    }
+//   for (let i = 0; i < k; i++) {
+//     // runs this loop k times
+//     let maxFreq: number = -Infinity // max frequencey to track most appearing num
+//     let maxKey: number = 0 // the key with the current most
+//     for (const keyStr in freqMap) {
+//       // loops through the object
+//       const key: number = Number(keyStr) // this is the key turned to a number
+//       if (freqMap[key]! > maxFreq) {
+//         // freqMap[key] acesses the value associated with the current key
+//         // of the frequency of the current val > than negative infinity
+//         maxKey = key // reassigning the max key
+//         maxFreq = freqMap[key]! // reassigning the current max frequency if > -Infinity
+//       }
+//     }
 
-    cleanArr.push(maxKey) // we have the key with the higest frequency in the arr now
-    delete freqMap[maxKey] // delete the key and its value for the next loop so it isn't found again
-  }
+//     cleanArr.push(maxKey) // we have the key with the higest frequency in the arr now
+//     delete freqMap[maxKey] // delete the key and its value for the next loop so it isn't found again
+//   }
 
-  return cleanArr
-}
+//   return cleanArr
+// }
