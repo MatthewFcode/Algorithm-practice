@@ -560,3 +560,29 @@ export const kFreqElements = (
 
   return cleanArr
 }
+
+export const anotherQuickProductExceptSelf = (
+  numbers: number[]
+): number[] | null => {
+  //qucik sanity check
+  if (numbers.length === 0) return null
+
+  // declare clean arr
+  let cleanArr: number[] = []
+
+  // loop over all numbers and decalre product to multiply first number that isnt that same iteration by
+  for (let i = 0; i < numbers.length; i++) {
+    let product: number = 1
+    //started nested loop at 0 for every i
+    for (let j = 0; j < numbers.length; j++) {
+      const num: number = numbers[j]! // current iteration/ number of the inner loop
+      if (j !== i) {
+        product *= num
+      }
+    }
+
+    cleanArr.push(product)
+  }
+
+  return cleanArr
+}
