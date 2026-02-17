@@ -20,6 +20,7 @@ import {
   practiceProductOfArrayExceptSelf,
   practiceLongSubStrWoRepChars,
   kFreqElements,
+  anotherQuickProductExceptSelf,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -336,6 +337,18 @@ test('function that tests the k most freq elements in an array of numbers', () =
 
   //Act
   const result = kFreqElements(nums, k)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that returns an array where every i is the product of everything else in the arr except for itself', () => {
+  //Arrange
+  const numbers: number[] = [1, 2, 3, 4]
+  const expected: number[] = [24, 12, 8, 6]
+
+  //Act
+  const result = anotherQuickProductExceptSelf(numbers)
 
   //Assert
   expect(result).toEqual(expected)
