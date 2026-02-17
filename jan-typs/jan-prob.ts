@@ -518,3 +518,45 @@ export const practiceLongSubStrWoRepChars = (string: string): number | null => {
 
 //   return cleanArr
 // }
+
+export const kFreqElements = (
+  numbers: number[],
+  k: number
+): number[] | null => {
+  //sanity check
+  if (numbers.length === 0 || typeof k !== 'number') return null
+
+  // freqMap the numbers
+  let freqMap: Record<number, number> = {}
+
+  for (let i = 0; i < numbers.length; i++) {
+    const num: number = numbers[i]!
+    if (freqMap[num]) {
+      freqMap[num] += 1
+    } else if (!freqMap[num]) {
+      freqMap[num] = 1
+    }
+  }
+
+  //clean arr || start a loop that runs k times
+  let cleanArr: number[] = []
+
+  for (let i = 0; i < k; i++) {
+    //declare vars for the current highest freq, and the value that has that
+    let highestFreq: number = -Infinity
+    let highestFreqKey: number = 0
+    for (const keyStr in freqMap) {
+      // loop through the keys of the object
+      const key: number = Number(keyStr)
+      if (freqMap[key]! > highestFreq) {
+        highestFreqKey = key
+        highestFreq = freqMap[key]!
+      }
+    }
+
+    cleanArr.push(highestFreqKey)
+    delete freqMap[highestFreqKey]
+  }
+
+  return cleanArr
+}
