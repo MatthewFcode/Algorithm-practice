@@ -19,6 +19,7 @@ import {
   quickKadaneAlg,
   practiceProductOfArrayExceptSelf,
   practiceLongSubStrWoRepChars,
+  kFreqElements,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -321,6 +322,20 @@ test('practice function the finds the longest substring without repeating charac
 
   //Act
   const result: number | null = practiceLongSubStrWoRepChars(string)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that tests the k most freq elements in an array of numbers', () => {
+  //Arrange
+  const nums: number[] = [22, 4, 5, 5, 2, 1, 1]
+  const k: number = 2
+
+  const expected: number[] = [1, 5]
+
+  //Act
+  const result = kFreqElements(nums, k)
 
   //Assert
   expect(result).toEqual(expected)
