@@ -586,3 +586,48 @@ export const anotherQuickProductExceptSelf = (
 
   return cleanArr
 }
+
+export const quickKMostFreqElements = (
+  numbers: number[],
+  k: number
+): number[] | null => {
+  // sanity check
+  if (numbers.length === 0 || typeof k !== 'number') return null
+
+  //freqMap over the initial array
+  let freqMap: Record<number, number> = {}
+
+  for (let i = 0; i < numbers.length; i++) {
+    const num: number = numbers[i]!
+    if (freqMap[num]) {
+      freqMap[num] += 1
+    } else if (!freqMap[num]) {
+      freqMap[num] = 1
+    }
+  }
+  //declare the clean arr
+  let cleanArr: number[] = []
+
+  // set the mutable variables for maxFreq and maxFreqNum
+  // loop over the object keys
+  // check for the highest value
+  // push those values to a clean array
+  // return that clean array
+
+  // loop over the array again < k times
+  for (let i = 0; i < k; i++) {
+    let maxFreq: number = -Infinity
+    let maxFreqId: number = 0
+    for (const keyStr in freqMap) {
+      const key: number = Number(keyStr)
+      if (freqMap[key]! > maxFreq) {
+        maxFreq = freqMap[key]!
+        maxFreqId = key
+      }
+    }
+    cleanArr.push(maxFreqId)
+    delete freqMap[maxFreqId]
+  }
+
+  return cleanArr
+}
