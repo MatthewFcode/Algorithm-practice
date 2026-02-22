@@ -368,3 +368,17 @@ test('quick kMostFreq function that returns k most frequent elements', () => {
   //Assert
   expect(result).toEqual(expected)
 })
+
+test('Another k most freq elements practice', () => {
+  //Arrange
+  const nums: number[] = [22, 4, 5, 5, 2, 1, 1]
+  const k: number = 2
+
+  const expected: number[] = [1, 5]
+
+  //Act
+  const result = quickKMostFreqElements(nums, k)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
