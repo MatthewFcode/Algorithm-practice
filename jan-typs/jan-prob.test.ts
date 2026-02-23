@@ -22,6 +22,7 @@ import {
   kFreqElements,
   anotherQuickProductExceptSelf,
   quickKMostFreqElements,
+  anotherPracLongestSubStrWoRepChars,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -369,15 +370,28 @@ test('quick kMostFreq function that returns k most frequent elements', () => {
   expect(result).toEqual(expected)
 })
 
-test('Another k most freq elements practice', () => {
-  //Arrange
-  const nums: number[] = [22, 4, 5, 5, 2, 1, 1]
-  const k: number = 2
+// test('Another k most freq elements practice', () => {
+//   //Arrange
+//   const nums: number[] = [22, 4, 5, 5, 2, 1, 1]
+//   const k: number = 2
 
-  const expected: number[] = [1, 5]
+//   const expected: number[] = [1, 5]
+
+//   //Act
+//   const result = anotherQuickKMostFreqElements(nums, k)
+
+//   //Assert
+//   expect(result).toEqual(expected)
+// })
+
+test('Function that returns the longest substring without repeating characters', () => {
+  //Arrange
+  const string: string = 'abcabcbb'
+
+  const expected: number = 3
 
   //Act
-  const result = quickKMostFreqElements(nums, k)
+  const result: number = anotherPracLongestSubStrWoRepChars(string)
 
   //Assert
   expect(result).toEqual(expected)

@@ -632,10 +632,10 @@ export const quickKMostFreqElements = (
   return cleanArr
 }
 
-export const anotherQuickKMostFreqElements = (
-  numbers: number[],
-  k: number
-): number[] | null => {
-  //sanity check
-  if (numbers.length === 0 || typeof k === 'number') return null
-}
+// export const anotherQuickKMostFreqElements = (
+//   numbers: number[],
+//   k: number
+// ): number[] | null => {
+//   //sanity check
+//   if (numbers.length === 0 || typeof k === 'number') return null
+// }
