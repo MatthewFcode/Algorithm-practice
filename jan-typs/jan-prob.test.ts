@@ -391,7 +391,7 @@ test('Function that returns the longest substring without repeating characters',
   const expected: number = 3
 
   //Act
-  const result: number = anotherPracLongestSubStrWoRepChars(string)
+  const result: number | null = anotherPracLongestSubStrWoRepChars(string)
 
   //Assert
   expect(result).toEqual(expected)

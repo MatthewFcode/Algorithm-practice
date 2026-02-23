@@ -639,3 +639,33 @@ export const quickKMostFreqElements = (
 //   //sanity check
 //   if (numbers.length === 0 || typeof k === 'number') return null
 // }
+export const anotherPracLongestSubStrWoRepChars = (
+  string: string
+): number | null => {
+  //sanity check
+  if (string.length === 0) return null
+
+  //declare mutable var for longest length
+
+  let maxLength: number = 0
+
+  // loop once over the array || at the start of every i empty seen map
+  // begin nested loop | if the j isnt seen then declare it seen and Math.max the current length on the variable
+  // if it is seen then break the looop
+  let str: string = string.toLowerCase()
+  for (let i = 0; i < str.length; i++) {
+    let seen: Record<string, boolean> = {}
+
+    for (let j = i; j < str.length; j++) {
+      const char: string = str[j]!
+      if (seen[char]) {
+        break
+      } else {
+        seen[char] = true
+        maxLength = Math.max(maxLength, j - i + 1)
+      }
+    }
+  }
+
+  return maxLength
+}
