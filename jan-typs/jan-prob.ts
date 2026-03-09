@@ -669,3 +669,53 @@ export const anotherPracLongestSubStrWoRepChars = (
 
   return maxLength
 }
+
+//longest conseccurtive sequence of numbers
+// sort the array to ascending | start counting when thee next numbers is the one up
+const longestConsecutives = (numbers: number[]): number[] | null => {
+  //sanity check
+  if (numbers.length === 0) return null
+
+  // sort the array in ascending
+  const sortedNums: number[] = numbers.sort((a, b) => a - b)
+
+  for (let i = 0; i < sortedNums.length; i++) {}
+}
+
+const somethingKMostFreqElements = (
+  nums: number[],
+  k: number
+): number[] | null => {
+  //sanity check
+  if (nums.length === 0 || typeof k !== 'number') return null
+
+  // freq Map through the nums
+  let freqMap: Record<number, number> = {}
+
+  for (let i = 0; i < nums.length; i++) {
+    const num: number = nums[i]!
+    if (freqMap[num]) {
+      freqMap[num] += 1
+    } else if (!freqMap[num]) {
+      freqMap[num] = 1
+    }
+  }
+  // loop k times through the objects and pluck out the max key and then remove it from the freqMap push it to a clean array
+  let freqEleArr: number[] = []
+
+  for (let i = 0; i < k; i++) {
+    let maxKey = 0
+    let maxKeyNum: number = -Infinity
+    for (const keyStr in freqMap) {
+      const key: number = Number(keyStr)
+
+      if (freqMap[key]! > maxKeyNum) {
+        maxKeyNum = freqMap[key]!
+        maxKey = key
+      }
+    }
+    freqEleArr.push(maxKey)
+    delete freqMap[maxKey]
+  }
+  return freqEleArr
+}
