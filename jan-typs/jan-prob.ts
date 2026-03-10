@@ -682,7 +682,7 @@ const longestConsecutives = (numbers: number[]): number[] | null => {
   for (let i = 0; i < sortedNums.length; i++) {}
 }
 
-const somethingKMostFreqElements = (
+export const somethingKMostFreqElements = (
   nums: number[],
   k: number
 ): number[] | null => {
