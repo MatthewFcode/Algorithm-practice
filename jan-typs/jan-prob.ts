@@ -672,15 +672,15 @@ export const anotherPracLongestSubStrWoRepChars = (
 
 //longest conseccurtive sequence of numbers
 // sort the array to ascending | start counting when thee next numbers is the one up
-const longestConsecutives = (numbers: number[]): number[] | null => {
-  //sanity check
-  if (numbers.length === 0) return null
+// const longestConsecutives = (numbers: number[]): number[] | null => {
+//   //sanity check
+//   if (numbers.length === 0) return null
 
-  // sort the array in ascending
-  const sortedNums: number[] = numbers.sort((a, b) => a - b)
+//   // sort the array in ascending
+//   const sortedNums: number[] = numbers.sort((a, b) => a - b)
 
-  for (let i = 0; i < sortedNums.length; i++) {}
-}
+//   for (let i = 0; i < sortedNums.length; i++) {}
+// }
 
 export const somethingKMostFreqElements = (
   nums: number[],
@@ -718,4 +718,28 @@ export const somethingKMostFreqElements = (
     delete freqMap[maxKey]
   }
   return freqEleArr
+}
+
+export const anotherQuickIndiciesTwoSum = (
+  numbers: number[],
+  k: number
+): number[] | null => {
+  //sanity check
+  if (numbers.length === 0 || typeof k !== 'number') return null
+
+  // loop over the numbers once
+  // start the nested loop and look for the one init
+  let indicies: number[] = []
+
+  for (let i = 0; i < numbers.length; i++) {
+    const ni: number = numbers[i]!
+    for (let j = i; j < numbers.length; j++) {
+      const nj: number = numbers[j]!
+      if (ni + nj === k) {
+        indicies.push(i, j)
+      }
+    }
+  }
+
+  return indicies
 }

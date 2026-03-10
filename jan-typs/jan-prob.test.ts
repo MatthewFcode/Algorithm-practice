@@ -24,6 +24,7 @@ import {
   quickKMostFreqElements,
   anotherPracLongestSubStrWoRepChars,
   somethingKMostFreqElements,
+  anotherQuickIndiciesTwoSum,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -407,6 +408,20 @@ test('another test for the k most frequent elements ', () => {
 
   //Act
   const result = somethingKMostFreqElements(nums, k)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('test another quick indicies two sum ', () => {
+  //Arrange
+  const nums: number[] = [22, 4, 5, 5, 2, 1, 1]
+  const k: number = 24
+
+  const expected: number[] = [0, 4]
+
+  //Act
+  const result = anotherQuickIndiciesTwoSum(nums, k)
 
   //Assert
   expect(result).toEqual(expected)
