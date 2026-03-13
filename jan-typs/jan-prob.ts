@@ -743,3 +743,17 @@ export const anotherQuickIndiciesTwoSum = (
 
   return indicies
 }
+
+export const footballMatchStreakCalc = (arr: {
+  result: string
+  goals: number
+}): { length: number; goals: number; points: number } | null => {
+  //sanity check
+  if (typeof arr.result !== 'string' || typeof arr.goals !== 'number') {
+    return null
+  }
+
+  // loop over the objects and declare and object that has length, goals and points
+
+  // nested
+}
