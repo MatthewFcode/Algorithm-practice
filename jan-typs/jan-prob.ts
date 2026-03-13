@@ -809,9 +809,11 @@ export const runningTracker = (numbers: number[]) => {
 }
 
 
-export const longestConseccutiveOneInit = (numbers: number[] ): number | null => {
+export const longestConseccutiveOneInit = (nums: number[] ): number | null => {
   //sanity check 
-  if (numbers.length === 0) return null
+  if (nums.length === 0) return null
+
+  const numbers: number[] = nums.sort((a, b) => a - b)
   let currentLength: number = 0
   let maxLength: number = 0
   
@@ -825,7 +827,6 @@ export const longestConseccutiveOneInit = (numbers: number[] ): number | null =>
          if (currentLength > maxLength) {
           maxLength = currentLength
          }
-
       }
     }
   }
