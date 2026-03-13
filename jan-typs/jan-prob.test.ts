@@ -25,6 +25,7 @@ import {
   anotherPracLongestSubStrWoRepChars,
   somethingKMostFreqElements,
   anotherQuickIndiciesTwoSum,
+  longestConseccutiveOneInit,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
