@@ -784,7 +784,26 @@ export const footballMatchStreakCalc = (
         }
       }
     }
-    result = Math.max( )
+    
   }
   // nested loop is goonna run on each iteration of the array
+}
+
+
+export const runningTracker = (numbers: number[]) => {
+  // sanity check 
+  if (numbers.length === 0) return null
+
+  let number: number | undefined = -Infinity
+  // what we are going to want to do is just loop over the arry and then started a nested loop at i that loops another 3 times 
+  for (let i = 0; i < numbers.length; i++) {
+    
+    let currentNum = 0
+    for (let j = i; j < 3; j++) {
+      currentNum += numbers[i]!
+    }
+    number = Math.max(number, currentNum)
+  }
+
+  return number 
 }
