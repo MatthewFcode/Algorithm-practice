@@ -744,16 +744,47 @@ export const anotherQuickIndiciesTwoSum = (
   return indicies
 }
 
-export const footballMatchStreakCalc = (arr: {
+interface MatchArr {
   result: string
   goals: number
-}): { length: number; goals: number; points: number } | null => {
+}
+
+export const footballMatchStreakCalc = (
+  arr: MatchArr[]
+): { length: number; goals: number; points: number } | null => {
   //sanity check
-  if (typeof arr.result !== 'string' || typeof arr.goals !== 'number') {
-    return null
+  for (let i = 0; i < arr.length; i++) {
+    const index = arr[i]!
+    if (typeof index.result !== 'string' || typeof index.goals !== 'number') {
+      return null
+    }
   }
 
-  // loop over the objects and declare and object that has length, goals and points
+  // empty variable for the object
+  let result = {} 
 
-  // nested
+  // loop over the objects and declare and object that has length, goals and points
+  for (let i = 0; i < arr.length; i++) {
+    let resultObj: { length: number; goals: number; points: number } = {length: 0, goals: 0, points: 0}
+    for (let j = i; j < arr.length; j++) {
+      const index = arr[j]!
+      if (index.result === 'L') {
+        break
+      }
+       else {
+        if (index.result === 'W') {
+          resultObj.length += 1
+          resultObj.goals += index.goals
+          resultObj.points += 3
+        }
+        else (index.result === 'D') {
+          resultObj.length += 1
+          resultObj.goals += index.goals
+          resultObj.points += 1
+        }
+      }
+    }
+    result = Math.max( )
+  }
+  // nested loop is goonna run on each iteration of the array
 }
