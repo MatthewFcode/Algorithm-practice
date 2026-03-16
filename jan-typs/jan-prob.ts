@@ -761,43 +761,42 @@ export const footballMatchStreakCalc = (
   }
 
   // empty variable for the object
-  let result = {} 
+  let result = {}
 
   // loop over the objects and declare and object that has length, goals and points
   for (let i = 0; i < arr.length; i++) {
-    let resultObj: { length: number; goals: number; points: number } = {length: 0, goals: 0, points: 0}
+    let resultObj: { length: number; goals: number; points: number } = {
+      length: 0,
+      goals: 0,
+      points: 0,
+    }
     for (let j = i; j < arr.length; j++) {
       const index = arr[j]!
       if (index.result === 'L') {
         break
-      }
-       else {
+      } else {
         if (index.result === 'W') {
           resultObj.length += 1
           resultObj.goals += index.goals
           resultObj.points += 3
-        }
-        else (index.result === 'D') {
+        } else if (index.result === 'D') {
           resultObj.length += 1
           resultObj.goals += index.goals
           resultObj.points += 1
         }
       }
     }
-    
   }
   // nested loop is goonna run on each iteration of the array
 }
 
-
 export const runningTracker = (numbers: number[]) => {
-  // sanity check 
+  // sanity check
   if (numbers.length === 0) return null
 
   let number: number | undefined = -Infinity
-  // what we are going to want to do is just loop over the arry and then started a nested loop at i that loops another 3 times 
+  // what we are going to want to do is just loop over the arry and then started a nested loop at i that loops another 3 times
   for (let i = 0; i < numbers.length; i++) {
-    
     let currentNum = 0
     for (let j = i; j < 3; j++) {
       currentNum += numbers[i]!
@@ -805,35 +804,44 @@ export const runningTracker = (numbers: number[]) => {
     number = Math.max(number, currentNum)
   }
 
-  return number 
+  return number
 }
 
-
-export const longestConseccutiveOneInit = (nums: number[] ): number | null => {
-  //sanity check 
+export const longestConseccutiveOneInit = (nums: number[]): number | null => {
+  //sanity check
   if (nums.length === 0) return null
 
   const numbers: number[] = nums.sort((a, b) => a - b)
   let currentLength: number = 0
   let maxLength: number = 0
-  
-  for (let i = 0; i < numbers.length; i ++) {
+
+  for (let i = 0; i < numbers.length; i++) {
     if (numbers[i + 1] !== numbers[i]! + 1) {
       break
-    }
-    else {
+    } else {
       if (numbers[i + 1] === numbers[i]! + 1) {
-         currentLength +=1
-         if (currentLength > maxLength) {
+        currentLength += 1
+        if (currentLength > maxLength) {
           maxLength = currentLength
-         }
+        }
       }
     }
   }
 
   if (currentLength > maxLength) {
     maxLength = currentLength
-   }
+  }
 
-   return maxLength 
+  return maxLength
+}
+
+export const isEvenNums = (num1: number, num2: number): boolean | null => {
+  //sanity check
+  if (typeof num1 !== 'number' || typeof num2 !== 'number') return null
+
+  if (num1 % num2 === 0) {
+    return true
+  } else {
+    return false
+  }
 }

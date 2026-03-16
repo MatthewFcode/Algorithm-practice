@@ -26,6 +26,7 @@ import {
   somethingKMostFreqElements,
   anotherQuickIndiciesTwoSum,
   longestConseccutiveOneInit,
+  isEvenNums,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -423,6 +424,20 @@ test('test another quick indicies two sum ', () => {
 
   //Act
   const result = anotherQuickIndiciesTwoSum(nums, k)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that checks if the first parameter is evenly dividable by the second number', () => {
+  //Arrange
+  const num1: number = 4
+  const num2: number = 2
+
+  const expected: boolean = true
+
+  //Act
+  const result = isEvenNums(num1, num2)
 
   //Assert
   expect(result).toEqual(expected)
