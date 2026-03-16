@@ -28,6 +28,7 @@ import {
   longestConseccutiveOneInit,
   isEvenNums,
   anotherAnotherQuickProductExceptSelf,
+  anotherSomethingKMostFreqElements,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -451,6 +452,20 @@ test('product of everything except self practice', () => {
 
   //Act
   const result = anotherAnotherQuickProductExceptSelf(numbers)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('another k most freq elements practice because why the helly not aye', () => {
+  //Arrange
+  const nums: number[] = [22, 4, 5, 5, 2, 1, 1]
+  const k: number = 2
+
+  const expected: number[] = [1, 5]
+
+  //Act
+  const result = anotherSomethingKMostFreqElements(nums, k)
 
   //Assert
   expect(result).toEqual(expected)
