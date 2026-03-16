@@ -27,6 +27,7 @@ import {
   anotherQuickIndiciesTwoSum,
   longestConseccutiveOneInit,
   isEvenNums,
+  anotherAnotherQuickProductExceptSelf,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -438,6 +439,18 @@ test('function that checks if the first parameter is evenly dividable by the sec
 
   //Act
   const result = isEvenNums(num1, num2)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('product of everything except self practice', () => {
+  //Arrange
+  const numbers: number[] = [1, 2, 3, 4]
+  const expected: number[] = [24, 12, 8, 6]
+
+  //Act
+  const result = anotherAnotherQuickProductExceptSelf(numbers)
 
   //Assert
   expect(result).toEqual(expected)

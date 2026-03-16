@@ -845,3 +845,28 @@ export const isEvenNums = (num1: number, num2: number): boolean | null => {
     return false
   }
 }
+
+export const anotherAnotherQuickProductExceptSelf = (
+  numbers: number[]
+): number[] | null => {
+  // sanity check
+  if (numbers.length === 0) return null
+
+  //clean arr for all the products except self
+  let cleanArr: number[] = []
+
+  // we are going to want to loop over the numbers
+  for (let i = 0; i < numbers.length; i++) {
+    // then we are going to nested loop at 0 for every i
+    // declare a product for the first times to push to the clean arr an then reset
+    let product: number = 1
+    for (let j = 0; j < numbers.length; j++) {
+      if (j !== i) {
+        product *= numbers[j]!
+      }
+    }
+    cleanArr.push(product)
+  }
+
+  return cleanArr
+}
