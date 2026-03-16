@@ -870,3 +870,17 @@ export const anotherAnotherQuickProductExceptSelf = (
 
   return cleanArr
 }
+
+export const anotherSomethingKMostFreqElements = (
+  numbers: number[],
+  k: number
+): number[] | null => {
+  //sanity check
+  if (numbers.length === 0 || typeof k !== 'number') return null
+
+  // frequency map over the number array
+
+  // start a loop thsat runs k times
+  // declare vars for highest freq and the highest freq key
+  // loop over the keys and find the highest freq and add that to the variable -- push to arr and then delete it from the freq map
+}
