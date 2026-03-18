@@ -947,4 +947,11 @@ export const volumesOfWater = (arr: number[]): number | null => {
   // nested loop starts at i and then goes of over the rest of the array
   // do the calculations for the volume for everyone if its higher than the current then reassign
   // after the nested loop reassign the current to a global var for highest volume and then return that
+
+  let highestVolume: number = 0
+
+  for (let i = 0; i < arr.length; i++) {
+    let currentMax: number = 0
+    for (let j = i; j < arr.length; j++) {}
+  }
 }
