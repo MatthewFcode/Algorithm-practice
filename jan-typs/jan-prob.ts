@@ -880,7 +880,33 @@ export const anotherSomethingKMostFreqElements = (
 
   // frequency map over the number array
 
-  // start a loop thsat runs k times
-  // declare vars for highest freq and the highest freq key
-  // loop over the keys and find the highest freq and add that to the variable -- push to arr and then delete it from the freq map
+  let freqMap: Record<number, number> = {}
+
+  for (let i = 0; i < numbers.length; i++) {
+    const num: number = numbers[i]!
+    if (freqMap[num]) {
+      freqMap[num] += 1
+    } else if (!freqMap[num]) {
+      freqMap[num] = 1
+    }
+  }
+
+  let resultArr: number[] = []
+
+  for (let i = 0; i < k; i++) {
+    let highestFreq: number = 0
+    let highestFreqKey: number = 0
+    for (const keyStr in freqMap) {
+      let key: number = Number(keyStr)
+      if (freqMap[key]! > highestFreq) {
+        // if the current keys freq is higher than 0
+        highestFreqKey = key //reassign the highest key
+        highestFreq = freqMap[key]! // but also update the highest frequency so we can compare with the next
+      }
+    }
+    resultArr.push(highestFreqKey) // push the highest key of that loop
+    delete freqMap[highestFreqKey] // delete the pair with the highest freq key and value
+  }
+
+  return resultArr
 }
