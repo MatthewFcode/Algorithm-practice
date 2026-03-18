@@ -910,3 +910,30 @@ export const anotherSomethingKMostFreqElements = (
 
   return resultArr
 }
+
+export const getMilestone = (number: number): string | null => {
+  // sanity check
+  if (typeof number !== 'number') return null
+
+  if (number < 1) {
+    return 'Newlyweds'
+  } else if (number >= 70) {
+    return 'Platinum'
+  } else if (number >= 60) {
+    return 'Diamond'
+  } else if (number >= 50) {
+    return 'Gold'
+  } else if (number >= 40) {
+    return 'Ruby'
+  } else if (number >= 25) {
+    return 'Silver'
+  } else if (number >= 10) {
+    return 'Tin'
+  } else if (number >= 5) {
+    return 'Wood'
+  } else if (number >= 1) {
+    return 'Paper'
+  }
+
+  return 'well how did you beat the sanity check my slime'
+}

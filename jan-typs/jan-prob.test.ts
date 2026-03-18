@@ -29,6 +29,7 @@ import {
   isEvenNums,
   anotherAnotherQuickProductExceptSelf,
   anotherSomethingKMostFreqElements,
+  getMilestone,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -469,4 +470,21 @@ test('another k most freq elements practice because why the helly not aye', () =
 
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('given an integer representing a couples blah blah blah code challenge', () => {
+  //Arrange
+  const year: number = 40
+  const year2: number = 50
+
+  const expected: string = 'Ruby'
+  const expected2: string = 'Gold'
+
+  //Act
+  const result: string | null = getMilestone(year)
+  const result2: string | null = getMilestone(year2)
+
+  //Expect
+  expect(result).toEqual(expected)
+  expect(result2).toEqual(expected2)
 })
