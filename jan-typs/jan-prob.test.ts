@@ -488,3 +488,17 @@ test('given an integer representing a couples blah blah blah code challenge', ()
   expect(result).toEqual(expected)
   expect(result2).toEqual(expected2)
 })
+
+test('finding the maximum pair of walls in an array to maximise the best solution for the volumes of water', () => {
+  //Arrange
+
+  const heights = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+
+  const expected = 49
+
+  //Act
+  const result = volumesOfWater(heights)
+
+  //Assert
+  expect(result).toEqual(expected)
+})

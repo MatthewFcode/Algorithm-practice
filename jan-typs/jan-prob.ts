@@ -937,3 +937,10 @@ export const getMilestone = (number: number): string | null => {
 
   return 'well how did you beat the sanity check my slime'
 }
+
+export const volumesOfWater = (arr: number[]): number | null => {
+  //sanity check
+  if (arr.length === 0) return null
+
+  // what
+}
