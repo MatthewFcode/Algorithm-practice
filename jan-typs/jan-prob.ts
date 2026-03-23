@@ -955,3 +955,28 @@ export const getMilestone = (number: number): string | null => {
 //     for (let j = i; j < arr.length; j++) {}
 //   }
 // }
+
+export const anotherBingLongestSubStr = (string: string): null | number => {
+  //Sanity check
+  if (typeof string !== 'string') return null
+
+  //sliding window approach
+  // start a loop at 0 and an empty object
+  // start the next loop at i and loop forward adding the current iteariton and true as key values to the clean object adding one to a varibale each time break the loo when we already seen that variable
+  let maxNum: number = 0
+
+  for (let i = 0; i < string.length; i++) {
+    let seen: Record<string, boolean> = {}
+    for (let j = i; j < string.length; j++) {
+      const ch: string = string[j]!
+      if (seen[ch]) {
+        break
+      } else {
+        seen[ch] = true
+        maxNum = Math.max(maxNum, j - i + 1)
+      }
+    }
+  }
+
+  return maxNum
+}
