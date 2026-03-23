@@ -990,7 +990,16 @@ export const anotherBingKMostFreqEle = (
 
   let freqMap: Record<number, number> = {}
 
-  for (let i = 0; i < numbers.length; i++) {}
+  for (let i = 0; i < numbers.length; i++) {
+    const num: number = numbers[i]!
+    if (freqMap[num]) {
+      freqMap[num] += 1
+    } else if (!freqMap[num]) {
+      freqMap[num] = 1
+    }
+  }
+
+  let cleanArr:
 
   // start the loop through the freq map inside a loop that runs k times
   // clean arr to push the highest freq key to
