@@ -30,6 +30,7 @@ import {
   anotherAnotherQuickProductExceptSelf,
   anotherSomethingKMostFreqElements,
   getMilestone,
+  anotherBingLongestSubStr,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -489,15 +490,28 @@ test('given an integer representing a couples blah blah blah code challenge', ()
   expect(result2).toEqual(expected2)
 })
 
-test('finding the maximum pair of walls in an array to maximise the best solution for the volumes of water', () => {
+// test('finding the maximum pair of walls in an array to maximise the best solution for the volumes of water', () => {
+//   //Arrange
+
+//   const heights = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+
+//   const expected = 49
+
+//   //Act
+//   const result = volumesOfWater(heights)
+
+//   //Assert
+//   expect(result).toEqual(expected)
+// })
+
+test('function that tests the longest substring without repeating characters', () => {
   //Arrange
+  const string: string = 'matthewfoley'
 
-  const heights = [1, 8, 6, 2, 5, 4, 8, 3, 7]
+  const expected: number = 7
 
-  const expected = 49
-
-  //Act
-  const result = volumesOfWater(heights)
+  // Act
+  const result = anotherBingLongestSubStr(string)
 
   //Assert
   expect(result).toEqual(expected)

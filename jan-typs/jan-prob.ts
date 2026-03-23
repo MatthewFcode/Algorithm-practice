@@ -938,20 +938,20 @@ export const getMilestone = (number: number): string | null => {
   return 'well how did you beat the sanity check my slime'
 }
 
-export const volumesOfWater = (arr: number[]): number | null => {
-  //sanity check
-  if (arr.length === 0) return null
+// export const volumesOfWater = (arr: number[]): number | null => {
+//   //sanity check
+//   if (arr.length === 0) return null
 
-  // brute force would be that we check all the possible combinations for the volumses of water and return the highest one
-  // start a loop going over the array and then decalre a variable at 0
-  // nested loop starts at i and then goes of over the rest of the array
-  // do the calculations for the volume for everyone if its higher than the current then reassign
-  // after the nested loop reassign the current to a global var for highest volume and then return that
+//   // brute force would be that we check all the possible combinations for the volumses of water and return the highest one
+//   // start a loop going over the array and then decalre a variable at 0
+//   // nested loop starts at i and then goes of over the rest of the array
+//   // do the calculations for the volume for everyone if its higher than the current then reassign
+//   // after the nested loop reassign the current to a global var for highest volume and then return that
 
-  let highestVolume: number = 0
+//   let highestVolume: number = 0
 
-  for (let i = 0; i < arr.length; i++) {
-    let currentMax: number = 0
-    for (let j = i; j < arr.length; j++) {}
-  }
-}
+//   for (let i = 0; i < arr.length; i++) {
+//     let currentMax: number = 0
+//     for (let j = i; j < arr.length; j++) {}
+//   }
+// }
