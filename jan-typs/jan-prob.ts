@@ -999,10 +999,27 @@ export const anotherBingKMostFreqEle = (
     }
   }
 
-  let cleanArr:
+  let cleanArr: number[] = []
+
+  for (let i = 0; i < k; i++) {
+    let maxKey: number = 0
+    let maxFreq: number = 0
+    for (const keyStr in freqMap) {
+      const key: number = Number(keyStr)
+
+      if (freqMap[key]! > maxFreq) {
+        maxFreq = freqMap[key]!
+        maxKey = key
+      }
+    }
+    cleanArr.push(maxKey)
+    delete freqMap[maxKey]
+  }
 
   // start the loop through the freq map inside a loop that runs k times
   // clean arr to push the highest freq key to
   // start highest freq at 0 and reassign when we find higher in the loop and the adjust the highest freq key accordingly
   // push these values at the end of the first pass
+
+  return cleanArr
 }
