@@ -980,3 +980,20 @@ export const anotherBingLongestSubStr = (string: string): null | number => {
 
   return maxNum
 }
+
+export const anotherBingKMostFreqEle = (
+  numbers: number[],
+  k: number
+): number[] | null => {
+  //sanity check
+  if (numbers.length === 0 || typeof k !== 'number') return null
+
+  let freqMap: Record<number, number> = {}
+
+  for (let i = 0; i < numbers.length; i++) {}
+
+  // start the loop through the freq map inside a loop that runs k times
+  // clean arr to push the highest freq key to
+  // start highest freq at 0 and reassign when we find higher in the loop and the adjust the highest freq key accordingly
+  // push these values at the end of the first pass
+}

@@ -31,6 +31,7 @@ import {
   anotherSomethingKMostFreqElements,
   getMilestone,
   anotherBingLongestSubStr,
+  anotherBingKMostFreqEle,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -512,6 +513,22 @@ test('function that tests the longest substring without repeating characters', (
 
   // Act
   const result = anotherBingLongestSubStr(string)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('Function that returns the K most frequent elements', () => {
+  //Arrange
+
+  const numbers: number[] = [22, 4, 5, 52, 234, 25, 22, 4, 4, 52, 25, 24, 25]
+
+  const k: number = 2
+
+  const expected: number[] = [4, 25]
+
+  //Act
+  const result = anotherBingKMostFreqEle(numbers, k)
 
   //Assert
   expect(result).toEqual(expected)
