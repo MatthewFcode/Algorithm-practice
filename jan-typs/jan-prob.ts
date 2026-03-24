@@ -1084,3 +1084,33 @@ export const anotherMoveZeroes = (numbers: number[]): number[] | null => {
 
   return [...noZeroes, ...zeroeArr]
 }
+
+export const subArrsEqualToK = (
+  numbers: number[],
+  k: number
+): null | number => {
+  //snatiy check
+  if (numbers.length === 0 || typeof k !== 'number') return null
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      return null
+    }
+  }
+  //loop through the numbers
+  // start the nested loop at i and then loop through every coditions adding it to var
+  //reassign
+  let count: number = 0
+
+  for (let i = 0; i < numbers.length; i++) {
+    let sum: number = 0
+    for (let j = i; j < numbers.length; j++) {
+      sum += numbers[j]!
+      if (sum === k) {
+        count += 1
+      }
+    }
+  }
+
+  return count
+}
