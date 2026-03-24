@@ -1067,3 +1067,20 @@ export const practiceKadanesAlg = (numbers: number[]): null | number => {
 
   return maxSum
 }
+
+export const anotherMoveZeroes = (numbers: number[]): number[] | null => {
+  //sanity check
+  if (numbers.length === 0) return null
+
+  // filter out zeroes
+  const noZeroes: number[] = numbers.filter((n: number) => n !== 0)
+
+  let zeroeArr: number[] = []
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] === 0) {
+      zeroeArr.push(numbers[i]!)
+    }
+  }
+
+  return [...noZeroes, ...zeroeArr]
+}
