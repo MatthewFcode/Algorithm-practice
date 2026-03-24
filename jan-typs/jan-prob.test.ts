@@ -35,6 +35,7 @@ import {
   hasNoReps,
   practiceKadanesAlg,
   anotherMoveZeroes,
+  subArrsEqualToK,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -569,6 +570,20 @@ test('Function that moves all zeroes to the end of an array', () => {
 
   //Act
   const result = anotherMoveZeroes(numbers)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that outputs the total amount of subarrays that equal to K', () => {
+  // Arrange
+  const numbers: number[] = [1, 1, 1]
+  const k = 2
+
+  const expected = 2
+
+  //Act
+  const result = subArrsEqualToK(numbers, k)
 
   //Assert
   expect(result).toEqual(expected)
