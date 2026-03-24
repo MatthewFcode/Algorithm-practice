@@ -1038,7 +1038,7 @@ export const hasNoReps = (string: string): null | boolean => {
   return true
 }
 
-export const practiceKadanesAlg = (numbers: number[]): null | number[] => {
+export const practiceKadanesAlg = (numbers: number[]): null | number => {
   //sanity checks thorough
   if (numbers.length === 0) return null
 
@@ -1049,4 +1049,21 @@ export const practiceKadanesAlg = (numbers: number[]): null | number[] => {
   }
   //start a loop at 0 of numbers and ecalre vaeiable at 0 for maximu
   //start the nest loop at i and then loop over the rest
+
+  let maxSum: number = 0
+  for (let i = 0; i < numbers.length; i++) {
+    let current: number = 0
+    let max: number = 0
+    for (let j = i; j < numbers.length; j++) {
+      current += numbers[j]!
+      if (current > max) {
+        max = current
+      }
+    }
+    if (max > maxSum) {
+      maxSum = max
+    }
+  }
+
+  return maxSum
 }
