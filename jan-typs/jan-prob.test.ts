@@ -34,6 +34,7 @@ import {
   anotherBingKMostFreqEle,
   hasNoReps,
   practiceKadanesAlg,
+  anotherMoveZeroes,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -559,4 +560,16 @@ test('Kadanes algoruthm which is I gueess just finding the max sub array in an a
 
   //Asset
   expect(result).toEqual(expectedMaxSum)
+})
+
+test('Function that moves all zeroes to the end of an array', () => {
+  //Arrange
+  const numbers = [0, 1, 0, 3, 12]
+  const expected = [1, 3, 12, 0, 0]
+
+  //Act
+  const result = anotherMoveZeroes(numbers)
+
+  //Assert
+  expect(result).toEqual(expected)
 })
