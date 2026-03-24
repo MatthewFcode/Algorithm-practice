@@ -1023,3 +1023,17 @@ export const anotherBingKMostFreqEle = (
 
   return cleanArr
 }
+
+export const hasNoReps = (string: string): null | boolean => {
+  //sanity check
+  if (typeof string !== 'string' || string.length === 0) return null
+
+  //singe loop + early return
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] === string[i + 1]) {
+      return false
+    }
+  }
+
+  return true
+}
