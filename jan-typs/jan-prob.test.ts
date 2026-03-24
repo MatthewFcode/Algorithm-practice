@@ -33,6 +33,7 @@ import {
   anotherBingLongestSubStr,
   anotherBingKMostFreqEle,
   hasNoReps,
+  practiceKadanesAlg,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -546,4 +547,16 @@ test('Function that is going to determine when a string has repeating characters
 
   //Assert
   expect(result).toEqual(expected)
+})
+
+test('Kadanes algoruthm which is I gueess just finding the max sub array in an array of numbers', () => {
+  //arrange
+  const nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+  const expectedMaxSum = 6 // subarray [4, -1, 2, 1]
+
+  //act
+  const result = practiceKadanesAlg(nums)
+
+  //Asset
+  expect(result).toEqual(expectedMaxSum)
 })

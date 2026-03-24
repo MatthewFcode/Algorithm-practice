@@ -1037,3 +1037,16 @@ export const hasNoReps = (string: string): null | boolean => {
 
   return true
 }
+
+export const practiceKadanesAlg = (numbers: number[]): null | number[] => {
+  //sanity checks thorough
+  if (numbers.length === 0) return null
+
+  for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      return null
+    }
+  }
+  //start a loop at 0 of numbers and ecalre vaeiable at 0 for maximu
+  //start the nest loop at i and then loop over the rest
+}
