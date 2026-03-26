@@ -36,6 +36,7 @@ import {
   practiceKadanesAlg,
   anotherMoveZeroes,
   subArrsEqualToK,
+  anotherRastTwoSum,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -584,6 +585,21 @@ test('function that outputs the total amount of subarrays that equal to K', () =
 
   //Act
   const result = subArrsEqualToK(numbers, k)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('Another quick and easy two sum', () => {
+  //Arrange
+  const numbers: number[] = [2, 7, 11, 15]
+
+  const target: number = 9
+
+  const expected: number[] = [0, 1]
+
+  //Act
+  const result = anotherRastTwoSum(numbers, target)
 
   //Assert
   expect(result).toEqual(expected)
