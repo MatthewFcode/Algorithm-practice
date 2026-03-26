@@ -1114,3 +1114,31 @@ export const subArrsEqualToK = (
 
   return count
 }
+
+export const anotherRastTwoSum = (
+  numbers: number[],
+  target: number
+): null | number[] => {
+  //sanity checks
+  if (numbers.length === 0 || typeof target !== 'number') return null
+  for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      return null
+    }
+  }
+  // clean Arr
+  let cleanArr: number[] = []
+  // then we are going to loop over the arrays and then started a nested loop to check every combination
+  for (let i = 0; i < numbers.length; i++) {
+    const numI: number = numbers[i]!
+    for (let j = i + 1; j < numbers.length; j++) {
+      const numJ: number = numbers[j]!
+
+      if (numI + numJ === target) {
+        cleanArr.push(i, j)
+      }
+    }
+  }
+
+  return cleanArr
+}
