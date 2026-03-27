@@ -1182,7 +1182,7 @@ export const longConseccSequBumb = (nums: number[]): null | number => {
 
   // we are going to loop over the array and just check start the nested loop
   for (let i = 0; i < numbers.length; i++) {
-    let consecutive: number = 0
+    let consecutive: number = 1
     for (let j = i; j < numbers.length; j++) {
       if (numbers[j + 1]! !== numbers[j]! + 1) {
         break
