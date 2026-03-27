@@ -1168,3 +1168,30 @@ export const prodBumbOfSelf = (numbers: number[]): null | number[] => {
 
   return cleanArr
 }
+
+export const longConseccSequBumb = (nums: number[]): null | number => {
+  //sanity checks
+  if (nums.length === 0) return null
+  for (let i = 0; i < nums.length; i++) {
+    if (typeof nums[i] !== 'number') return null
+  }
+
+  const numbers: number[] = nums.sort((a, b) => a - b)
+
+  let maxConsecutive: number = 0
+
+  // we are going to loop over the array and just check start the nested loop
+  for (let i = 0; i < numbers.length; i++) {
+    let consecutive: number = 0
+    for (let j = i; j < numbers.length; j++) {
+      if (numbers[j + 1]! !== numbers[j]! + 1) {
+        break
+      } else if (numbers[j + 1]! === numbers[j]! + 1) {
+        consecutive += 1
+      }
+    }
+    maxConsecutive = Math.max(maxConsecutive, consecutive)
+  }
+
+  return maxConsecutive
+}
