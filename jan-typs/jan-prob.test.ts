@@ -38,6 +38,7 @@ import {
   subArrsEqualToK,
   anotherRastTwoSum,
   prodBumbOfSelf,
+  longConseccSequBumb,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -614,6 +615,19 @@ test('Function that every iteration in an array into the product of everything b
 
   //Act
   const result = prodBumbOfSelf(numbers)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('finding the longest consecutive sequence in an array', () => {
+  //Arrange
+  const numbers: number[] = [100, 4, 200, 1, 3, 2]
+
+  const expected: number = 4
+
+  //Act
+  const result = longConseccSequBumb(numbers)
 
   //Assert
   expect(result).toEqual(expected)
