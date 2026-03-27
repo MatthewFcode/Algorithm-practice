@@ -37,6 +37,7 @@ import {
   anotherMoveZeroes,
   subArrsEqualToK,
   anotherRastTwoSum,
+  prodBumbOfSelf,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {

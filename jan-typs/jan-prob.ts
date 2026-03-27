@@ -1142,3 +1142,29 @@ export const anotherRastTwoSum = (
 
   return cleanArr
 }
+
+export const prodBumbOfSelf = (numbers: number[]): null | number[] => {
+  //sanity checks
+  if (numbers.length === 0) return null
+  for (let i = 0; i < numbers.length; i++) {
+    if (typeof numbers[i] !== 'number') {
+      return null
+    }
+  }
+
+  let cleanArr: number[] = []
+
+  // loop over | nested loop at 0 and then avoid the thang and * by the product
+  // push to the clean arr and whabam
+  for (let i = 0; i < numbers.length; i++) {
+    let product: number = 1
+    for (let j = 0; j < numbers.length; j++) {
+      if (j !== i) {
+        product *= numbers[j]!
+      }
+    }
+    cleanArr.push(product)
+  }
+
+  return cleanArr
+}
