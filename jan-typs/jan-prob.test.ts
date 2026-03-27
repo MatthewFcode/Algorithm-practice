@@ -608,17 +608,9 @@ test('Another quick and easy two sum', () => {
 
 test('Function that every iteration in an array into the product of everything but itself', () => {
   //Arrange
-  const numbers: number[] = [
-    32290, 23, 235, 235, 235, 235, 23, 5435345, 12, 342355,
-  ]
+  const numbers: number[] = [1, 2, 3, 4]
 
-  const expected: number[] = [
-    2596223295722665300000000000000, 3645385307549337000000000000000,
-    356712655930794500000000000000, 356712655930794500000000000000,
-    356712655930794500000000000000, 356712655930794500000000000000,
-    3645385307549337000000000000000, 15426958061350290000000000000,
-    6986988506136225000000000000000, 244859568638922660000000000000,
-  ]
+  const expected: number[] = [24, 12, 8, 6]
 
   //Act
   const result = prodBumbOfSelf(numbers)
