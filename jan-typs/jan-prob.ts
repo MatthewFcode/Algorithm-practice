@@ -1196,11 +1196,15 @@ export const longConseccSequBumb = (nums: number[]): null | number => {
   return maxConsecutive
 }
 export const constBumbAnagramChecker = (
-  string1: string,
-  string2: string
+  stringYo: string,
+  stringNah: string
 ): boolean | null => {
   //sanity check
-  if (typeof string1 !== 'string' || typeof string2 !== 'string') return null
+  if (typeof stringYo !== 'string' || typeof stringNah !== 'string') return null
+
+  //handle the case sensitivity
+  let string1: string = stringYo.toLowerCase()
+  let string2: string = stringNah.toLowerCase()
 
   // freq map over the first one and then loop over the second one and return when it isnt in the freq map default to true
   let freqMap: Record<string, number> = {}
