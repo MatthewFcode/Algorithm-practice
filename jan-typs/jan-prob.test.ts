@@ -39,6 +39,7 @@ import {
   anotherRastTwoSum,
   prodBumbOfSelf,
   longConseccSequBumb,
+  constBumbAnagramChecker,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -628,6 +629,19 @@ test('finding the longest consecutive sequence in an array', () => {
 
   //Act
   const result = longConseccSequBumb(numbers)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('Is my knowledge of TypeScript really that much clear of other languages', () => {
+  //Arrange
+  const string: string = 'Matthew'
+  const string1: string = 'Amtthew'
+  const expected: boolean = true
+
+  //Act
+  const result = constBumbAnagramChecker(string1, string)
 
   //Assert
   expect(result).toEqual(expected)
