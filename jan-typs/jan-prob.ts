@@ -1195,3 +1195,34 @@ export const longConseccSequBumb = (nums: number[]): null | number => {
 
   return maxConsecutive
 }
+export const constBumbAnagramChecker = (
+  string1: string,
+  string2: string
+): boolean | null => {
+  //sanity check
+  if (typeof string1 !== 'string' || typeof string2 !== 'string') return null
+
+  // freq map over the first one and then loop over the second one and return when it isnt in the freq map default to true
+  let freqMap: Record<string, number> = {}
+
+  for (let i = 0; i < string1.length; i++) {
+    const currentNum: string = string1[i]!
+    if (freqMap[currentNum]) {
+      freqMap[currentNum] += 1
+    } else if (!freqMap[currentNum]) {
+      freqMap[currentNum] = 1
+    }
+  }
+
+  //loop over the second one
+  for (let i = 0; i < string2.length; i++) {
+    let currentStr: string = string2[i]!
+    if (freqMap[currentStr]) {
+      freqMap[currentStr] - 1
+    } else {
+      return false
+    }
+  }
+
+  return true
+}
