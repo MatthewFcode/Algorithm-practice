@@ -1230,3 +1230,14 @@ export const constBumbAnagramChecker = (
 
   return true
 }
+
+export const yaProdExceptSelf = (nums: number[]): number[] | null => {
+  // sanity check
+  if (nums.length === 0) return null
+  for (let i = 0; i < nums.length; i++) {
+    if (typeof nums[i] !== 'number') {
+      return null
+    }
+  }
+  // then we are going to run a loop
+}

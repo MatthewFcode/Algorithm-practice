@@ -40,6 +40,7 @@ import {
   prodBumbOfSelf,
   longConseccSequBumb,
   constBumbAnagramChecker,
+  yaProdExceptSelf,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -642,6 +643,19 @@ test('Is my knowledge of TypeScript really that much clear of other languages', 
 
   //Act
   const result = constBumbAnagramChecker(string1, string)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('function that makes each iteration of an array the product of everything except itself', () => {
+  //Arrange
+  const numbers: number[] = [1, 2, 3, 4]
+
+  const expected: number[] = [24, 12, 8, 6]
+
+  //Act
+  const result = yaProdExceptSelf(numbers)
 
   //Assert
   expect(result).toEqual(expected)
