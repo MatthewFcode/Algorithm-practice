@@ -1239,5 +1239,17 @@ export const yaProdExceptSelf = (nums: number[]): number[] | null => {
       return null
     }
   }
-  // then we are going to run a loop
+
+  let cleanArr: number[] = []
+
+  // then we are going to run a loop over all the nums
+  // we are going to start a loop at 0 for each i and when the nested loop isnt the same index as the one at i we are going to times it by the running product
+  for (let i = 0; i < nums.length; i++) {
+    let product: number = 1
+    for (let j = 0; j < nums.length; j++) {
+      if (j !== i) {
+        cleanArr.push()
+      }
+    }
+  }
 }
