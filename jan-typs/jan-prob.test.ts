@@ -41,6 +41,7 @@ import {
   longConseccSequBumb,
   constBumbAnagramChecker,
   yaProdExceptSelf,
+  pracLongSubStr,
 } from './jan-prob.js'
 
 test('function that returns the longest unique contigious substring', () => {
@@ -656,6 +657,19 @@ test('function that makes each iteration of an array the product of everything e
 
   //Act
   const result = yaProdExceptSelf(numbers)
+
+  //Assert
+  expect(result).toEqual(expected)
+})
+
+test('Finding the longest string without repeating characters', () => {
+  //Arrange
+  const string: string = 'DroneTrust'
+
+  const expected: number = 6
+
+  //Act
+  const result = pracLongSubStr(string)
 
   //Assert
   expect(result).toEqual(expected)
