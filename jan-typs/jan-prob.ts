@@ -749,46 +749,46 @@ interface MatchArr {
   goals: number
 }
 
-export const footballMatchStreakCalc = (
-  arr: MatchArr[]
-): { length: number; goals: number; points: number } | null => {
-  //sanity check
-  for (let i = 0; i < arr.length; i++) {
-    const index = arr[i]!
-    if (typeof index.result !== 'string' || typeof index.goals !== 'number') {
-      return null
-    }
-  }
+// export const footballMatchStreakCalc = (
+//   arr: MatchArr[]
+// ): { length: number; goals: number; points: number } | null => {
+//   //sanity check
+//   for (let i = 0; i < arr.length; i++) {
+//     const index = arr[i]!
+//     if (typeof index.result !== 'string' || typeof index.goals !== 'number') {
+//       return null
+//     }
+//   }
 
-  // empty variable for the object
-  let result = {}
+//   // empty variable for the object
+//   let result = {}
 
-  // loop over the objects and declare and object that has length, goals and points
-  for (let i = 0; i < arr.length; i++) {
-    let resultObj: { length: number; goals: number; points: number } = {
-      length: 0,
-      goals: 0,
-      points: 0,
-    }
-    for (let j = i; j < arr.length; j++) {
-      const index = arr[j]!
-      if (index.result === 'L') {
-        break
-      } else {
-        if (index.result === 'W') {
-          resultObj.length += 1
-          resultObj.goals += index.goals
-          resultObj.points += 3
-        } else if (index.result === 'D') {
-          resultObj.length += 1
-          resultObj.goals += index.goals
-          resultObj.points += 1
-        }
-      }
-    }
-  }
-  // nested loop is goonna run on each iteration of the array
-}
+//   // loop over the objects and declare and object that has length, goals and points
+//   for (let i = 0; i < arr.length; i++) {
+//     let resultObj: { length: number; goals: number; points: number } = {
+//       length: 0,
+//       goals: 0,
+//       points: 0,
+//     }
+//     for (let j = i; j < arr.length; j++) {
+//       const index = arr[j]!
+//       if (index.result === 'L') {
+//         break
+//       } else {
+//         if (index.result === 'W') {
+//           resultObj.length += 1
+//           resultObj.goals += index.goals
+//           resultObj.points += 3
+//         } else if (index.result === 'D') {
+//           resultObj.length += 1
+//           resultObj.goals += index.goals
+//           resultObj.points += 1
+//         }
+//       }
+//     }
+//   }
+//   // nested loop is goonna run on each iteration of the array
+// }
 
 export const runningTracker = (numbers: number[]) => {
   // sanity check
@@ -1248,8 +1248,11 @@ export const yaProdExceptSelf = (nums: number[]): number[] | null => {
     let product: number = 1
     for (let j = 0; j < nums.length; j++) {
       if (j !== i) {
-        cleanArr.push((product *= nums[i]))
+        product *= nums[j] as number
       }
     }
+    cleanArr.push(product)
   }
+
+  return cleanArr
 }
