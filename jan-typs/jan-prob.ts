@@ -1248,7 +1248,7 @@ export const yaProdExceptSelf = (nums: number[]): number[] | null => {
     let product: number = 1
     for (let j = 0; j < nums.length; j++) {
       if (j !== i) {
-        cleanArr.push()
+        cleanArr.push((product *= nums[i]))
       }
     }
   }
