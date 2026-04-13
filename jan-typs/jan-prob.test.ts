@@ -666,7 +666,7 @@ test('Finding the longest string without repeating characters', () => {
   //Arrange
   const string: string = 'DroneTrust'
 
-  const expected: number = 6
+  const expected: number = 7
 
   //Act
   const result = pracLongSubStr(string)

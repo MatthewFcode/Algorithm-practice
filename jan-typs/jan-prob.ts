@@ -1257,4 +1257,27 @@ export const yaProdExceptSelf = (nums: number[]): number[] | null => {
   return cleanArr
 }
 
-export const
+export const pracLongSubStr = (string: string): number | null => {
+  //sanity check
+  if (string.length === 0) return null
+
+  let yep: number = 0
+
+  // we are going to loop over the string
+  // start a nested loop
+  // keep track of what we have seen and use Math.max to save the max to that variable we we have seen one already break
+  for (let i = 0; i < string.length; i++) {
+    let seen: Record<string, boolean> = {}
+    for (let j = i; j < string.length; j++) {
+      const ch: string = string[j]!
+      if (seen[ch]) {
+        break
+      } else if (!seen[ch]) {
+        seen[ch] = true
+        yep = Math.max(yep, j - i)
+      }
+    }
+  }
+
+  return yep
+}
