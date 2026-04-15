@@ -667,6 +667,7 @@ test('Finding the longest string without repeating characters', () => {
   const string: string = 'DroneTrust'
   console.log('Hello world')
   console.log('Hello world')
+  console.log('Hello world')
   const expected: number = 7
 
   //Act
