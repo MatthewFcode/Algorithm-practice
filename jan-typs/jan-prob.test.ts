@@ -665,7 +665,7 @@ test('function that makes each iteration of an array the product of everything e
 test('Finding the longest string without repeating characters', () => {
   //Arrange
   const string: string = 'DroneTrust'
-
+  console.log('Hello world')
   console.log('Hello world')
   const expected: number = 7
 
